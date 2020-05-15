@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vy_test/billett/billett.dart';
+import 'package:vy_test/billetter/billett.dart';
 import 'package:vy_test/layout/layout.dart';
 
 class Billetter extends StatelessWidget {
