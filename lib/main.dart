@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vy_test/betjening/betjening.dart';
 import 'package:vy_test/billetter/billetter.dart';
 import 'package:vy_test/dyr/dyr.dart';
+import 'package:vy_test/innstillinger/innstillinger.dart';
 import 'package:vy_test/internett/internett.dart';
 import 'package:vy_test/kontroll/kontroll.dart';
 import 'package:vy_test/mat/mat.dart';
@@ -32,6 +33,7 @@ void main() {
       '/stoppesteder': (context) => Stoppesteder(),
       '/varsler': (context) => Varsler(),
       '/vognoversikt': (context) => Vognoversikt(),
+      '/innstillinger': (context) => Innstillinger(),
     },
   ));
 }
