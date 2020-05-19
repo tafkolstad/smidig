@@ -14,8 +14,14 @@ import 'package:vy_test/sove/sove.dart';
 import 'package:vy_test/stoppesteder/stoppesteder.dart';
 import 'package:vy_test/varsler/varsler.dart';
 import 'package:vy_test/vognoversikt/vognoversikt.dart';
+import 'package:flutter/services.dart';
+
 
 void main() {
+
+  
+
+
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
