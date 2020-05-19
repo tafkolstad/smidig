@@ -44,26 +44,24 @@ class Innstillinger extends StatelessWidget {
   Widget build(BuildContext context) {
     return Layout(
       appBarText: 'Min Reise',
-      customBody: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Text(
-                'Innstillinger',
-                style: TextStyle(
-                  color: Color(0xff383E42),
-                  fontFamily: 'Raleway', // Does not exist in this project
-                  fontSize: 30,
-                ),
+      customBody: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Text(
+              'Innstillinger',
+              style: TextStyle(
+                color: Color(0xff383E42),
+                fontFamily: 'Raleway', // Does not exist in this project
+                fontSize: 30,
               ),
             ),
-            Column(
-              children: innstillinger,
-            ),
-          ],
-        ),
+          ),
+          Column(
+            children: innstillinger,
+          ),
+        ],
       ),
     );
   }
