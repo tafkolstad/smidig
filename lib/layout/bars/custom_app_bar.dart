@@ -22,14 +22,6 @@ class CustomAppBar extends PreferredSize {
     ),
   );
 
-  static const Padding settingsIcon = Padding(
-    padding: const EdgeInsets.only(right: 10.0),
-    child: Icon(
-      OMIcons.settings,
-      color: Colors.black,
-    ),
-  );
-
   CustomAppBar({this.titleText, this.showButtons = true})
       : super(
           preferredSize: Size.fromHeight(56.0),
@@ -41,6 +33,21 @@ class CustomAppBar extends PreferredSize {
     final text = Text(
       titleText,
       style: textStyle,
+    );
+
+    void _onSettingsPressed() {
+      Navigator.pushNamed(context, '/innstillinger');
+    }
+
+    Padding settingsIcon = Padding(
+      padding: const EdgeInsets.only(right: 10.0),
+      child: IconButton(
+        onPressed: _onSettingsPressed,
+        icon: Icon(
+          OMIcons.settings,
+          color: Colors.black,
+        ),
+      ),
     );
 
     if (showButtons) {
