@@ -18,6 +18,12 @@ class OmOss extends StatelessWidget {
             ),
           ),
         ),
+        Text(
+          'NSB-konsernet endret navn til Vygruppen den 24.april 2019. Vygruppen er ett av Nordens største transportkonsern. Selskapet eies av den norske stat ved Samferdselsdepartementet. ',
+          
+          
+  
+        )
       ]),
     );
   }
