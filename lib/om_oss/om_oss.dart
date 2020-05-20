@@ -6,31 +6,6 @@ class OmOss extends StatelessWidget {
   Widget build(BuildContext context) {
     return Layout(
       appBarText: 'Min Reise',
-<<<<<<< Updated upstream
-      customBody: Column(children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: Text(
-            'Om oss',
-            style: TextStyle(
-              color: Color(0xff383E42),
-              fontFamily: 'Raleway', // Does not exist in this project
-              fontSize: 30,
-            ),
-          ),
-        ),
-        Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Text(
-              'NSB-konsernet endret navn til Vygruppen den 24.april 2019. Vygruppen er ett av Nordens største transportkonsern. Selskapet eies av den norske stat ved Samferdselsdepartementet. ',
-              style: TextStyle(
-                //color: Color(0xff383E42),
-                //fontFamily: 'Raleway', // Does not exist in this project
-                fontSize: 20,
-              ),
-            ))
-      ]),
-=======
       customBody: Column(
         children: <Widget>[
         Padding(
@@ -132,7 +107,6 @@ class OmOss extends StatelessWidget {
         ),
         ]
       ),
->>>>>>> Stashed changes
     );
   }
 }
