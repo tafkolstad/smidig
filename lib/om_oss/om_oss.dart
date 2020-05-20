@@ -18,12 +18,16 @@ class OmOss extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          'NSB-konsernet endret navn til Vygruppen den 24.april 2019. Vygruppen er ett av Nordens største transportkonsern. Selskapet eies av den norske stat ved Samferdselsdepartementet. ',
-          
-          
-  
-        )
+        Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Text(
+              'NSB-konsernet endret navn til Vygruppen den 24.april 2019. Vygruppen er ett av Nordens største transportkonsern. Selskapet eies av den norske stat ved Samferdselsdepartementet. ',
+              style: TextStyle(
+                //color: Color(0xff383E42),
+                //fontFamily: 'Raleway', // Does not exist in this project
+                fontSize: 20,
+              ),
+            ))
       ]),
     );
   }
