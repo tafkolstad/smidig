@@ -26,7 +26,7 @@ class Dyr extends StatelessWidget {
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 20, 0, 5),
+                padding: const EdgeInsets.only(left: 3, top: 20, bottom: 5),
                 child: Text(
                   'Kan jeg ha med kjæledyr?',
                   style: TextStyle(
@@ -38,16 +38,16 @@ class Dyr extends StatelessWidget {
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 1, 0, 10),
+                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
                 child: Text(
                   'Dyrene som får bli med på tog er hund, katt, gnagere i bur, burfugl og små skilpadder. Du kan ta med akvariefisk så lenge de er forsvarlig pakket. Andre dyr er ikke ønsket på toget. Eksempler på dyr som ikke er ønsket er insekter, edderkopper, krypdyr/reptiler og amfibier.',
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 16,
                   )
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 20, 0, 5),
+                padding: const EdgeInsets.only(left: 3, top: 20, bottom: 5),
                 child: Text(
                   'Førerhund',
                   style: TextStyle(
@@ -59,16 +59,16 @@ class Dyr extends StatelessWidget {
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 1, 0, 10),
+                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
                 child: Text(
                   'Førerhund for blinde og svaksynte som har offentlig godkjenning reiser gratis når den er i tjeneste. Dette forutsetter at den er utstyrt med sele og håndtak for den svaksynte. Førerhund under opplæring (sammen med trener) reiser gratis når den er utstyrt med sele og håndtak. Servicehunden må ha på seg vesten sin slik at konduktøren ser at hunden er i tjeneste.',
                   style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                     )
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 20, 0, 5),
+                padding: const EdgeInsets.only(left: 3, top: 20, bottom: 5),
                 child: Text(
                   'Billett for kjæledyr',
                   style: TextStyle(
@@ -80,11 +80,11 @@ class Dyr extends StatelessWidget {
                   ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(3, 1, 0, 10),
+                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
                 child: Text(
                   'For kjæledyr med skulderhøyde over 40 cm er prisen 50 prosent av en ordinær voksenbillett. Kjæledyr med skulderhøyde under 40 cm reiser gratis sammen med deg.',
                   style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 16,
                       )
                   ),
               ),
