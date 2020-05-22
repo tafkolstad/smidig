@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'varsel.dart';
+import 'package:intl/intl.dart';
+
 
 class Varsler extends StatelessWidget {
+
+
   final List<Varsel> varselList = [
     Varsel(
         title: 'Forsinkelse',
@@ -25,7 +29,7 @@ class Varsler extends StatelessWidget {
           Icons.info,
           color: Colors.blue,
         ),
-        catagoryColor: Colors.blue),
+        catagoryColor: Colors.blue,),
     Varsel(
         title: 'Forsinkelse',
         subtitle:
@@ -66,10 +70,13 @@ class Varsler extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                 child: Text('Varsler',
                     style: TextStyle(fontSize: 30, wordSpacing: 5))),
-            // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             Expanded(
-              child: ListView.builder(
-                  itemBuilder: listItem, itemCount: varselList.length),
+              child: Container(
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: ListView.builder(
+                    itemBuilder: listItem, itemCount: varselList.length),
+              ),
             )
           ],
         ));
@@ -111,6 +118,7 @@ class Varsler extends StatelessWidget {
               ],
               leading: varselList[index].catagoryIcon,
               title: Text(varselList[index].title),
+              
 
               //  subtitle: Text(varselList[index].subtitle),
               // contentPadding: EdgeInsets.all(8),

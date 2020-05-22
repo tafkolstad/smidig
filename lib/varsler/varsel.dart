@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+
 
 class Varsel {
   String title;
   String subtitle;
-  TimeOfDay timeStamp;
+  String timeStamp;
   Icon catagoryIcon;
   Icon isDelayed;
   Color catagoryColor;
-
   bool userHasRead = false;
 
   Varsel({
@@ -22,4 +24,5 @@ class Varsel {
   void setUserHasRead(){
     userHasRead = true;
   }
+
 }
