@@ -10,6 +10,7 @@ import 'package:vy_test/meny/meny.dart';
 import 'package:vy_test/om_oss/om_oss.dart';
 import 'package:vy_test/reisekart/reisekart.dart';
 import 'package:vy_test/severdigheter/severdigheter.dart';
+import 'package:vy_test/severdigheter/severdigheterviewall.dart';
 import 'package:vy_test/sove/sove.dart';
 import 'package:vy_test/stoppesteder/stoppesteder.dart';
 import 'package:vy_test/varsler/varsler.dart';
@@ -34,6 +35,7 @@ void main() {
       '/varsler': (context) => Varsler(),
       '/vognoversikt': (context) => Vognoversikt(),
       '/innstillinger': (context) => Innstillinger(),
+      '/severdigheterviewall': (context) => SeverdigheterViewAll(),
     },
   ));
 }

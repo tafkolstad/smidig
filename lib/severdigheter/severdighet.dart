@@ -34,7 +34,7 @@ class Severdighet extends StatelessWidget {
               ]),
           width: 200,
           margin: EdgeInsets.fromLTRB(45, 145, 0, 0),
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+          padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
           child: RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
