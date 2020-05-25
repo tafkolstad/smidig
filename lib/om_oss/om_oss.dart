@@ -22,7 +22,7 @@ class OmOss extends StatelessWidget {
                         color: Color(0xff383E42))),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 8, bottom: 30),
+                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 30),
                 child: Text(
                     'NSB-konsernet endret navn til Vygruppen den 24.april 2019. Vygruppen er ett av Nordens største transportkonsern. Selskapet eies av den norske stat ved Samferdselsdepartementet.',
                     style: TextStyle(
@@ -31,7 +31,7 @@ class OmOss extends StatelessWidget {
                         color: Color(0xff383E42))),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 8),
+                padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Text(
                     'Vår strategi og visjon er "Den beste reisen", og vårt hovedfokus er våre kunder og deres behov.',
                     style: TextStyle(
