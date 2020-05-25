@@ -1,8 +1,11 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'varsel.dart';
 
 class Varsler extends StatelessWidget {
+  final dbRef = FirebaseDatabase.instance.reference();
+
   final List<Varsel> varselList = [
     Varsel(
         title: 'Forsinkelse',
@@ -62,6 +65,21 @@ class Varsler extends StatelessWidget {
         appBarText: 'Min reise',
         customBody: Column(
           children: <Widget>[
+            RaisedButton(
+              padding: EdgeInsets.all(30),
+              child: Text('TRYKK!'),
+              onPressed: () {
+                skrivDB();
+                print('trykket....');
+              },
+            ),
+            RaisedButton(
+              padding: EdgeInsets.all(30),
+              child: Text('hent!'),
+              onPressed: () {
+                hentdata();
+              },
+            ),
             Container(
                 margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                 child: Text('Varsler',
@@ -120,5 +138,15 @@ class Varsler extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void skrivDB() {
+    dbRef.child("2").set({'Type': 'info', 'Melding': 'Dette er et ran!'});
+  }
+
+  void hentdata() {
+    dbRef.once().then((DataSnapshot snapshot) {
+      print('Test: ${snapshot.value}');
+    });
   }
 }
