@@ -35,7 +35,7 @@ class Dyr extends StatelessWidget {
                 child: Text(
                     'Dyrene som får bli med på tog er hund, katt, gnagere i bur, burfugl og små skilpadder. Du kan ta med akvariefisk så lenge de er forsvarlig pakket. Andre dyr er ikke ønsket på toget. Eksempler på dyr som ikke er ønsket er insekter, edderkopper, krypdyr/reptiler og amfibier.',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                     )),
               ),
               Padding(
@@ -52,7 +52,7 @@ class Dyr extends StatelessWidget {
                 child: Text(
                     'Førerhund for blinde og svaksynte som har offentlig godkjenning reiser gratis når den er i tjeneste. Dette forutsetter at den er utstyrt med sele og håndtak for den svaksynte. Førerhund under opplæring (sammen med trener) reiser gratis når den er utstyrt med sele og håndtak. Servicehunden må ha på seg vesten sin slik at konduktøren ser at hunden er i tjeneste.',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                     )),
               ),
               Padding(
@@ -69,7 +69,7 @@ class Dyr extends StatelessWidget {
                 child: Text(
                     'For kjæledyr med skulderhøyde over 40 cm er prisen 50 prosent av en ordinær voksenbillett. Kjæledyr med skulderhøyde under 40 cm reiser gratis sammen med deg.',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                     )),
               ),
             ],
