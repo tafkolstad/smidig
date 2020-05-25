@@ -88,6 +88,23 @@ class Dyr extends StatelessWidget {
                       )
                   ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 3, top: 20, bottom: 5),
+                child: Text('Reise med dyr til eller fra Sverige',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Raleway',
+                        color: Color(0xff383E42),
+                        fontWeight: FontWeight.bold)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
+                child: Text(
+                    'Vi gjør oppmerksom på at dersom du skal reise til eller fra Sverige med dyr, er det viktig at du på forhånd setter deg godt inn i reglene til tollvesenet slik at du unngår at dyret blir satt i karantene. \n\nHunder må ha ID-merke, eget pass og dokumentert behandling mot revens dvergbendelorm. Behandlingen mot bendelorm skal være gitt av veterinær, senest 24 timer før hunden passerer grensen over til Norge. Veterinæren skal dokumentere behandlingen i hundens pass. Kravene gjelder også for deg som bare skal på dags- og helgetur til Sverige.',
+                    style: TextStyle(
+                      fontSize: 16,
+                    )),
+              ),
             ],
           ),
         ),
