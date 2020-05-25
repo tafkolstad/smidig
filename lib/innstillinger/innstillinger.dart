@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vy_test/innstillinger/innstilling.dart';
 import 'package:vy_test/layout/layout.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class Innstillinger extends StatelessWidget {
   final List<Innstilling> innstillinger = [
@@ -20,19 +21,19 @@ class Innstillinger extends StatelessWidget {
       firstText: 'Varsler for ',
       firstTextColor: Color(0xff707070),
       secondText: 'forsinkelser',
-      secondTextColor: Color(0xffFFA200),
+      secondTextColor: vyColorOrange,
     ),
     Innstilling(
       firstText: 'Varsler for ',
       firstTextColor: Color(0xff707070),
       secondText: 'info',
-      secondTextColor: Color(0xff0088FF),
+      secondTextColor: infoColor,
     ),
     Innstilling(
       firstText: 'Varsler for ',
       firstTextColor: Color(0xff707070),
       secondText: 'tekniske feil',
-      secondTextColor: Color(0xffEA3700),
+      secondTextColor: tekniskFeilColor,
     ),
     Innstilling(
       firstText: 'Konstant sidebar',
@@ -52,8 +53,8 @@ class Innstillinger extends StatelessWidget {
             child: Text(
               'Innstillinger',
               style: TextStyle(
-                color: Color(0xff383E42),
-                fontFamily: 'Raleway', // Does not exist in this project
+                color: textColorTitle,
+                fontFamily: 'Raleway Medium', // Does not exist in this project
                 fontSize: 30,
               ),
             ),

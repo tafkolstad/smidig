@@ -35,7 +35,7 @@ class SeverdighetLiten extends StatelessWidget {
 //                )
               ]),
           width: 134,
-          margin: EdgeInsets.fromLTRB(28, 142, 0, 45),
+          margin: EdgeInsets.fromLTRB(28, 135, 0, 45),
           child: Column(
             children: <Widget>[
               Text(
