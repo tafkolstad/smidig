@@ -1,78 +1,107 @@
+import 'dart:convert';
+
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'varsel.dart';
 
+
 class Varsler extends StatelessWidget {
-  final List<Varsel> varselList = [
+ // final dbRef = FirebaseDatabase.instance.reference();
+
+  void databasetest() async {
+    FirebaseDatabase.instance.reference().child('recent').push().set({
+      'title':
+          'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
+      'timestamp': ServerValue.timestamp
+    });
+  }
+
+  var recentWarningsRef = FirebaseDatabase.instance
+      .reference()
+      .child('recent')
+      .orderByChild('created_at') //order by creation time.
+      .limitToFirst(10);
+
+  List liste=[];
+   List<Varsel> varselList = [
     Varsel(
         title: 'Forsinkelse',
         subtitle:
             'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal.',
         catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
         catagoryColor: Colors.orange,
-        isDelayed: Icon(Icons.access_time)),
+        isDelayed: Icon(Icons.access_time), timeStamp: '09:41'),
     Varsel(
         title: 'Farlig mann i vogn 2',
         subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
+            'Ikke gå til vogn 2',
         catagoryIcon: Icon(Icons.warning, color: Colors.red),
-        catagoryColor: Colors.orange),
+        catagoryColor: Colors.orange, timeStamp: '08:14'),
     Varsel(
         title: 'Info',
         subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
+            'Aircondition i vogn 3 er defekt. Beklager ulempene dette medfører',
         catagoryIcon: Icon(
           Icons.info,
           color: Colors.blue,
         ),
-        catagoryColor: Colors.blue),
-    Varsel(
-        title: 'Forsinkelse',
-        subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-        catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
-        catagoryColor: Colors.orange),
-    Varsel(
-        title: 'Info',
-        subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-        catagoryIcon: Icon(
-          Icons.info,
-          color: Colors.blue,
-        ),
-        catagoryColor: Colors.blue),
-    Varsel(
-        title: 'Forsinkelse',
-        subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-        catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
-        catagoryColor: Colors.orange),
-    Varsel(
-        title: 'Forsinkelse',
-        subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-        catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
-        catagoryColor: Colors.orange,
-        userHasRead: false),
+        catagoryColor: Colors.blue, timeStamp: '06:30'),
   ];
 
   @override
   Widget build(BuildContext context) {
+
+
     return Layout(
         appBarText: 'Min reise',
-        customBody: Column(
-          children: <Widget>[
-            Container(
-                margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
-                child: Text('Varsler',
-                    style: TextStyle(fontSize: 30, wordSpacing: 5))),
-            // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
-            Expanded(
-              child: ListView.builder(
-                  itemBuilder: listItem, itemCount: varselList.length),
-            )
-          ],
-        ));
+        customBody: StreamBuilder(
+            stream: recentWarningsRef.onValue,
+            builder: (context,
+                AsyncSnapshot<Event> snapshot) {
+              if (snapshot.hasData) {
+                liste.clear();
+                DataSnapshot dataValues = snapshot.data.snapshot;
+                Map<dynamic, dynamic> values = dataValues.value;
+                values.forEach((key, values) {
+                  liste.add(values);
+
+
+                });
+
+                print(liste[0]);
+               /*
+                snap) {
+              if (snap.hasData &&
+                  !snap.hasError &&
+                  snap.data.snapshot.value != null) {
+//taking the data snapshot.
+                getPushWarning(snap);
+*/
+
+                /*  */
+              }
+
+              return Column(
+                children: <Widget>[
+               /*   RaisedButton(
+                    child: Text('Trykk'),
+                    onPressed: () {
+                      databasetest();
+                    },
+                  ),*/
+                  Container(
+                      margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
+                      child: Text('Varsler',
+                          style: TextStyle(fontSize: 30, wordSpacing: 5))),
+                  // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
+                  Expanded(
+                    child: ListView.builder(
+                        itemBuilder: listItem, itemCount: varselList.length),
+                  )
+                ],
+              );
+            }));
   }
 
   Widget listItem(BuildContext context, int index) {
@@ -85,12 +114,12 @@ class Varsler extends StatelessWidget {
           decoration: BoxDecoration(
               color: varselList[index].catagoryColor,
               borderRadius: BorderRadius.all(Radius.circular(10))),
-          margin: EdgeInsets.fromLTRB(1, 20, 0, 0),
+          margin: EdgeInsets.fromLTRB(17, 20, 0, 0),
         ),
         //Tile
         Container(
           //height: 100,
-          margin: EdgeInsets.fromLTRB(5, 20, 0, 0),
+          margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -118,7 +147,29 @@ class Varsler extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          padding: EdgeInsets.fromLTRB(320, 25, 0, 0),
+          child: Text(varselList[index].timeStamp, style: TextStyle(fontSize: 10),),
+        ),
       ],
     );
   }
+
+  void getPushWarning(snap) async {
+
+
+
+
+
+  }
+/*
+  void skrivDB() {
+    dbRef.child("3").set({'Type': 'info', 'Melding': 'Test1'});
+  }
+
+  void hentdata() {
+    dbRef.once().then((DataSnapshot snapshot) {
+      print('Test: ${snapshot.value}');
+    });
+  }*/
 }

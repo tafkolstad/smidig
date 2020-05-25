@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Varsel {
   String title;
   String subtitle;
-  TimeOfDay timeStamp;
+  String timeStamp;
   Icon catagoryIcon;
   Icon isDelayed;
   Color catagoryColor;
