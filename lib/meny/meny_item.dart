@@ -37,7 +37,7 @@ class MenyItem extends StatelessWidget {
                 menuItemText,
                 style: TextStyle(
                   fontFamily: 'Raleway',
-                  fontSize: 20.0,
+                  fontSize: 17.0,
                   color: textColorMenu,
                 ),
               ),
