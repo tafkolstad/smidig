@@ -83,7 +83,7 @@ class Sove extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 3, right: 3),
                 child: Text(
-                    '- For Sove Refunderbar gjelder følgende rabatter: \n\t\t>  Barn: 25 prosent (barn under 6 år reiser gratis)\n\t\t>  Honnør: 25 prosent\n\t\t>  Student: 10 prosent\n',
+                    '- For Sove Refunderbar gjelder følgende rabatter: \n\t\t>  Barn: 25 prosent (barn under 6 år \n\t\t\t\t\t reiser gratis)\n\t\t>  Honnør: 25 prosent\n\t\t>  Student: 10 prosent\n',
                     style: TextStyle(
                       fontSize: 18,
                     )),
