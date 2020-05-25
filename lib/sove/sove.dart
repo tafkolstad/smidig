@@ -22,7 +22,7 @@ class Sove extends StatelessWidget {
                         color: Color(0xff383E42))),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
+                padding: const EdgeInsets.fromLTRB(3, 1, 3, 10),
                 child: Text(
                     'Sove er billetten for deg som vil reise langt og sove godt. Kom frem uthvilt.',
                     style: TextStyle(
@@ -39,7 +39,7 @@ class Sove extends StatelessWidget {
                         fontWeight: FontWeight.bold)),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
+                padding: const EdgeInsets.fromLTRB(3, 1, 3, 10),
                 child: Text(
                     'En sovekupé med køyeseng (to soveplasser), gode madrasser, dyne og pute. I kupeen finner du strømuttak, servant, såpe, håndklær og drikkevann. Felles toalett finner du i enden av vognen.',
                     style: TextStyle(
@@ -56,7 +56,7 @@ class Sove extends StatelessWidget {
                         fontWeight: FontWeight.bold)),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3, top: 1, bottom: 10),
+                padding: const EdgeInsets.fromLTRB(3, 1, 3, 10),
                 child: Text(
                     '- Du kan endre avreisetidspunkt helt frem til avgang. Ved endring til en dyrere avgang vil du belastes prisdifferansen. \n\n- Billetten kan endres til Flex og Pluss. Ved valg av en dyrere avgang vil du belastes prisdifferansen. \n\n- Du betaler et servicetillegg for bestillinger og endringer du gjør via betjente salgskanaler. \n\n- Sove kan ikke kombineres med andre rabatter som student eller honnør.\n\n- Rullestol og barnevogn er gratis. Du kan ta med hund og/eller sykkel om bord mot et pristillegg. Merk: Det er ikke tillatt med hund i sovekupé, med unntak av servicehund/førerhund. \n\n- Du har fire timers angrefrist fra du kjøper billetten for billetter som er kjøpt på vy.no, i appen eller fra en billettautomat, så lenge du avbestiller før togets avgangstid.',
                     style: TextStyle(
@@ -73,7 +73,7 @@ class Sove extends StatelessWidget {
                         fontWeight: FontWeight.bold)),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3, top: 1),
+                padding: const EdgeInsets.only(left: 3, top: 1, right: 3),
                 child: Text(
                     '- Denne billetten er refunderbar. Det betyr at du får pengene igjen hvis du avbestiller turen før avreise, uansett årsak.\n\n- Du kan du endre avreisetidspunkt helt frem til avgang. Ved endring til en dyrere avgang vil du belastes prisdifferansen.\n\n- Billetten kan endres til Flex Refunderbar og Pluss Refunderbar. Ved valg av en dyrere avgang vil du belastes prisdifferansen.\n\n- Du betaler et servicetillegg for bestillinger og endringer du gjør via betjente salgskanaler.\n',
                     style: TextStyle(
@@ -81,7 +81,7 @@ class Sove extends StatelessWidget {
                     )),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3),
+                padding: const EdgeInsets.only(left: 3, right: 3),
                 child: Text(
                     '- For Sove Refunderbar gjelder følgende rabatter: \n\t\t>  Barn: 25 prosent (barn under 6 år reiser gratis)\n\t\t>  Honnør: 25 prosent\n\t\t>  Student: 10 prosent\n',
                     style: TextStyle(
@@ -89,7 +89,7 @@ class Sove extends StatelessWidget {
                     )),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 3, bottom: 10),
+                padding: const EdgeInsets.only(left: 3, right: 3, bottom: 10),
                 child: Text(
                     '- Rullestol og barnevogn er gratis. Du kan ta med hund og/eller sykkel om bord mot et pristillegg. Merk: Det er ikke tillatt med hund i sovekupé, med unntak av servicehund/førerhund.',
                     style: TextStyle(
