@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class TextContainer extends StatelessWidget {
   final Widget customChild;
@@ -11,13 +12,13 @@ class TextContainer extends StatelessWidget {
     return Container(
       height: customHeight,
       decoration: BoxDecoration(
-        color: Color(0xffE0E7F6),
+        color: textContainerColor,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            blurRadius: 5.0,
-            color: Colors.grey[400],
-            offset: Offset(5, 5),
+            blurRadius: 4.0,
+            color: dropshadowColor,
+            offset: Offset(6, 6),
           ),
         ],
       ),
