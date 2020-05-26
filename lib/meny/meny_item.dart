@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class MenyItem extends StatelessWidget {
   final String menuItemText;
@@ -18,26 +19,32 @@ class MenyItem extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey,
-              offset: Offset(3, 3),
-              blurRadius: 3,
+              color: dropshadowColor,
+              offset: Offset(1, 4),
+              blurRadius: 6,
             ),
           ],
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(7.0),
           color: Colors.white,
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Image(
-                image: AssetImage("assets/$menuItemImage"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Image(
+              image: AssetImage("assets/$menuItemImage"),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.0, bottom: 12.0),
+              child: Text(
+                menuItemText,
+                style: TextStyle(
+                  fontFamily: 'Raleway',
+                  fontSize: 20.0,
+                  color: textColorMenu,
+                ),
               ),
-              SizedBox(height: 10.0,),
-              Text(menuItemText, style: textStyle,),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

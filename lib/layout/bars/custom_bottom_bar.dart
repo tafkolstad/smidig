@@ -6,7 +6,7 @@ class CustomBottomBar extends StatelessWidget {
   static const List<BottomNavigationBarItem> _navigationBarItems = [
     BottomNavigationBarItem(
       icon: Icon(
-        OMIcons.home,
+        OMIcons.search,
       ),
       title: Text(
         'Reisesøk',
@@ -22,7 +22,7 @@ class CustomBottomBar extends StatelessWidget {
     ),
     BottomNavigationBarItem(
       icon: Icon(
-        OMIcons.localActivity,
+        OMIcons.confirmationNumber,
       ),
       title: Text(
         'Billetter',
