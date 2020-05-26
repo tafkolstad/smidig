@@ -60,134 +60,139 @@ class _BetjeningState extends State<Betjening> {
     final double _bodyPadding = MediaQuery.of(context).size.height * 0.036;
     final double _textPadding = MediaQuery.of(context).size.height * 0.025;
 
-    return Layout(
-      appBarText: 'Min Reise',
-      customBody: Padding(
-        padding: EdgeInsets.all(_bodyPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Flexible(
-              child: ListView(
-                children: <Widget>[
-                  Text(
-                    'Kontakt betjening',
-                    style: TextStyle(
-                      color: textColorTitle,
-                      fontFamily: 'Raleway', // Does not exist in this project
-                      fontSize: 30,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 44.0,
-                  ),
-                  Text(
-                    'Her kan du ta kontakt med besetningen for å gi tilbakemeldinger eller be om hjelp',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: textColorDarkBlue,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 44.0,
-                  ),
-                  TextContainer(
-                    customChild: DropdownButtonHideUnderline(
-                      child: ButtonTheme(
-                        alignedDropdown: true,
-                        child: DropdownButton<String>(
-                          dropdownColor: textContainerColor,
-                          hint: Text(
-                            'Hva vil du si fra om?',
-                            style: Betjening._hintTextStyle,
-                          ),
-                          isExpanded: true,
-                          value: _dropdownValue,
-                          onChanged: (String val) {
-                            setState(() {
-                              _dropdownValue = val;
-                            });
-                          },
-                          items: _items.map<DropdownMenuItem<String>>((val) {
-                            return DropdownMenuItem<String>(
-                              value: val.data,
-                              child: val,
-                            );
-                          }).toList(),
-                        ),
+    return GestureDetector(
+      onTap: (){
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Layout(
+        appBarText: 'Min Reise',
+        customBody: Padding(
+          padding: EdgeInsets.all(_bodyPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Flexible(
+                child: ListView(
+                  children: <Widget>[
+                    Text(
+                      'Kontakt betjening',
+                      style: TextStyle(
+                        color: textColorTitle,
+                        fontFamily: 'Raleway', // Does not exist in this project
+                        fontSize: 30,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15.0,
-                  ),
-                  TextContainer(
-                    customChild: TextField(
-                      controller: textEditingController,
-                      style: Betjening._inputTextStyle,
-                      keyboardType: TextInputType.multiline,
-                      maxLines: null,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(_textPadding),
-                        border: InputBorder.none,
-                        hintText: 'Skriv inn din melding...',
-                        hintStyle: Betjening._hintTextStyle,
+                    SizedBox(
+                      height: 44.0,
+                    ),
+                    Text(
+                      'Her kan du ta kontakt med besetningen for å gi tilbakemeldinger eller be om hjelp',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: textColorDarkBlue,
                       ),
                     ),
-                    customHeight: 155.0,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(
-                        _buttonSidePadding,
-                        _buttonTopPadding,
-                        _buttonSidePadding,
-                        _buttonBottomPadding),
-                    child: ButtonTheme(
-                      height: 45.0,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: RaisedButton(
-                        color: vyColorGreen,
-                        child: Text(
-                          'Send',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Segoe UI',
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                        onPressed: () {
-                          writeToDatabase(_dropdownValue,
-                              textEditingController.text);
-
-                          return showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                content: Text('Henvendelsen er sendt'),
-                              );
+                    SizedBox(
+                      height: 44.0,
+                    ),
+                    TextContainer(
+                      customChild: DropdownButtonHideUnderline(
+                        child: ButtonTheme(
+                          alignedDropdown: true,
+                          child: DropdownButton<String>(
+                            dropdownColor: textContainerColor,
+                            hint: Text(
+                              'Hva vil du si fra om?',
+                              style: Betjening._hintTextStyle,
+                            ),
+                            isExpanded: true,
+                            value: _dropdownValue,
+                            onChanged: (String val) {
+                              setState(() {
+                                _dropdownValue = val;
+                              });
                             },
-                          );
-                        },
+                            items: _items.map<DropdownMenuItem<String>>((val) {
+                              return DropdownMenuItem<String>(
+                                value: val.data,
+                                child: val,
+                              );
+                            }).toList(),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    'Hendelsen vil bli sendt til konduktøren.\nKonduktøren kan komme bort til deg.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Segoe UI',
-                      fontSize: 10.0,
-                      fontWeight: FontWeight.w600,
-                      color: textColorDarkBlue,
+                    SizedBox(
+                      height: 15.0,
                     ),
-                  ),
-                ],
+                    TextContainer(
+                      customChild: TextField(
+                        controller: textEditingController,
+                        style: Betjening._inputTextStyle,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(_textPadding),
+                          border: InputBorder.none,
+                          hintText: 'Skriv inn din melding...',
+                          hintStyle: Betjening._hintTextStyle,
+                        ),
+                      ),
+                      customHeight: 155.0,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          _buttonSidePadding,
+                          _buttonTopPadding,
+                          _buttonSidePadding,
+                          _buttonBottomPadding),
+                      child: ButtonTheme(
+                        height: 45.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: RaisedButton(
+                          color: vyColorGreen,
+                          child: Text(
+                            'Send',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Segoe UI',
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          onPressed: () {
+                            writeToDatabase(
+                                _dropdownValue, textEditingController.text);
+
+                            return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  content: Text('Henvendelsen er sendt'),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Hendelsen vil bli sendt til konduktøren.\nKonduktøren kan komme bort til deg.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.w600,
+                        color: textColorDarkBlue,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
