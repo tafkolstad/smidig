@@ -22,10 +22,10 @@ class Faq extends StatelessWidget {
                         fontFamily: 'Raleway',
                         color: Color(0xff383E42))),
               ),
-              ItemList()
             ],
           ),
         ),
+        ItemList()
       ]),
     );
   }

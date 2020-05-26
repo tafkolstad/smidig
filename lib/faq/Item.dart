@@ -1,8 +1,11 @@
-class Item {
-  Item({this.title, this.panelTitle, this.isExpanded = false, this.subtitle});
+import 'package:flutter/material.dart';
 
-  String title;
-  String panelTitle;
-  String subtitle;
+class Item {
+  Item(
+      {this.panelText, this.expandedText, this.child, this.isExpanded = false});
+
+  Widget panelText;
+  Widget expandedText;
+  Widget child;
   bool isExpanded;
 }

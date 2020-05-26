@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Item.dart';
-
-List<Item> generateItems(int numberOfItems) {
-  return List.generate(numberOfItems, (int index) {
-    return Item(
-      panelTitle: 'Panel $index',
-      title: 'This is item number $index',
-    );
-  });
-}
+import 'data.dart';
 
 class ItemList extends StatefulWidget {
   ItemList({Key key}) : super(key: key);
@@ -19,8 +11,7 @@ class ItemList extends StatefulWidget {
 }
 
 class _ItemListState extends State<ItemList> {
-  List<Item> _data = generateItems(2);
-
+  List<Item> _data = data;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -41,17 +32,13 @@ class _ItemListState extends State<ItemList> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(item.panelTitle),
+              title: item.panelText,
             );
           },
-          body: item.subtitle != null && item.subtitle.isNotEmpty
-              ? ListTile(
-                  title: Text(item.title),
-                  subtitle: Text(item.subtitle),
-                )
-              : ListTile(
-                  title: Text(item.title),
-                ),
+          body: ListTile(
+            title: item.expandedText,
+            subtitle: item.child,
+          ),
           isExpanded: item.isExpanded,
         );
       }).toList(),
