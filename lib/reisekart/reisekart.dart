@@ -9,6 +9,7 @@ class Reisekart extends StatelessWidget {
 
     return Layout(
       appBarText: 'Min Reise',
+      appBarButtons: false,
       customDrawer: Sidebar(),
       // Menu button
       customBody: MenuButton(),
