@@ -12,11 +12,11 @@ class Severdighet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      
       children: [
         Container(
-          width: 250,
+          width: 280,
           margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
-          padding: EdgeInsets.all(0),
           child: Image(
             image: AssetImage("assets/$severdighetBilde"),
           ),
@@ -32,27 +32,34 @@ class Severdighet extends StatelessWidget {
                   blurRadius: 1,
                 )
               ]),
-          width: 200,
-          margin: EdgeInsets.fromLTRB(45, 145, 0, 0),
-          padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-          child: RichText(
-            textAlign: TextAlign.left,
-            text: TextSpan(
-                text: severdighetOverskrift,
+          width: 220,
+          height: 75,
+          margin: EdgeInsets.fromLTRB(50, 145, 0, 0),
+          padding: EdgeInsets.fromLTRB(17, 8, 14, 5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 3),
+              child: Text(severdighetOverskrift, 
                 style: TextStyle(
-                    fontFamily: "Segoe",
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xff3B434D),
-                    fontSize: 15),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: "\n$severdighetTekst",
-                      style: TextStyle(
-                          color: Color(0xff7C847C),
-                          fontWeight: FontWeight.normal,
-                          fontSize: 11)),
-                ]),
-          ),
+                fontFamily: "Segoe UI",
+                fontWeight: FontWeight.w600,
+                color: Color(0xff3B434D),
+                fontSize: 15),
+              ),
+            ),
+            Text(severdighetTekst, 
+              style: TextStyle(
+              fontFamily: "Segoe UI",
+              fontWeight: FontWeight.normal,
+              color: Color(0xff7C847C),
+              fontSize: 11),
+            ),
+            ]
+            ),
+          
+          
         )
       ],
     );
