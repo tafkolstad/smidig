@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class Kontroll extends StatelessWidget {
   @override
@@ -18,10 +19,9 @@ class Kontroll extends StatelessWidget {
               child: Text(
                 'Kontroll',
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
                   fontSize: 30.0,
-                  fontFamily: 'Raleway', // Does not exist in this project
-                  color: Color(0xFF4E4E4E),
+                  fontFamily: 'Raleway Medium',
+                  color: textColorTitle,
                 ),
               ),
             ),
