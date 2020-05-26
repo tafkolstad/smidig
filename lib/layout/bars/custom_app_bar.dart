@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class CustomAppBar extends PreferredSize {
   final String titleText;
@@ -9,8 +10,7 @@ class CustomAppBar extends PreferredSize {
   static const TextStyle textStyle = TextStyle(
     color: Color(0xFF4e4e4e),
     fontSize: 23.0,
-    fontFamily: 'Segoe UI', // Does not exist in project
-    fontWeight: FontWeight.w600,
+    fontFamily: 'Segoe UI',
   );
 
   static const PreferredSize dividerLine = PreferredSize(
@@ -45,7 +45,7 @@ class CustomAppBar extends PreferredSize {
         onPressed: _onSettingsPressed,
         icon: Icon(
           OMIcons.settings,
-          color: Colors.black,
+          color: topbarIcon,
         ),
       ),
     );
@@ -58,7 +58,7 @@ class CustomAppBar extends PreferredSize {
           centerTitle: true,
           backgroundColor: Colors.white,
           leading: BackButton(
-            color: Colors.black,
+            color: topbarIcon,
           ),
           actions: <Widget>[
             settingsIcon,
