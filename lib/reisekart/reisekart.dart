@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/layout/colors.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:vy_test/meny/meny_item.dart';
 
 class Reisekart extends StatelessWidget {
   static const TextStyle _textStyle = TextStyle(
     fontFamily: 'Raleway',
-    fontSize: 11.0,
-    color: Color(0xff616161),
+    fontSize: 12.0,
+    color: textColorMenu,
   );
 
   @override
   Widget build(BuildContext context) {
+  final _edgePadding = MediaQuery.of(context).size.width * 0.03;
+  final _menuButtonPadding = MediaQuery.of(context).size.width * 0.1;
+  final _menuButtonHeight = MediaQuery.of(context).size.height * 0.05;
+
     return Layout(
       appBarText: 'Min Reise',
 
@@ -20,7 +25,7 @@ class Reisekart extends StatelessWidget {
         color: Colors.transparent,
         child: ListView(
           padding: EdgeInsets.only(
-            right: 15.0,
+            right: _edgePadding,
           ),
           shrinkWrap: true,
           children: <Widget>[
@@ -74,14 +79,14 @@ class Reisekart extends StatelessWidget {
       customBody: Container(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: const EdgeInsets.only(
-            bottom: 25,
+          padding: EdgeInsets.only(
+            bottom: _edgePadding,
           ),
           child: ButtonTheme(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 40.0,
+            padding: EdgeInsets.symmetric(
+              horizontal: _menuButtonPadding,
             ),
-            height: 35.0,
+            height: _menuButtonHeight,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0)),
             child: Builder(
@@ -95,7 +100,7 @@ class Reisekart extends StatelessWidget {
                       fontFamily: 'Segoe UI',
                       fontSize: 21.0,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xff00685E),
+                      color: vyColorDarkGreen,
                     ),
                   ),
                   onPressed: () {

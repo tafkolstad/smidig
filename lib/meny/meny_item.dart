@@ -37,11 +37,7 @@ class MenyItem extends StatelessWidget {
               padding: EdgeInsets.only(top: 10.0, bottom: 12.0),
               child: Text(
                 menuItemText,
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 17.0,
-                  color: textColorMenu,
-                ),
+                style: textStyle,
               ),
             ),
           ],
