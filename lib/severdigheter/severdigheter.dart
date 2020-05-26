@@ -12,7 +12,7 @@ class Severdigheter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(30, 10, 0, 10),
+            padding: const EdgeInsets.fromLTRB(30, 30, 0, 20),
             child: Text(
               'Severdigheter',
               style: TextStyle(
@@ -26,16 +26,16 @@ class Severdigheter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(35, 0, 10, 0),
+                padding: const EdgeInsets.fromLTRB(35, 0, 10, 10),
                 child: Text('Suggested top locations',
                     style: TextStyle(
                         fontFamily: 'Segoe',
                         fontWeight: FontWeight.w600,
                         color: Color(0xff7C847C),
-                        fontSize: 13)),
+                        fontSize: 13.5)),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 15, 10),
                 child: InkWell(
                   child: Text(
                     'View all > ',
@@ -43,7 +43,7 @@ class Severdigheter extends StatelessWidget {
                         fontFamily: 'Segoe',
                         fontWeight: FontWeight.w600,
                         color: Color(0xff7C847C),
-                        fontSize: 13),
+                        fontSize: 13.5),
                   ),
                   onTap: () {
                     Navigator.pushNamed(context, '/severdigheterviewall');
@@ -54,26 +54,29 @@ class Severdigheter extends StatelessWidget {
           ),
           new Expanded(
               child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Severdighet(
-                severdighetBilde: 'stranda.png',
-                severdighetOverskrift: 'Stranda',
-                severdighetTekst: 'Dette er ei bygd. Det er faktisk den flottaste bygda i helie verden. Dei lagar grandiosa her nemlig.',
-              ),
-              Severdighet(
-                severdighetBilde: 'fjord2.png',
-                severdighetOverskrift: 'Fjorden',
-                severdighetTekst: 'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
-              ),
-              Severdighet(
-                severdighetBilde: 'by.png',
-                severdighetOverskrift: 'By',
-                severdighetTekst: 'Dette er ein by',
-              ),
-            ],
-          )),
-          Padding(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Severdighet(
+                  severdighetBilde: 'stranda.png',
+                  severdighetOverskrift: 'Stranda',
+                  severdighetTekst: 'Dette er ei bygd. Det er faktisk den flottaste bygda i helie verden. Dei lagar grandiosa her nemlig.',
+                ),
+                Severdighet(
+                  severdighetBilde: 'fjord2.png',
+                  severdighetOverskrift: 'Fjorden',
+                  severdighetTekst: 'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
+                ),
+                Severdighet(
+                  severdighetBilde: 'by.png',
+                  severdighetOverskrift: 'By',
+                  severdighetTekst: 'Dette er ein by',
+                ),
+              ],
+            )
+          ),
+
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
             padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
             child: Text('Neste oppkommende',
                 style: TextStyle(
@@ -82,6 +85,7 @@ class Severdigheter extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontSize: 25)),
           ),
+          
           new Expanded(
               child: ListView(
             scrollDirection: Axis.horizontal,
