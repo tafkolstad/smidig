@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/faq/ItemList.dart';
 import 'package:vy_test/layout/layout.dart';
 
 class Faq extends StatelessWidget {
@@ -21,6 +22,7 @@ class Faq extends StatelessWidget {
                         fontFamily: 'Raleway',
                         color: Color(0xff383E42))),
               ),
+              ItemList()
             ],
           ),
         ),
