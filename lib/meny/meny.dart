@@ -46,8 +46,8 @@ class Meny extends StatelessWidget {
     ),
     MenyItem(
       menuItemImage: 'billett.png',
-      menuItemText: 'Billett',
-      routeName: '',
+      menuItemText: 'Kontroll',
+      routeName: 'kontroll',
     ),
     MenyItem(
       menuItemImage: 'vy.logo.final_primary.png',
