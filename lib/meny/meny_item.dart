@@ -7,14 +7,25 @@ class MenyItem extends StatelessWidget {
   final String routeName;
   final TextStyle textStyle;
 
-  MenyItem({this.menuItemText, this.menuItemImage, this.routeName, this.textStyle});
+  MenyItem(
+      {this.menuItemText, this.menuItemImage, this.routeName, this.textStyle});
 
   @override
   Widget build(BuildContext context) {
+    final _topPadding = MediaQuery.of(context).size.height * 0.015;
+    final _bottomPadding = MediaQuery.of(context).size.height * 0.013;
+    final _containerHeight = MediaQuery.of(context).size.height * 0.12;
+
     return GestureDetector(
-      onTap: (){Navigator.pushNamed(context, '/$routeName');},
+      onTap: () {
+        if(routeName == 'reisekart'){
+          Navigator.of(context).pushNamedAndRemoveUntil('/reisekart', (Route<dynamic> route) => false);
+        } else {
+          Navigator.pushNamed(context, '/$routeName');
+        }
+      },
       child: Container(
-        height: 80,
+        height: _containerHeight,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           boxShadow: [
@@ -34,7 +45,10 @@ class MenyItem extends StatelessWidget {
               image: AssetImage("assets/$menuItemImage"),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 10.0, bottom: 12.0),
+              padding: EdgeInsets.only(
+                top: _topPadding,
+                bottom: _bottomPadding,
+              ),
               child: Text(
                 menuItemText,
                 style: textStyle,
