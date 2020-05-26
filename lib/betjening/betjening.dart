@@ -27,7 +27,7 @@ class _BetjeningState extends State<Betjening> {
   final TextEditingController textEditingController = TextEditingController();
   final database = FirebaseDatabase.instance.reference();
 
-  void writeToDatabase(String category, String message) {
+  void writeToDatabase(String category, String message) async {
     database.child("Henvendelser").push().set({
       'Kategori': category,
       'Melding': message,
