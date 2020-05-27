@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vy_test/severdigheter/Model/topPlaces_model.dart';
+import 'package:vy_test/severdigheter/model/topp_Opplevelser_Karusell_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/colors.dart';
 
-class DestinationCarousel extends StatelessWidget {
+class ToppOpplevelserKarusell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,18 +14,18 @@ class DestinationCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Top Destinations',
+                'Topp 10 opplevelser',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 18.0,
                   color: textColorMenu,
                   fontFamily: 'Segoe UI',
                   letterSpacing: 0.3,
                 ),
               ),
               GestureDetector(
-                onTap: () => print('view all'),
+                onTap: () => print('Viser alle'),
                 child: Text(
-                  'View all',
+                  'Vis alle',
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontSize: 13.0,
@@ -39,7 +39,7 @@ class DestinationCarousel extends StatelessWidget {
           ),
         ),
         Container(
-          height: 300.0,
+          height: 280.0,
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -70,30 +70,22 @@ class DestinationCarousel extends StatelessWidget {
                             ),
                             Positioned(
                               left: 15.0,
-                              bottom: 30.0,
+                              bottom: 35.0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text(
-                                    destination.place,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24.0,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
                                   Row(
                                     children: <Widget>[
                                       Icon(
                                         FontAwesomeIcons.locationArrow,
-                                        size: 10.0,
+                                        size: 14.0,
                                         color: Colors.white,
                                       ),
                                       SizedBox(width: 8.0),
                                       Text(
-                                        destination.place,
+                                        destination.plass,
                                         style: TextStyle(
+                                          fontSize: 18.0,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -106,7 +98,7 @@ class DestinationCarousel extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        bottom: 25.0,
+                        bottom: 5.0,
                         child: Container(
                           height: 100.0,
                           width: 230.0,
@@ -121,7 +113,7 @@ class DestinationCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  destination.place,
+                                  destination.title,
                                   style: TextStyle(
                                     fontSize: 22.0,
                                     fontFamily: 'Segoe UI',
@@ -130,7 +122,7 @@ class DestinationCarousel extends StatelessWidget {
                                 ),
                                 SizedBox(height: 3.0,),
                                 Text(
-                                  destination.description,
+                                  destination.beskrivelse,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 3,
                                   style: TextStyle(
