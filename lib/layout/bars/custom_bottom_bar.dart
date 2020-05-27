@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
-import 'package:vy_test/billetter/billetter.dart';
 
 class CustomBottomBar extends StatelessWidget {
   static const List<BottomNavigationBarItem> _navigationBarItems = [
     BottomNavigationBarItem(
       icon: Icon(
-        OMIcons.home,
+        OMIcons.search,
       ),
       title: Text(
         'Reisesøk',
@@ -22,7 +21,7 @@ class CustomBottomBar extends StatelessWidget {
     ),
     BottomNavigationBarItem(
       icon: Icon(
-        OMIcons.localActivity,
+        OMIcons.confirmationNumber,
       ),
       title: Text(
         'Billetter',
@@ -50,8 +49,7 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     void _onBilletterTapped(int index) {
       if (index == 2) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (BuildContext context) => Billetter()));
+        Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
       }
     }
 
