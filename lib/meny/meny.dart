@@ -99,7 +99,7 @@ class Meny extends StatelessWidget {
       bottomPadding: _bottomPadding,
     ),
     MenyItem(
-      menuItemImage: 'sove.png',
+      menuItemImage: 'faq.png',
       menuItemText: 'FAQ',
       routeName: 'faq',
       textStyle: _textStyle,
