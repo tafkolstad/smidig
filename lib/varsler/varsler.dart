@@ -134,6 +134,7 @@ class Varsler extends StatelessWidget {
               ],
               leading: varselList[index].catagoryIcon,
               title: Text(varselList[index].title),
+              trailing: Text(varselList[index].timeStamp),
 
               //  subtitle: Text(varselList[index].subtitle),
               // contentPadding: EdgeInsets.all(8),
@@ -141,13 +142,7 @@ class Varsler extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: EdgeInsets.fromLTRB(320, 25, 0, 0),
-          child: Text(
-            varselList[index].timeStamp,
-            style: TextStyle(fontSize: 10),
-          ),
-        ),
+     
       ],
     );
   }
