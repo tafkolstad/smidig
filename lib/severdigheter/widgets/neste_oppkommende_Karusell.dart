@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:vy_test/severdigheter/Model/topPlaces_model.dart';
+import 'package:vy_test/severdigheter/model/neste_oppkommende_Karusell_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/colors.dart';
 
-class DestinationCarousel2 extends StatelessWidget {
+class NesteoppkommendeKarusell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
+          padding: EdgeInsets.fromLTRB(30, 0, 20, 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Top Destinations',
+                'Neste oppkommende',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 20.0,
                   color: textColorMenu,
                   fontFamily: 'Segoe UI',
                   letterSpacing: 0.3,
@@ -24,12 +24,11 @@ class DestinationCarousel2 extends StatelessWidget {
               GestureDetector(
                 onTap: () => print('view all'),
                 child: Text(
-                  'View all',
+                  'Vis alle',
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontSize: 13.0,
                     fontFamily: 'Segoe UI',
-                    fontWeight: FontWeight.w600,
                     letterSpacing: 1.0,
                   ),
                 ),
@@ -38,17 +37,17 @@ class DestinationCarousel2 extends StatelessWidget {
           ),
         ),
         Container(
-          height: 300.0,
+          height: 215.0,
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: destinations.length,
+            itemCount: oppkommer.length,
             itemBuilder: (BuildContext context, int index) {
-              Destination destination = destinations[index];
+              Oppkommende oppkommende = oppkommer[index];
               return GestureDetector(
                 child: Container(
                   margin: EdgeInsets.all(10.0),
-                  width: 160.0,
+                  width: 130.0,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: <Widget>[
@@ -56,20 +55,20 @@ class DestinationCarousel2 extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: destination.imageUrl,
+                              tag: oppkommende.imageUrl,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
-                                  height: 150.0,
+                                  height: 120.0,
                                   width: 160.0,
-                                  image: AssetImage(destination.imageUrl),
+                                  image: AssetImage(oppkommende.imageUrl),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                             Positioned(
-                              left: 15.0,
-                              bottom: 30.0,
+                              left: 10.0,
+                              bottom: 21.0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -82,8 +81,9 @@ class DestinationCarousel2 extends StatelessWidget {
                                       ),
                                       SizedBox(width: 8.0),
                                       Text(
-                                        destination.place,
+                                        oppkommende.plass,
                                         style: TextStyle(
+                                          fontSize: 15.0,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -98,8 +98,8 @@ class DestinationCarousel2 extends StatelessWidget {
                       Positioned(
                         bottom: 25.0,
                         child: Container(
-                          height: 130.0,
-                          width: 160.0,
+                          height: 65.0,
+                          width: 130.0,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -108,29 +108,42 @@ class DestinationCarousel2 extends StatelessWidget {
                               )
                           ),
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(15, 5, 10, 5),
+                            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  destination.place,
+                                  oppkommende.title,
                                   style: TextStyle(
                                     fontSize: 16.0,
                                     fontFamily: 'Segoe UI',
                                     letterSpacing: 0.2,
                                   ),
                                 ),
-                                SizedBox(height: 3.0,),
-                                Text(
-                                  destination.description,
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 3,
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontFamily: 'Segoe UI',
-                                    color: Colors.grey,
-                                  ),
+                                SizedBox(height: 5.0,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                      'Høyreside',
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                        color: textColorMenu,
+                                        fontFamily: 'Segoe UI',
+                                        letterSpacing: 0.3,
+                                      ),
+                                    ),
+                                    Text(
+                                      oppkommende.minutterTil,
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                        color: textColorMenu,
+                                        fontFamily: 'Segoe UI',
+                                        letterSpacing: 0.3,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
