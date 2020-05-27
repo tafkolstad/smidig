@@ -25,7 +25,10 @@ class Faq extends StatelessWidget {
             ],
           ),
         ),
-        ItemList()
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: ItemList(),
+        )
       ]),
     );
   }
