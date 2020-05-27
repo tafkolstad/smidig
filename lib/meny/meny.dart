@@ -64,6 +64,11 @@ class Meny extends StatelessWidget {
       menuItemText: 'Dyr',
       routeName: 'dyr',
     ),
+    MenyItem(
+      menuItemImage: 'dyr.png',
+      menuItemText: 'Faq',
+      routeName: 'faq',
+    ),
   ];
 
   @override
