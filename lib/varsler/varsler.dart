@@ -1,13 +1,10 @@
-import 'dart:convert';
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'varsel.dart';
 
-
 class Varsler extends StatelessWidget {
- // final dbRef = FirebaseDatabase.instance.reference();
+  // final dbRef = FirebaseDatabase.instance.reference();
 
   void databasetest() async {
     FirebaseDatabase.instance.reference().child('recent').push().set({
@@ -23,21 +20,23 @@ class Varsler extends StatelessWidget {
       .orderByChild('created_at') //order by creation time.
       .limitToFirst(10);
 
-  List liste=[];
-   List<Varsel> varselList = [
+  List liste = [];
+
+  final List<Varsel> varselList = [
     Varsel(
         title: 'Forsinkelse',
         subtitle:
             'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal.',
         catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
         catagoryColor: Colors.orange,
-        isDelayed: Icon(Icons.access_time), timeStamp: '09:41'),
+        isDelayed: Icon(Icons.access_time),
+        timeStamp: '09:41'),
     Varsel(
         title: 'Farlig mann i vogn 2',
-        subtitle:
-            'Ikke gå til vogn 2',
+        subtitle: 'Ikke gå til vogn 2',
         catagoryIcon: Icon(Icons.warning, color: Colors.red),
-        catagoryColor: Colors.orange, timeStamp: '08:14'),
+        catagoryColor: Colors.orange,
+        timeStamp: '08:14'),
     Varsel(
         title: 'Info',
         subtitle:
@@ -46,36 +45,31 @@ class Varsler extends StatelessWidget {
           Icons.info,
           color: Colors.blue,
         ),
-        catagoryColor: Colors.blue, timeStamp: '06:30'),
+        catagoryColor: Colors.blue,
+        timeStamp: '06:30'),
   ];
 
   @override
   Widget build(BuildContext context) {
-
-
     return Layout(
         appBarText: 'Min reise',
         customBody: StreamBuilder(
             stream: recentWarningsRef.onValue,
-            builder: (context,
-                AsyncSnapshot<Event> snapshot) {
+            builder: (context, AsyncSnapshot<Event> snapshot) {
               if (snapshot.hasData) {
                 liste.clear();
                 DataSnapshot dataValues = snapshot.data.snapshot;
                 Map<dynamic, dynamic> values = dataValues.value;
                 values.forEach((key, values) {
                   liste.add(values);
-
-
                 });
 
                 print(liste[0]);
-               /*
+                /*
                 snap) {
               if (snap.hasData &&
                   !snap.hasError &&
                   snap.data.snapshot.value != null) {
-//taking the data snapshot.
                 getPushWarning(snap);
 */
 
@@ -84,7 +78,7 @@ class Varsler extends StatelessWidget {
 
               return Column(
                 children: <Widget>[
-               /*   RaisedButton(
+                  /*   RaisedButton(
                     child: Text('Trykk'),
                     onPressed: () {
                       databasetest();
@@ -149,27 +143,14 @@ class Varsler extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.fromLTRB(320, 25, 0, 0),
-          child: Text(varselList[index].timeStamp, style: TextStyle(fontSize: 10),),
+          child: Text(
+            varselList[index].timeStamp,
+            style: TextStyle(fontSize: 10),
+          ),
         ),
       ],
     );
   }
 
-  void getPushWarning(snap) async {
-
-
-
-
-
-  }
-/*
-  void skrivDB() {
-    dbRef.child("3").set({'Type': 'info', 'Melding': 'Test1'});
-  }
-
-  void hentdata() {
-    dbRef.once().then((DataSnapshot snapshot) {
-      print('Test: ${snapshot.value}');
-    });
-  }*/
+  void getPushWarning(snap) async {}
 }
