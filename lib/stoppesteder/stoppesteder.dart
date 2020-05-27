@@ -124,21 +124,28 @@ class Stoppesteder extends StatelessWidget {
                           roundedEdges: Radius.circular(10),
                         ),
                         StepProgressIndicator(
-                          customStep: (index, color, _) => color == Colors.black
-                              ? SirkelStoppested()
-                              : SirkelStoppested(circleHeight: 15,
-                            circleWidth: 15,
-                            circleColor: vyColorGreen,
-                            childCircleWidth: 10,
-                            childCircleHeight: 10,),
                           totalSteps: 17,
-                          currentStep: 5,
+                          currentStep: 10,
                           direction: Axis.vertical,
                           size: 25,
                           padding: 2,
                           selectedColor: vyColorDarkGreen,
                           unselectedColor: vyColorGreen,
-                          roundedEdges: Radius.circular(30),
+                          customStep: (index, color, _) => color == vyColorDarkGreen
+                              ? SirkelStoppested(
+                                circleHeight: 15,
+                                circleWidth: 15,
+                                circleColor: vyColorDarkGreen,
+                                childCircleWidth: 10,
+                                childCircleHeight: 10,
+                              )
+                              : SirkelStoppested(
+                                circleHeight: 15,
+                                circleWidth: 15,
+                                circleColor: vyColorGreen,
+                                childCircleWidth: 10,
+                                childCircleHeight: 10,
+                              ),
                         )
                       ],
                     ),
