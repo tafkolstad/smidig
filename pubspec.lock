@@ -22,13 +22,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.1"
-  badges:
-    dependency: "direct main"
-    description:
-      name: badges
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -149,13 +142,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.12"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.1+1"
   matcher:
     dependency: transitive
     description:
@@ -184,13 +170,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.4"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.9.0"
   petitparser:
     dependency: transitive
     description:
