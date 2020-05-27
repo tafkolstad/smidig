@@ -115,17 +115,17 @@ class Stoppesteder extends StatelessWidget {
                       children: <Widget>[
                         StepProgressIndicator(
                           totalSteps: 100,
-                          currentStep: 50,
+                          currentStep: 80,
                           direction: Axis.vertical,
                           size: 5,
                           padding: 0,
-                          selectedColor: Colors.yellow,
-                          unselectedColor: Colors.cyan,
+                          selectedColor: vyColorDarkGreen,
+                          unselectedColor: vyColorGreen,
                           roundedEdges: Radius.circular(10),
                         ),
                         StepProgressIndicator(
                           totalSteps: 17,
-                          currentStep: 10,
+                          currentStep: 7,
                           direction: Axis.vertical,
                           size: 25,
                           padding: 2,
@@ -143,8 +143,8 @@ class Stoppesteder extends StatelessWidget {
                                 circleHeight: 15,
                                 circleWidth: 15,
                                 circleColor: vyColorGreen,
-                                childCircleWidth: 10,
-                                childCircleHeight: 10,
+                                childCircleWidth: 8,
+                                childCircleHeight: 8,
                               ),
                         )
                       ],
