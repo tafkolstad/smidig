@@ -32,8 +32,8 @@ class Varsler extends StatelessWidget {
         isDelayed: Icon(Icons.access_time),
         timeStamp: '09:41'),
     Varsel(
-        title: 'Farlig mann i vogn 2',
-        subtitle: 'Ikke gå til vogn 2',
+        title: 'Hendelse',
+        subtitle: 'Hendelse i vogn 2, ikke gå dit!',
         catagoryIcon: Icon(Icons.warning, color: Colors.red),
         catagoryColor: Colors.orange,
         timeStamp: '08:14'),
