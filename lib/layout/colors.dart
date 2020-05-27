@@ -7,11 +7,11 @@ const textColorTitle = const Color(0xFF383E42);
 const textColorDarkBlue = const Color(0xFF5C7181);
 const textColorGrey = const Color(0xFF4E4E4E);
 const textColorMenu = const Color(0xFF616161);
+const textContainerColor = const Color(0xffE0E7F6);
 const dropshadowColor = const Color(0x16000000);
 
 const infoColor = const Color(0xff0088FF);
 const tekniskFeilColor = const Color(0xffEA3700);
-
 
 const vyColorGreen = const Color(0xFF00957A);
 const vyColorDarkGreen = const Color(0xFF00685E);
