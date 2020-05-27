@@ -27,6 +27,7 @@ class Reisekart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Layout(
       appBarText: 'Min Reise',
       customBody: Stack(
