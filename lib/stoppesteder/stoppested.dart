@@ -17,10 +17,10 @@ class Stoppested extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(6),
             child: Text(
               ankomstTid,
-              style: TextStyle(fontSize: 13),
+              style: TextStyle(fontSize: 15),
             ),
           ),
           Stack(
@@ -29,29 +29,29 @@ class Stoppested extends StatelessWidget {
                 color: farge,
                 height: 28,
                 width: 5,
-                margin: EdgeInsets.fromLTRB(4.5, 0, 0, 0),
+                margin: EdgeInsets.fromLTRB(6, 0, 0, 0),
               ),
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: farge),
-                height: 10,
-                width: 10,
-                margin: EdgeInsets.fromLTRB(2, 12, 0, 0),
+                height: 12,
+                width: 12,
+                margin: EdgeInsets.fromLTRB(2.5, 12, 0, 0),
               ),
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.white),
-                height: 6,
-                width: 6,
-                margin: EdgeInsets.fromLTRB(4, 14, 0, 0),
+                height: 7,
+                width: 7,
+                margin: EdgeInsets.fromLTRB(5, 14.5, 0, 0),
               )
             ],
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(10,0,0,0),
-            child: Text(ankomstSted, style: TextStyle(fontSize: 13)),
+            padding: const EdgeInsets.fromLTRB(20,0,0,0),
+            child: Text(ankomstSted, style: TextStyle(fontSize: 15)),
           )
         ],
       ),
