@@ -6,14 +6,14 @@ class MenyItem extends StatelessWidget {
   final String menuItemImage;
   final String routeName;
   final TextStyle textStyle;
+  final double bottomPadding;
 
   MenyItem(
-      {this.menuItemText, this.menuItemImage, this.routeName, this.textStyle});
+      {this.menuItemText, this.menuItemImage, this.routeName, this.textStyle, this.bottomPadding});
 
   @override
   Widget build(BuildContext context) {
     final _topPadding = MediaQuery.of(context).size.height * 0.015;
-    final _bottomPadding = MediaQuery.of(context).size.height * 0.013;
     final _containerHeight = MediaQuery.of(context).size.height * 0.12;
 
     return GestureDetector(
@@ -47,7 +47,7 @@ class MenyItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                 top: _topPadding,
-                bottom: _bottomPadding,
+                bottom: bottomPadding,
               ),
               child: Text(
                 menuItemText,

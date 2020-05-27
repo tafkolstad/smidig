@@ -12,6 +12,7 @@ class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _edgePadding = MediaQuery.of(context).size.width * 0.03;
+    final _bottomPadding = MediaQuery.of(context).size.height * 0.01;
 
     final SizedBox _spacing =
         SizedBox(height: MediaQuery.of(context).size.height * 0.01);
@@ -22,6 +23,7 @@ class Sidebar extends StatelessWidget {
         menuItemText: 'Mat',
         routeName: 'mat',
         textStyle: _textStyle,
+      bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -29,6 +31,7 @@ class Sidebar extends StatelessWidget {
         menuItemText: 'Vognoversikt',
         routeName: 'vognoversikt',
         textStyle: _textStyle,
+      bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -36,6 +39,7 @@ class Sidebar extends StatelessWidget {
         menuItemText: 'Severdigheter',
         routeName: 'severdigheter',
         textStyle: _textStyle,
+      bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -43,6 +47,7 @@ class Sidebar extends StatelessWidget {
         menuItemText: 'Betjening',
         routeName: 'betjening',
         textStyle: _textStyle,
+      bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -50,6 +55,7 @@ class Sidebar extends StatelessWidget {
         menuItemText: 'Mer info',
         routeName: 'meny',
         textStyle: _textStyle,
+      bottomPadding: _bottomPadding,
       ),
     ];
 
