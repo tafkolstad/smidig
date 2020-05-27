@@ -7,14 +7,22 @@ class Layout extends Scaffold {
   final String appBarText;
   final bool appBarButtons;
   final Widget customBody;
+  final Widget customDrawer;
 
-  Layout({this.appBarText, this.appBarButtons = true, this.customBody})
+  Layout(
+      {this.appBarText,
+      this.appBarButtons = true,
+      this.customBody,
+      this.customDrawer})
       : super(
           backgroundColor: backgroudColor,
           appBar: CustomAppBar(
             titleText: appBarText,
             showButtons: appBarButtons,
           ),
+          endDrawer: customDrawer,
+          endDrawerEnableOpenDragGesture: false,
+          drawerScrimColor: Colors.transparent,
           body: customBody,
           bottomNavigationBar: CustomBottomBar(),
         );
