@@ -4,14 +4,14 @@ import 'Item.dart';
 
 List<Item> data = [
   Item(
-      panelText: Text(
-        'Hvor mye bagasje kan jeg ha med?'),
+      panelText: Text('Hvor mye bagasje kan jeg ha med?'),
       expandedText: Text(
-          'Du kan ta med deg inntil 30 kilo fordelt på maksimum 3 kolli. Har du mer enn dette og skal reise mellom Oslo og Voss/Bergen eller Trondheim, kan du benytte bagasjetransport. ')),
-  /*child: Padding(
+          'Du kan ta med deg inntil 30 kilo fordelt på maksimum 3 kolli. Har du mer enn dette og skal reise mellom Oslo og Voss/Bergen eller Trondheim, kan du benytte bagasjetransport. ')
+      /*child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Text("hello world!"),
         )*/
+      ),
   Item(
       panelText: Text('Kan jeg ha med kjæledyr?'),
       expandedText: Text(
