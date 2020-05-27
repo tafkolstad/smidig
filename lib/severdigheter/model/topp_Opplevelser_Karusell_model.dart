@@ -33,19 +33,19 @@ List<Destination> destinations = [
   ),
   Destination(
     imageUrl: 'assets/stranda.png',
-    plass: 'Stranda',
+    plass: 'Stranda1',
     title: 'testing',
     beskrivelse: 'Dette er ei bygd. Det er faktisk den flottaste bygda i helie verden. Dei lagar grandiosa her nemlig.',
   ),
   Destination(
     imageUrl: 'assets/fjord2.png',
-    plass: 'Fjorden',
+    plass: 'Fjorden1',
     title: 'testing',
     beskrivelse: 'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
   ),
   Destination(
     imageUrl: 'assets/by.png',
-    plass: 'By vvdvdf',
+    plass: 'By vvdvdf1',
     title: 'testing',
     beskrivelse: 'Dette er ei bygd. Det er faktisk den flottaste bygda i helie verden. Dei lagar grandiosa her nemlig.',
   ),

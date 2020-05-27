@@ -55,7 +55,7 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: oppkommende.imageUrl,
+                              tag: oppkommende.minutterTil,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
@@ -126,7 +126,7 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Text(
-                                      'Høyreside',
+                                      oppkommende.vongside,
                                       style: TextStyle(
                                         fontSize: 12.0,
                                         color: textColorMenu,
