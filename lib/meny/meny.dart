@@ -98,6 +98,11 @@ class Meny extends StatelessWidget {
       textStyle: _textStyle,
       bottomPadding: _bottomPadding,
     ),
+    MenyItem(
+      menuItemImage: 'dyr.png',
+      menuItemText: 'Faq',
+      routeName: 'faq',
+    ),
   ];
 
     return Layout(
