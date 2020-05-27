@@ -25,6 +25,7 @@ class MenuButton extends StatelessWidget {
             builder: (context) {
               return RaisedButton(
                 color: Colors.white,
+                elevation: 5,
                 child: Text(
                   'Meny',
                   textAlign: TextAlign.center,
