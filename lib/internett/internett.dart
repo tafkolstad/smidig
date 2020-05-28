@@ -3,7 +3,13 @@ import 'package:vy_test/layout/colors.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:wifi_configuration/wifi_configuration.dart';
 
+// AUTOMATIC WIFI CONNECTION DOES NOT WORK ON IOS, because of the package itself
+
 class Internett extends StatelessWidget {
+  Future<bool> _onBackButton() {
+    return Future.value(false);
+  }
+
   @override
   Widget build(BuildContext context) {
     final _imagePadding = MediaQuery.of(context).size.height * 0.015;
@@ -74,9 +80,21 @@ class Internett extends StatelessWidget {
               onPressed: () async {
                 String status;
 
+                showDialog(
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (context) {
+                    return WillPopScope(
+                        onWillPop: _onBackButton,
+                        child: Center(child: CircularProgressIndicator()));
+                  },
+                );
+
                 WifiConnectionStatus connectionStatus =
                     await WifiConfiguration.connectToWifi(
                         'NSB_Interaktiv', '', 'com.smidig_28.vy');
+
+                Navigator.pop(context);
 
                 switch (connectionStatus) {
                   case WifiConnectionStatus.connected:
@@ -89,13 +107,14 @@ class Internett extends StatelessWidget {
                     status = 'Noe gikk galt';
                     break;
                   case WifiConnectionStatus.platformNotSupported:
-                    status = 'Ditt operativsystem støtter ikke denne tilkoblingsmåten';
+                    status =
+                        'Ditt operativsystem støtter ikke denne tilkoblingsmåten';
                     break;
                   case WifiConnectionStatus.profileAlreadyInstalled:
                     status = 'Nettverket er allerede i listen';
                     break;
                   case WifiConnectionStatus.locationNotAllowed:
-                    status = 'For å bruke denne knappen, må du slå på lokasjon';
+                    status = 'For å bruke denne knappen må du slå på lokasjon';
                     break;
                 }
 
