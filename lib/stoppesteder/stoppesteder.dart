@@ -46,7 +46,7 @@ class Stoppesteder extends StatelessWidget {
               children: <Widget>[ Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-
+                  SizedBox(height: 15,),
                   StoppestederTider(),
 
                   Container(

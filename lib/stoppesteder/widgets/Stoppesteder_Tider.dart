@@ -10,7 +10,7 @@ class StoppestederTider extends StatelessWidget {
       width: 100,
       height: 530,
       child: ListView.builder(
-        scrollDirection: Axis.vertical,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: destinasjoner.length,
         itemBuilder: (BuildContext context, int index) {
           Destinasjon destinasjon = destinasjoner[index];
