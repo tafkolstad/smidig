@@ -19,19 +19,16 @@ class StoppestederSted extends StatelessWidget {
             children: <Widget>[
               Container(
                 height: 31.6,
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(destinasjon.stoppested, 
-                              style: _textStyle,
+                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: Text(
+                    destinasjon.stoppested, 
+                    style: _textStyle,
                   )
               ),
-              
             ],
           );
-          
         },
       ),
-     
-
     );
   }
 }

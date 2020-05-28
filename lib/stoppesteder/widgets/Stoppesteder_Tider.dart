@@ -19,17 +19,15 @@ class StoppestederTider extends StatelessWidget {
               Container(
                 height: 31.6,
                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(destinasjon.tid, 
-                              style: _textStyle,
+                  child: Text(
+                    destinasjon.tid, 
+                    style: _textStyle,
                   )
               ),
-              
             ],
           );
         },
       ),
-     
-
     );
   }
 }

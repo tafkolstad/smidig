@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class SirkelStoppested extends StatelessWidget {
@@ -10,8 +8,13 @@ class SirkelStoppested extends StatelessWidget {
   double childCircleHeight;
   double childCircleWidth;
 
-
-  SirkelStoppested({this.circleColor, this.circleHeight, this.circleWidth, this.childCircleHeight, this.childCircleWidth});
+  SirkelStoppested({
+    this.circleColor,
+    this.circleHeight, 
+    this.circleWidth, 
+    this.childCircleHeight, 
+    this.childCircleWidth
+  });
 
   @override
   Widget build(BuildContext context) {

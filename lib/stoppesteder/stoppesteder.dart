@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:vy_test/layout/colors.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-import 'dart:async';
-import 'stoppested.dart';
 import 'sirkelstoppested.dart';
 import 'package:vy_test/stoppesteder/widgets/Stoppesteder_Tider.dart';
 import 'package:vy_test/stoppesteder/widgets/Stoppesteder_Sted.dart';
