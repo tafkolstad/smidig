@@ -6,7 +6,6 @@ import 'package:vy_test/reisekart/sidebar.dart';
 class Reisekart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Layout(
       appBarText: 'Min Reise',
       appBarButtons: false,
@@ -14,21 +13,17 @@ class Reisekart extends StatelessWidget {
       // Menu button
 
       customBody: Stack(
-
-              children: <Widget> [ 
-
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: FittedBox(
-  child: Image.asset('assets/map_static.png'),
-  fit: BoxFit.fill,
-),
-                ),
-                 MenuButton(),
-              ],
-        ),
-        
-      );
-
+        children: <Widget>[
+          Container(
+            height: MediaQuery.of(context).size.height,
+            child: FittedBox(
+              child: Image.asset('assets/map_static.png'),
+              fit: BoxFit.fill,
+            ),
+          ),
+          MenuButton(),
+        ],
+      ),
+    );
   }
 }
