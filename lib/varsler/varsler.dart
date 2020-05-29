@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:vy_test/layout/colors.dart';
 import 'varsel.dart';
+import 'package:intl/intl.dart';
 
 enum IconType{
 
@@ -16,6 +17,7 @@ class Varsler extends StatelessWidget {
 
 Color catagoryColor = Colors.red;
 
+final customTimeFormat = new DateFormat('HH:mm');
 
 Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
 
@@ -139,7 +141,7 @@ Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
         Container(
           padding: EdgeInsets.fromLTRB(_horizontalPhoneLength * 0.85, 27, 0, 0),
           child: Text(
-            varselList[index].timestamp,
+            customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(int.parse(varselList[index].timestamp))),
             style: TextStyle(fontSize: 10),
           ),
         ),
