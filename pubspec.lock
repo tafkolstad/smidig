@@ -129,7 +129,17 @@ packages:
     source: sdk
     version: "0.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.8.1"
+>>>>>>> 13250fb9018bf423b15b50aaa1f8250b553ff80f
   http:
     dependency: transitive
     description:
@@ -334,7 +344,11 @@ packages:
 sdks:
   dart: ">=2.7.0 <3.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
   flutter: ">=1.12.13+hotfix.5 <2.0.0"
 =======
   flutter: ">=1.12.13+hotfix.4 <2.0.0"
 >>>>>>> afbc6213bf6950038070fbc6c4eb5b23458ae04b
+=======
+  flutter: ">=1.12.13+hotfix.4 <2.0.0"
+>>>>>>> 13250fb9018bf423b15b50aaa1f8250b553ff80f
