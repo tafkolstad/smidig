@@ -5,13 +5,21 @@ import 'data.dart';
 
 class ItemList extends StatefulWidget {
   ItemList({Key key}) : super(key: key);
+  final List<Item> _data = data;
+
+  void collapseAll(){
+    _data.forEach((element) {
+      element.isExpanded = false;
+    });
+  }
 
   @override
   _ItemListState createState() => _ItemListState();
 }
 
 class _ItemListState extends State<ItemList> {
-  List<Item> _data = data;
+
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -25,19 +33,23 @@ class _ItemListState extends State<ItemList> {
     return ExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
         setState(() {
-          _data[index].isExpanded = !isExpanded;
+          widget._data[index].isExpanded = !isExpanded;
         });
       },
-      children: _data.map<ExpansionPanel>((Item item) {
+      children: widget._data.map<ExpansionPanel>((Item item) {
         return ExpansionPanel(
+          canTapOnHeader: true,
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
               title: item.panelText,
             );
           },
-          body: ListTile(
-            title: item.expandedText,
-            subtitle: item.child,
+          body: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: ListTile(
+              title: item.expandedText,
+              subtitle: item.child,
+            ),
           ),
           isExpanded: item.isExpanded,
         );
