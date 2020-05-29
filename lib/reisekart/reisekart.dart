@@ -12,7 +12,23 @@ class Reisekart extends StatelessWidget {
       appBarButtons: false,
       customDrawer: Sidebar(),
       // Menu button
-      customBody: MenuButton(),
-    );
+
+      customBody: Stack(
+
+              children: <Widget> [ 
+
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  child: FittedBox(
+  child: Image.asset('assets/map_static.png'),
+  fit: BoxFit.fill,
+),
+                ),
+                 MenuButton(),
+              ],
+        ),
+        
+      );
+
   }
 }
