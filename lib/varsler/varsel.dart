@@ -1,25 +1,24 @@
-import 'package:flutter/material.dart';
 
 class Varsel {
   String title;
   String subtitle;
-  String timeStamp;
-  Icon catagoryIcon;
-  Icon isDelayed;
-  Color catagoryColor;
-
+  String timestamp;
+  String icon;
+  String color;
   bool userHasRead = false;
 
   Varsel({
     this.title,
     this.subtitle,
-    this.timeStamp,
-    this.catagoryIcon,
-    this.catagoryColor,
-    this.isDelayed,
-    this.userHasRead
+    this.timestamp,
+    this.icon,
+    this.color,
   });
-  void setUserHasRead(){
-    userHasRead = true;
-  }
+    factory Varsel.fromJson(Map<String, dynamic> json) {
+    return Varsel(
+      title: json['title'] as String,
+      subtitle: json['subtitle'] as String,
+      timestamp: json['timeStamp'] as String,
+    );
+}
 }
