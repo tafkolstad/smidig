@@ -52,7 +52,7 @@ Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
                 listOfAllNotifications.clear();
                 DataSnapshot dataValues = snapshot.data.snapshot;
                 //  var myList = dataValues
-
+                varselList.clear();
                 Map<dynamic, dynamic> values = dataValues.value;
                 if (values != null) {
                   dataValues.value.forEach((key, value) {
@@ -70,14 +70,14 @@ Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
 
               return Column(
                 children: <Widget>[
-                  RaisedButton(
-                    child: Text('TRYKK'),
-                    onPressed: () {
-                      pushToDatabase();
-                      print('tryjkket!');
+                  // RaisedButton(
+                  //   child: Text('TRYKK'),
+                  //   onPressed: () {
+                  //     pushToDatabase();
+                  //     print('tryjkket!');
                 
-                    },
-                  ),
+                  //   },
+                  //),
                   Container(
                       margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                       child: Text('Varsler',
