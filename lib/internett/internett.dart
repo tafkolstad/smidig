@@ -16,6 +16,56 @@ class Internett extends StatelessWidget {
     final _horizontalButtonPadding = MediaQuery.of(context).size.width * 0.15;
     final _verticalButtonPadding = MediaQuery.of(context).size.height * 0.04;
 
+    Future attemptConnection() async {
+      String status;
+
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return WillPopScope(
+              onWillPop: _onBackButton,
+              child: Center(child: CircularProgressIndicator()));
+        },
+      );
+
+      WifiConnectionStatus connectionStatus =
+          await WifiConfiguration.connectToWifi(
+              'NSB_Interaktiv', '', 'com.smidig_28.vy');
+
+      Navigator.pop(context);
+
+      switch (connectionStatus) {
+        case WifiConnectionStatus.connected:
+          status = 'Du er nå koblet til NSB_Interaktiv';
+          break;
+        case WifiConnectionStatus.alreadyConnected:
+          status = 'Allerede koblet til';
+          break;
+        case WifiConnectionStatus.notConnected:
+          status = 'Noe gikk galt';
+          break;
+        case WifiConnectionStatus.platformNotSupported:
+          status = 'Ditt operativsystem støtter ikke denne tilkoblingsmåten';
+          break;
+        case WifiConnectionStatus.profileAlreadyInstalled:
+          status = 'Nettverket er allerede i listen';
+          break;
+        case WifiConnectionStatus.locationNotAllowed:
+          status = 'For å bruke denne knappen må du slå på lokasjon';
+          break;
+      }
+
+      return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(status),
+          );
+        },
+      );
+    }
+
     return Layout(
       appBarText: 'Min Reise',
       customBody: Column(
@@ -27,7 +77,7 @@ class Internett extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: _imagePadding),
                 child: Image(
-                  image: AssetImage("assets/vy.logo.final_primary_big.png"),
+                  image: AssetImage('assets/vy.logo.final_primary_big.png'),
                 ),
               ),
               Text(
@@ -77,56 +127,7 @@ class Internett extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () async {
-                String status;
-
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder: (context) {
-                    return WillPopScope(
-                        onWillPop: _onBackButton,
-                        child: Center(child: CircularProgressIndicator()));
-                  },
-                );
-
-                WifiConnectionStatus connectionStatus =
-                    await WifiConfiguration.connectToWifi(
-                        'NSB_Interaktiv', '', 'com.smidig_28.vy');
-
-                Navigator.pop(context);
-
-                switch (connectionStatus) {
-                  case WifiConnectionStatus.connected:
-                    status = 'Du er nå koblet til togets Wifi';
-                    break;
-                  case WifiConnectionStatus.alreadyConnected:
-                    status = 'Allerede koblet til';
-                    break;
-                  case WifiConnectionStatus.notConnected:
-                    status = 'Noe gikk galt';
-                    break;
-                  case WifiConnectionStatus.platformNotSupported:
-                    status =
-                        'Ditt operativsystem støtter ikke denne tilkoblingsmåten';
-                    break;
-                  case WifiConnectionStatus.profileAlreadyInstalled:
-                    status = 'Nettverket er allerede i listen';
-                    break;
-                  case WifiConnectionStatus.locationNotAllowed:
-                    status = 'For å bruke denne knappen må du slå på lokasjon';
-                    break;
-                }
-
-                return showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      content: Text(status),
-                    );
-                  },
-                );
-              },
+              onPressed: attemptConnection,
             ),
           ),
         ],
