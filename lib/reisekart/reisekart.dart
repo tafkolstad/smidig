@@ -1,10 +1,6 @@
-import 'dart:collection';
-
-
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:location/location.dart';
 //import 'dart:io' show Platform;
 /*
 void checkPlatform(){
@@ -16,6 +12,8 @@ void checkPlatform(){
  }
 }
 */
+import 'package:vy_test/reisekart/meny_button.dart';
+import 'package:vy_test/reisekart/sidebar.dart';
 
 class Reisekart extends StatelessWidget {
   MapboxMapController mapController;
@@ -30,6 +28,8 @@ class Reisekart extends StatelessWidget {
 
     return Layout(
       appBarText: 'Min Reise',
+      appBarButtons: false,
+      customDrawer: Sidebar(),
       customBody: Stack(
         children: <Widget>[
           Column(
@@ -42,12 +42,7 @@ class Reisekart extends StatelessWidget {
               ),
             ],
           ),
-          RaisedButton(
-            child: Text('Meny'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/meny');
-            },
-          ),
+          MenuButton(),
         ],
       ),
     );
