@@ -128,10 +128,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -139,7 +135,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.8.1"
->>>>>>> 13250fb9018bf423b15b50aaa1f8250b553ff80f
   http:
     dependency: transitive
     description:
@@ -147,7 +142,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.1"
->>>>>>> afbc6213bf6950038070fbc6c4eb5b23458ae04b
   http_parser:
     dependency: transitive
     description:
@@ -162,16 +156,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.12"
-<<<<<<< HEAD
   intl:
     dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.16.1"
-=======
->>>>>>> afbc6213bf6950038070fbc6c4eb5b23458ae04b
+    version: "0.15.8"
   js:
     dependency: transitive
     description:
@@ -179,7 +170,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1+1"
-<<<<<<< HEAD
   location:
     dependency: "direct main"
     description:
@@ -208,8 +198,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.5"
-=======
->>>>>>> afbc6213bf6950038070fbc6c4eb5b23458ae04b
   matcher:
     dependency: transitive
     description:
@@ -343,12 +331,4 @@ packages:
     version: "3.6.1"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
   flutter: ">=1.12.13+hotfix.5 <2.0.0"
-=======
-  flutter: ">=1.12.13+hotfix.4 <2.0.0"
->>>>>>> afbc6213bf6950038070fbc6c4eb5b23458ae04b
-=======
-  flutter: ">=1.12.13+hotfix.4 <2.0.0"
->>>>>>> 13250fb9018bf423b15b50aaa1f8250b553ff80f
