@@ -14,10 +14,10 @@ void checkPlatform(){
 */
 import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
+import 'package:vy_test/reisekart/varsel_tile.dart';
 
 class Reisekart extends StatelessWidget {
   MapboxMapController mapController;
-
 
   void androidController(MapboxMapController controller) {
     mapController = controller;
@@ -25,7 +25,6 @@ class Reisekart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Layout(
       appBarText: 'Min Reise',
       appBarButtons: false,
@@ -37,9 +36,18 @@ class Reisekart extends StatelessWidget {
               Expanded(
                 child: MapboxMap(
                   onMapCreated: androidController,
-                  initialCameraPosition: CameraPosition(target: LatLng(0.0, 0.0)),
+                  initialCameraPosition:
+                      CameraPosition(target: LatLng(0.0, 0.0)),
                 ),
               ),
+            ],
+          ),
+          
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(child: VarselTile()),
+              Expanded(child: VarselTile(),),
             ],
           ),
           MenuButton(),
