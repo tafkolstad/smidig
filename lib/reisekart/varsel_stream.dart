@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:vy_test/layout/colors.dart';
 
 class VarselStream extends StatelessWidget {
-
   var _notificationRef = FirebaseDatabase.instance
       .reference()
       .child('recent')
       .orderByChild('created_at') //order by creation time.
-      .limitToFirst(10);
+      .limitToFirst(3);
 
   final List<Varsel> _varselList = [];
 
@@ -27,10 +26,10 @@ class VarselStream extends StatelessWidget {
               (key, value) {
                 _varselList.add(
                   Varsel(
-                      title: value['title'],
+                    title: value['title'],
                     //  subtitle: value['subtitle'],
                     //  icon: value['iconType'],
-                   //   color: value['catagoryColor'],
+                    //   color: value['catagoryColor'],
                     //  timestamp: value['timestamp'].toString()),
                   ),
                 );
@@ -44,27 +43,28 @@ class VarselStream extends StatelessWidget {
             SizedBox(
               height: 50.0 * _varselList.length,
               child: ListView.builder(
-                shrinkWrap: true,
-                  itemBuilder: listItem, itemCount: _varselList.length),
+                  shrinkWrap: true,
+                  itemBuilder: listItem,
+                  itemCount: _varselList.length),
             )
           ],
         );
       },
     );
   }
-   Widget listItem(BuildContext context, int index) {
+  Widget listItem(BuildContext context, int index) {
     final _horizontalPhoneLength = MediaQuery.of(context).size.width;
     final _verticalPhoneLength = MediaQuery.of(context).size.height;
 
-    return Container(
+    return FlatButton(
+      onPressed: () {
+        Navigator.pushNamed(context, '/varsler');
+      },
       child: ListTile(
-      
-        trailing: Icon(Icons.access_time, size: 15),
         title: Text(
           _varselList[index].title,
           style: TextStyle(fontSize: 12),
         ),
-        
       ),
     );
   }
