@@ -78,7 +78,7 @@ class Billett extends StatelessWidget {
                     'Minipris',
                     style: TextStyle(
                       fontFamily: 'Helvetica', // Does not exist in project
-                      fontSize: 15.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF315D93),
                     ),
@@ -86,7 +86,7 @@ class Billett extends StatelessWidget {
                 ),
                 Image(
                   alignment: Alignment.centerRight,
-                  width: 60.0,
+                  width: 80.0,
                   image: AssetImage('assets/minipris_icons.png'),
                 ),
               ],
