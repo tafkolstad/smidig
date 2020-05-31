@@ -37,7 +37,7 @@ class Reisekart extends StatelessWidget {
                 child: MapboxMap(
                   onMapCreated: androidController,
                   initialCameraPosition:
-                      CameraPosition(target: LatLng(0.0, 0.0)),
+                      CameraPosition(target: LatLng(59.9139, 10.7522), zoom: 7.0),
                 ),
               ),
             ],
