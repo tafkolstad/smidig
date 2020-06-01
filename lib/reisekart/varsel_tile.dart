@@ -5,8 +5,6 @@ import 'package:vy_test/varsler/varsel.dart';
 import 'package:vy_test/layout/colors.dart';
 
 class VarselTile extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     final _phoneHeight = MediaQuery.of(context).size.height;
@@ -20,16 +18,14 @@ class VarselTile extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
-        child: Flexible(
-                  child: ExpansionTile(
-            title: Text(
-              'Varsler',
-              style: TextStyle(fontSize: 12),
-            ),
-            children: <Widget>[
-              VarselStream(),
-            ],
+        child: ExpansionTile(
+          title: Text(
+            'Varsler',
+            style: TextStyle(fontSize: 12),
           ),
+          children: <Widget>[
+            VarselStream(),
+          ],
         ),
       ),
     );
