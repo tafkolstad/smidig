@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class Billett extends StatelessWidget {
   final String fromPlatform;
@@ -9,6 +10,8 @@ class Billett extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _minReiseHeight = MediaQuery.of(context).size.height * 0.075;
+
     void _onKontrollTapped() {
       Navigator.pushNamed(context, '/kontroll');
     }
@@ -45,7 +48,7 @@ class Billett extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 21.0,
-                        fontFamily: 'Raleway', // Does not exist in project
+                        fontFamily: 'Raleway',
                       ),
                       children: <TextSpan>[
                         TextSpan(text: 'Fra '),
@@ -106,6 +109,7 @@ class Billett extends StatelessWidget {
                         'Avgang',
                         style: TextStyle(
                           fontSize: 15.0,
+                          fontFamily: 'Raleway',
                         ),
                       ),
                       SizedBox(
@@ -116,6 +120,7 @@ class Billett extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Raleway',
                         ),
                       ),
                     ],
@@ -139,17 +144,61 @@ class Billett extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
+                // Expanded(
+                //   child: FlatButton(
+                //     child: Text(
+                //       'Min Reise',
+                //       style: TextStyle(
+                //         color: Color(0xFF109980),
+                //         fontSize: 24.0,
+                //         fontWeight: FontWeight.w600,
+                //       ),
+                //     ),
+                //     onPressed: _onMinReiseTapped,
+                //   ),
+                // ),
+
+                // Expanded(
+                //   child: RaisedButton(
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(5.0),
+                //     ),
+                //     color: textContainerColor,
+                //     child: Text(
+                //       'Min Reise',
+                //       style: TextStyle(
+                //         color: vyColorGreen,
+                //         fontSize: 24.0,
+                //         fontWeight: FontWeight.w600,
+                //         fontFamily: 'Raleway',
+                //       ),
+                //     ),
+                //     onPressed: _onMinReiseTapped,
+                //   ),
+                // ),
+                
                 Expanded(
-                  child: FlatButton(
-                    child: Text(
-                      'Min Reise',
-                      style: TextStyle(
-                        color: Color(0xFF109980),
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w600,
+                  child: Container(
+                    height: _minReiseHeight,
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: vyColorBlack,
+                          width: 2.5,
+                        ),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
+                      child: Text(
+                        'Min Reise',
+                        style: TextStyle(
+                          color: vyColorBlack,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Raleway',
+                        ),
+                      ),
+                      onPressed: _onMinReiseTapped,
                     ),
-                    onPressed: _onMinReiseTapped,
                   ),
                 ),
               ],
