@@ -13,7 +13,7 @@ class VarselButton extends StatefulWidget {
 }
 
 class _VarselButtonState extends State<VarselButton> {
-  bool _visible = true;
+  bool _visible = false;
   @override
   Widget build(BuildContext context) {
     final _phoneHeight = MediaQuery.of(context).size.height;
