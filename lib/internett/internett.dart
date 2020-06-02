@@ -3,7 +3,7 @@ import 'package:vy_test/layout/colors.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:wifi_configuration/wifi_configuration.dart';
 
-// AUTOMATIC WIFI CONNECTION DOES NOT WORK ON IOS, because of the package itself
+// AUTOMATIC WIFI CONNECTION DOES NOT WORK ON IOS, because of Apple
 
 class Internett extends StatelessWidget {
   Future<bool> _onBackButton() {
@@ -53,6 +53,9 @@ class Internett extends StatelessWidget {
           break;
         case WifiConnectionStatus.locationNotAllowed:
           status = 'For å bruke denne knappen må du slå på lokasjon';
+          break;
+        default:
+          status = "Trenger tillatelser for å koble til";
           break;
       }
 
