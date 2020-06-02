@@ -20,9 +20,13 @@ import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
 import 'package:vy_test/reisekart/varsel_tile.dart';
 
-class Reisekart extends StatelessWidget {
+class Reisekart extends StatefulWidget {
+  @override
+  _ReisekartState createState() => _ReisekartState();
+}
+
+class _ReisekartState extends State<Reisekart> {
   MapboxMapController mapController;
-  TrainLocation trainLocation = TrainLocation();
 
   void androidController(MapboxMapController controller) {
     mapController = controller;
