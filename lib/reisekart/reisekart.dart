@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppested_tile.dart';
-import 'train_location.dart';
+
+import 'package:location/location.dart';
+
 //import 'dart:io' show Platform;
 /*
 void checkPlatform(){
@@ -45,21 +45,23 @@ class _ReisekartState extends State<Reisekart> {
             children: <Widget>[
               Expanded(
                 child: MapboxMap(
-                  styleString: 'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
+                  myLocationEnabled: true,
+                  styleString:
+                      'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
                   onMapCreated: androidController,
-                  initialCameraPosition:
-                      CameraPosition(target: LatLng(59.9139, 10.7522), zoom: 8.0, tilt: 50),
+                  initialCameraPosition: CameraPosition(
+                      target: LatLng(59.9139, 10.7522), zoom: 8.0, tilt: 50),
                 ),
               ),
             ],
           ),
-          
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Expanded(child: StoppestedTile(),),
+              Expanded(
+                child: StoppestedTile(),
+              ),
               Expanded(child: VarselTile()),
-
             ],
           ),
           MenuButton(),
