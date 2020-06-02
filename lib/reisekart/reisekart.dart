@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppested_tile.dart';
@@ -24,7 +25,41 @@ class Reisekart extends StatefulWidget {
 }
 
 class _ReisekartState extends State<Reisekart> {
+  PermissionStatus _status;
   MapboxMapController mapController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    PermissionHandler()
+        .checkPermissionStatus(PermissionGroup.locationWhenInUse)
+        .then(_updatestatus);
+  }
+
+  void _updatestatus(PermissionStatus status) {
+    if (status != _status) {
+      setState(() {
+        _status = status;
+      });
+    }
+  }
+
+  void _askPermission() {
+    PermissionHandler().requestPermissions(
+        [PermissionGroup.locationWhenInUse]).then(_onStatusRequested);
+  }
+
+  void _onStatusRequested(Map<PermissionGroup, PermissionStatus> value) {
+    final status = value[PermissionGroup.locationWhenInUse];
+    _updatestatus(status);
+    if(status != PermissionStatus.granted){
+      PermissionHandler().openAppSettings();
+    }
+    else{
+      _updatestatus(status);
+    }
+  }
 
   void androidController(MapboxMapController controller) {
     mapController = controller;
@@ -33,6 +68,8 @@ class _ReisekartState extends State<Reisekart> {
   @override
   Widget build(BuildContext context) {
     //trainLocation.fetchJson();
+    _askPermission();
+
     return Layout(
       appBarText: 'Min Reise',
       appBarButtons: false,
@@ -56,9 +93,10 @@ class _ReisekartState extends State<Reisekart> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Expanded(child: StoppestedTile(),),
+              Expanded(
+                child: StoppestedTile(),
+              ),
               Expanded(child: VarselButton()),
-
             ],
           ),
           VarselTile(),
