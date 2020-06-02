@@ -1,4 +1,3 @@
-import 'package:vy_test/severdigheter/model/topp_Opplevelser_Karusell_model%202.dart';
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
 import 'package:vy_test/stoppesteder/stoppesteder.dart';
 import 'package:vy_test/varsler/varsel.dart';
