@@ -1,11 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_stream.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_tile.dart';
-import 'package:vy_test/severdigheter/model/topp_Opplevelser_Karusell_model%202.dart';
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
 //import 'dart:io' show Platform;
 /*
@@ -20,6 +17,7 @@ void checkPlatform(){
 */
 import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
+import 'package:vy_test/reisekart/varsel_button.dart';
 import 'package:vy_test/reisekart/varsel_tile.dart';
 
 class Reisekart extends StatefulWidget {
@@ -38,8 +36,6 @@ class _ReisekartState extends State<Reisekart> {
 
   @override
   Widget build(BuildContext context) {
-     StoppestedStream stoppestedStream = StoppestedStream();
-     Destinasjon destinasjon = Destinasjon();
     //trainLocation.fetchJson();
     return Layout(
       appBarText: 'Min Reise',
@@ -51,15 +47,16 @@ class _ReisekartState extends State<Reisekart> {
             children: <Widget>[
               Expanded(
                 child: MapboxMap(
-                  styleString: 'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
+                  myLocationEnabled: true,
+                  styleString:
+                      'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
                   onMapCreated: androidController,
-                  initialCameraPosition:
-                      CameraPosition(target: LatLng(59.9139, 10.7522), zoom: 8.0, tilt: 50),
+                  initialCameraPosition: CameraPosition(
+                      target: LatLng(59.9139, 10.7522), zoom: 8.0, tilt: 50),
                 ),
               ),
             ],
           ),
-          
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -74,10 +71,11 @@ class _ReisekartState extends State<Reisekart> {
                 }
               ),*/
               Expanded(child: StoppestedTile(),),
-              Expanded(child: VarselTile()),
+              Expanded(child: VarselButton()),
 
             ],
           ),
+          VarselTile(),
           MenuButton(),
         ],
       ),
