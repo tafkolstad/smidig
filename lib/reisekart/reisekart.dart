@@ -61,7 +61,6 @@ class _ReisekartState extends State<Reisekart> {
 
             ],
           ),
-          VarselTile(),
           MenuButton(),
         ],
       ),

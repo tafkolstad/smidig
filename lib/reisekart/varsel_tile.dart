@@ -9,17 +9,21 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class VarselTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
-
-    return  Container(
+    return Container(
+  
       height: 120,
       width: 150,
-      margin: EdgeInsets.fromLTRB(230, 60, 0, 0),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(15), boxShadow:[
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
             BoxShadow(
               color: dropshadowColor,
               offset: Offset(1, 4),
               blurRadius: 6,
             ),
-          ] ),
-    );}}
+          ]),
+    );
+  }
+}
