@@ -55,19 +55,22 @@ class Stoppesteder extends StatelessWidget {
                     child: Stack(
                       alignment: Alignment.topCenter,
                       children: <Widget>[
-                        StepProgressIndicator(
-                          totalSteps: 100,
-                          currentStep: 80,
-                          direction: Axis.vertical,
-                          size: 5,
-                          padding: 0,
-                          selectedColor: vyColorDarkGreen,
-                          unselectedColor: vyColorGreen,
-                          roundedEdges: Radius.circular(10),
+                        Container(height: 510,
+                          margin: EdgeInsets.only(top: 10),
+                          child: StepProgressIndicator(
+                            totalSteps: 100,
+                            currentStep: 60,
+                            direction: Axis.vertical,
+                            size: 5,
+                            padding: 0,
+                            selectedColor: vyColorDarkGreen,
+                            unselectedColor: vyColorGreen,
+                            roundedEdges: Radius.circular(10),
+                          ),
                         ),
                         StepProgressIndicator(
                           totalSteps: 17,
-                          currentStep: 7,
+                          currentStep: 10,
                           direction: Axis.vertical,
                           size: 21,
                           padding: 5,
