@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:vy_test/reisekart/stoppested_tile.dart';
 import 'train_location.dart';
 //import 'dart:io' show Platform;
 /*
@@ -51,8 +53,9 @@ class Reisekart extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Expanded(child: StoppestedTile(),),
               Expanded(child: VarselTile()),
-              Expanded(child: VarselTile(),),
+
             ],
           ),
           MenuButton(),

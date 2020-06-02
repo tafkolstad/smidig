@@ -4,7 +4,7 @@ import 'package:vy_test/reisekart/varsel_stream.dart';
 import 'package:vy_test/varsler/varsel.dart';
 import 'package:vy_test/layout/colors.dart';
 
-class VarselTile extends StatelessWidget {
+class StoppestedTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _phoneHeight = MediaQuery.of(context).size.height;
@@ -33,7 +33,7 @@ class VarselTile extends StatelessWidget {
                 color: Colors.white,
                 elevation: 5,
                 child: Text(
-                  'Varsler',
+                  '12 min',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Segoe UI',

@@ -27,7 +27,7 @@ class VarselStream extends StatelessWidget {
                 _varselList.add(
                   Varsel(
                     title: value['title'],
-                    //  subtitle: value['subtitle'],
+                      subtitle: value['subtitle'],
                     //  icon: value['iconType'],
                     //   color: value['catagoryColor'],
                     //  timestamp: value['timestamp'].toString()),
@@ -61,6 +61,7 @@ class VarselStream extends StatelessWidget {
         Navigator.pushNamed(context, '/varsler');
       },
       child: ListTile(
+        leading: Text(_varselList[index].subtitle),
         title: Text(
           _varselList[index].title,
           style: TextStyle(fontSize: 12),
