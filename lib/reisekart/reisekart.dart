@@ -99,7 +99,6 @@ class _ReisekartState extends State<Reisekart> {
               Expanded(child: VarselButton()),
             ],
           ),
-          VarselTile(),
           MenuButton(),
         ],
       ),
