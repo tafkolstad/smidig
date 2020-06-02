@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppested_tile.dart';
-import 'train_location.dart';
 //import 'dart:io' show Platform;
 /*
 void checkPlatform(){
@@ -18,6 +17,7 @@ void checkPlatform(){
 */
 import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
+import 'package:vy_test/reisekart/varsel_button.dart';
 import 'package:vy_test/reisekart/varsel_tile.dart';
 
 class Reisekart extends StatefulWidget {
@@ -58,10 +58,11 @@ class _ReisekartState extends State<Reisekart> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Expanded(child: StoppestedTile(),),
-              Expanded(child: VarselTile()),
+              Expanded(child: VarselButton()),
 
             ],
           ),
+          VarselTile(),
           MenuButton(),
         ],
       ),
