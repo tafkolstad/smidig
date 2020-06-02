@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppested_tile.dart';
-import 'train_location.dart';
 //import 'dart:io' show Platform;
 /*
 void checkPlatform(){
