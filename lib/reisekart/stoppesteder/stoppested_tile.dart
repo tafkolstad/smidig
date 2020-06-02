@@ -21,45 +21,22 @@ class StoppestedTile extends StatelessWidget {
     final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
 
     return Container(
-      alignment: Alignment.topCenter,
-      child: Padding(
-        padding: EdgeInsets.only(
-          bottom: _edgePadding,
-        ),
-        child: ButtonTheme(
-          padding: EdgeInsets.symmetric(
-            horizontal: _buttonPaddingInside,
-          ),
-          height: _buttonHeight,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-          child: Builder(builder: (context) {
-            return Container(
-              margin: EdgeInsets.fromLTRB(_phoneWidth * 0.03,
-                  _phoneHeight * 0.01, _phoneWidth * 0.1, 0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                ),
-                child: ExpansionTile(
-                  title: Text(
-                    'Stoppesteder',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  children: <Widget>[
-            
-                  StoppestedStream(),
-                 // destinasjon.destinasjoner;
-               
-                  ],
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
+      child: StoppestedStream(),
+      height: 70,
+      width: 150,
+      margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: dropshadowColor,
+              offset: Offset(1, 4),
+              blurRadius: 6,
+            ),
+          ]),
     );
+          
 
 //      Container(
 //      margin: EdgeInsets.fromLTRB(

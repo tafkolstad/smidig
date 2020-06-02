@@ -18,7 +18,7 @@ class StoppestedStream extends StatelessWidget {
   var _destinationRef = FirebaseDatabase.instance
       .reference()
       .child('Destinations')
-      .limitToFirst(3);
+      .limitToFirst(1);
 
   final List<Destinasjon> _destinationList = [];
 
@@ -48,7 +48,7 @@ class StoppestedStream extends StatelessWidget {
           children: <Widget>[
             // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             SizedBox(
-              height: 80,
+              height: 70,
               child: ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: listItem,
@@ -71,11 +71,11 @@ class StoppestedStream extends StatelessWidget {
       child: ListTile(
         title: Text(
           _destinationList[index].tid,
-          style: TextStyle(fontSize: 9),
-        ),
-        subtitle: Text(
-          _destinationList[index].stoppested,
           style: TextStyle(fontSize: 13),
+        ),
+        leading: Text('Neste:', style: TextStyle(fontSize: 14, color: vyColorOrange),),
+        subtitle: Text('${_destinationList[index].stoppested}',
+          style: TextStyle(fontSize: 12),
         ),
       ),
     );

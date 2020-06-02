@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:vy_test/reisekart/stoppesteder/stoppested_button.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_stream.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_tile.dart';
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
@@ -107,7 +108,7 @@ class _ReisekartState extends State<Reisekart> {
                  
                 }
               ),*/
-              Expanded(child: StoppestedTile(),),
+              Expanded(child: StoppestedButton(),),
               Expanded(child: VarselButton()),
             ],
           ),
