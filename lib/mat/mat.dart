@@ -4,7 +4,7 @@ import 'package:vy_test/layout/layout.dart';
 import 'package:vy_test/mat/mat_item.dart';
 
 class Mat extends StatelessWidget {
-  final List<Widget> matItems = [
+  final List<Widget> _matItems = [
     MatItem(
       text: 'Påsmurt',
       imagePath: 'mat_påsmurt.png',
@@ -63,11 +63,12 @@ class Mat extends StatelessWidget {
           ),
           Flexible(
             child: Padding(
-              padding: EdgeInsets.only(left: _phoneWidth * 0.04, bottom: _phoneHeight * 0.03,),
+              padding: EdgeInsets.only(left: _phoneWidth * 0.04),
               child: GridView.count(
+                padding: EdgeInsets.only(bottom: _phoneHeight * 0.02,),
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 2,
-                children: matItems,
+                children: _matItems,
                 mainAxisSpacing: _phoneHeight * 0.02,
               ),
             ),
