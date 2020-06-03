@@ -1,5 +1,6 @@
 # Miscellaneous
 *.class
+*.lock
 *.log
 *.pyc
 *.swp
@@ -28,7 +29,6 @@
 .packages
 .pub-cache/
 .pub/
-pubspec.lock
 /build/
 
 # Web related
