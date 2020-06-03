@@ -1,16 +1,34 @@
+
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:vy_test/layout/layout.dart';
+import 'package:vy_test/layout/colors.dart';
 import 'varsel.dart';
+import 'package:intl/intl.dart';
 
+enum IconType{
+
+  DELAYED, WARNING, INFORMATION
+}
 class Varsler extends StatelessWidget {
   // final dbRef = FirebaseDatabase.instance.reference();
 
-  void databasetest() async {
+Color catagoryColor = Colors.red;
+
+final customTimeFormat = new DateFormat('HH:mm');
+
+Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
+
+  void pushToDatabase() async {
     FirebaseDatabase.instance.reference().child('recent').push().set({
-      'title':
+      'title': 'forsinkelse',
+      'subtitle':
           'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-      'timestamp': ServerValue.timestamp
+      'timestamp': ServerValue.timestamp,
+      'iconType': 'delayed',
+      'color': 'orange',
     });
   }
 
@@ -20,34 +38,10 @@ class Varsler extends StatelessWidget {
       .orderByChild('created_at') //order by creation time.
       .limitToFirst(10);
 
-  List liste = [];
+  List listOfAllNotifications = [];
 
-  final List<Varsel> varselList = [
-    Varsel(
-        title: 'Forsinkelse',
-        subtitle:
-            'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal.',
-        catagoryIcon: Icon(Icons.access_time, color: Colors.orange),
-        catagoryColor: Colors.orange,
-        isDelayed: Icon(Icons.access_time),
-        timeStamp: '09:41'),
-    Varsel(
-        title: 'Hendelse',
-        subtitle: 'Hendelse i vogn 2, ikke gå dit!',
-        catagoryIcon: Icon(Icons.warning, color: Colors.red),
-        catagoryColor: Colors.orange,
-        timeStamp: '08:14'),
-    Varsel(
-        title: 'Info',
-        subtitle:
-            'Aircondition i vogn 3 er defekt. Beklager ulempene dette medfører',
-        catagoryIcon: Icon(
-          Icons.info,
-          color: Colors.blue,
-        ),
-        catagoryColor: Colors.blue,
-        timeStamp: '06:30'),
-  ];
+  final List<Varsel> varselList = [];
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,33 +51,35 @@ class Varsler extends StatelessWidget {
             stream: recentWarningsRef.onValue,
             builder: (context, AsyncSnapshot<Event> snapshot) {
               if (snapshot.hasData) {
-                liste.clear();
+                listOfAllNotifications.clear();
                 DataSnapshot dataValues = snapshot.data.snapshot;
+                //  var myList = dataValues
+                varselList.clear();
                 Map<dynamic, dynamic> values = dataValues.value;
-                values.forEach((key, values) {
-                  liste.add(values);
-                });
-
-                print(liste[0]);
-                /*
-                snap) {
-              if (snap.hasData &&
-                  !snap.hasError &&
-                  snap.data.snapshot.value != null) {
-                getPushWarning(snap);
-*/
-
-                /*  */
+                if (values != null) {
+                  dataValues.value.forEach((key, value) {
+                    varselList.add(
+                      Varsel(
+                          title: value['title'],
+                          subtitle: value['subtitle'],
+                          icon: value['iconType'],
+                          color: value['catagoryColor'],
+                          timestamp: value['timestamp'].toString()),
+                    );
+                  });
+                }
               }
 
               return Column(
                 children: <Widget>[
-                  /*   RaisedButton(
-                    child: Text('Trykk'),
-                    onPressed: () {
-                      databasetest();
-                    },
-                  ),*/
+                  // RaisedButton(
+                  //   child: Text('TRYKK'),
+                  //   onPressed: () {
+                  //     pushToDatabase();
+                  //     print('tryjkket!');
+                
+                  //   },
+                  //),
                   Container(
                       margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                       child: Text('Varsler',
@@ -99,6 +95,9 @@ class Varsler extends StatelessWidget {
   }
 
   Widget listItem(BuildContext context, int index) {
+    final _horizontalPhoneLength = MediaQuery.of(context).size.width;
+    final _verticalPhoneLength = MediaQuery.of(context).size.height;
+
     return Stack(
       children: <Widget>[
         //Side color
@@ -106,7 +105,7 @@ class Varsler extends StatelessWidget {
           height: 62,
           width: 10,
           decoration: BoxDecoration(
-              color: varselList[index].catagoryColor,
+              color: Colors.orange,
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.fromLTRB(17, 20, 0, 0),
         ),
@@ -115,37 +114,50 @@ class Varsler extends StatelessWidget {
           //height: 100,
           margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
           decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 2,
-                    offset: Offset(0, 1))
-              ],
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(5))),
+            boxShadow: [
+              BoxShadow(
+                color: dropshadowColor,
+                offset: Offset(1, 4),
+                blurRadius: 6,
+              ),
+            ],
+            borderRadius: BorderRadius.circular(7.0),
+            color: Colors.white,
+          ),
           child: Padding(
             padding: const EdgeInsets.all(2.0),
+            //Expandable tile
             child: ExpansionTile(
               children: <Widget>[
                 Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(varselList[index].subtitle)),
               ],
-              leading: varselList[index].catagoryIcon,
+              leading:Icon(Icons.access_time, color: Colors.orange,),
               title: Text(varselList[index].title),
-              trailing: Text(varselList[index].timeStamp),
-
-              //  subtitle: Text(varselList[index].subtitle),
-              // contentPadding: EdgeInsets.all(8),
-              // onTap: (){},
             ),
           ),
         ),
-     
+        Container(
+          padding: EdgeInsets.fromLTRB(_horizontalPhoneLength * 0.85, 27, 0, 0),
+          child: Text(
+            customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(int.parse(varselList[index].timestamp))),
+            style: TextStyle(fontSize: 10),
+          ),
+        ),
       ],
     );
   }
+Icon iconToShow(icon){
+  if(icon == IconType.DELAYED){
+    return Icon(Icons.access_time);
+  }
+  if(icon == IconType.INFORMATION){
+    return Icon(Icons.info_outline);
+  }
+  if(icon == IconType.WARNING){
+    return Icon(Icons.warning);
+  }
+}
 
-  void getPushWarning(snap) async {}
 }
