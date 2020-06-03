@@ -1,28 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_stream.dart';
-import 'package:vy_test/reisekart/varsel_stream.dart';
-import 'package:vy_test/severdigheter/model/topp_Opplevelser_Karusell_model.dart';
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
-import 'package:vy_test/varsler/varsel.dart';
 import 'package:vy_test/layout/colors.dart';
-import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
+
 
 class StoppestedTile extends StatelessWidget {
   Destinasjon destinasjon = new Destinasjon();
 
   @override
   Widget build(BuildContext context) {
-    final _phoneHeight = MediaQuery.of(context).size.height;
-    final _phoneWidth = MediaQuery.of(context).size.width;
-
-    final _edgePadding = MediaQuery.of(context).size.height * 0.01;
-    final _buttonPaddingInside = MediaQuery.of(context).size.width * 0.1;
-    final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
-
+  
     return Container(
       child: StoppestedStream(),
-      height: 70,
+      height: 120,
       width: 150,
       margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
       decoration: BoxDecoration(

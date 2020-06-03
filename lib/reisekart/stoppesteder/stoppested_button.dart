@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_tile.dart';
-import 'package:vy_test/reisekart/varsel_stream.dart';
-import 'package:vy_test/varsler/varsel.dart';
 import 'package:vy_test/layout/colors.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vy_test/reisekart/varsel_tile.dart';
 
 class StoppestedButton extends StatefulWidget {
   @override
@@ -48,7 +42,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            '6 timer',
+                            '2 min',
                             textAlign: TextAlign.right,
                             style: TextStyle(
                               fontFamily: 'Segoe UI',

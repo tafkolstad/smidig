@@ -4,8 +4,11 @@ import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_button.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_stream.dart';
-import 'package:vy_test/reisekart/stoppesteder/stoppested_tile.dart';
-import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
+import 'package:vy_test/reisekart/meny_button.dart';
+import 'package:vy_test/reisekart/sidebar.dart';
+import 'package:vy_test/reisekart/varsler/varsel_button.dart';
+
+
 //import 'dart:io' show Platform;
 /*
 void checkPlatform(){
@@ -17,12 +20,10 @@ void checkPlatform(){
  }
 }
 */
-import 'package:vy_test/reisekart/meny_button.dart';
-import 'package:vy_test/reisekart/sidebar.dart';
-import 'package:vy_test/reisekart/varsel_button.dart';
-import 'package:vy_test/reisekart/varsel_tile.dart';
+
 
 class Reisekart extends StatefulWidget {
+ 
 
  
   @override
@@ -30,6 +31,7 @@ class Reisekart extends StatefulWidget {
 }
 
 class _ReisekartState extends State<Reisekart> {
+   StoppestedStream stoppestedStream = StoppestedStream();
   PermissionStatus _status;
   MapboxMapController mapController;
 
@@ -98,12 +100,12 @@ class _ReisekartState extends State<Reisekart> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             /* RaisedButton(
+              /*RaisedButton(
                child: Text('Trykk'),
                 onPressed: (){
                 
                    for(Destinasjon item in destinasjoner){
-                    stoppestedStream.pushToDatabase(item.stoppested, item.tid);
+                    stoppestedStream.pushToDatabase(item.tid, item.stoppested,);
                   }
                  
                 }

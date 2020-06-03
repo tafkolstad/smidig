@@ -1,12 +1,11 @@
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
-import 'package:vy_test/stoppesteder/stoppesteder.dart';
-import 'package:vy_test/varsler/varsel.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:vy_test/layout/colors.dart';
+import 'package:intl/intl.dart';
 
 class StoppestedStream extends StatelessWidget {
   Destinasjon destinasjon = Destinasjon();
+  final customTimeFormat = new DateFormat('HH:mm');
 
   void pushToDatabase(tid, stoppested) {
     FirebaseDatabase.instance.reference().child('Destinations').push().set({
@@ -18,7 +17,7 @@ class StoppestedStream extends StatelessWidget {
   var _destinationRef = FirebaseDatabase.instance
       .reference()
       .child('Destinations')
-      .limitToFirst(1);
+      .limitToFirst(10);
 
   final List<Destinasjon> _destinationList = [];
 
@@ -46,9 +45,8 @@ class StoppestedStream extends StatelessWidget {
         }
         return Column(
           children: <Widget>[
-            // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             SizedBox(
-              height: 70,
+              height: 120,
               child: ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: listItem,
@@ -61,21 +59,19 @@ class StoppestedStream extends StatelessWidget {
   }
 
   Widget listItem(BuildContext context, int index) {
-    final _horizontalPhoneLength = MediaQuery.of(context).size.width;
-    final _verticalPhoneLength = MediaQuery.of(context).size.height;
-
     return FlatButton(
       onPressed: () {
         Navigator.pushNamed(context, '/stoppesteder');
       },
       child: ListTile(
-        title: Text(
-          _destinationList[index].tid,
-          style: TextStyle(fontSize: 13),
+        leading: Text(
+          customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
+              _destinationList[index].tid)),
+          style: TextStyle(fontSize: 10),
         ),
-        leading: Text('Neste:', style: TextStyle(fontSize: 14, color: vyColorOrange),),
-        subtitle: Text('${_destinationList[index].stoppested}',
-          style: TextStyle(fontSize: 12),
+        trailing: Text(
+          _destinationList[index].stoppested,
+          style: TextStyle(fontSize: 10),
         ),
       ),
     );
