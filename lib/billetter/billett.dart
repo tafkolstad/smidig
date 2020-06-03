@@ -10,7 +10,8 @@ class Billett extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _minReiseHeight = MediaQuery.of(context).size.height * 0.075;
+    final _phoneHeight = MediaQuery.of(context).size.height;
+    final _phoneWidth = MediaQuery.of(context).size.width;
 
     void _onKontrollTapped() {
       Navigator.pushNamed(context, '/kontroll');
@@ -34,9 +35,9 @@ class Billett extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 10.0,
-          horizontal: 20.0,
+        padding: EdgeInsets.symmetric(
+          vertical: _phoneHeight * 0.02,
+          horizontal: _phoneWidth * 0.05,
         ),
         child: Column(
           children: <Widget>[
@@ -57,21 +58,25 @@ class Billett extends StatelessWidget {
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(text: ' til\n'),
                         TextSpan(
-                            text: toPlatform,
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                          text: toPlatform,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 27.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 Image(
                   alignment: Alignment.topRight,
-                  width: 60.0,
+                  width: _phoneWidth * 0.2,
                   image: AssetImage('assets/vy.logo.final_primary.png'),
                 ),
               ],
             ),
             Divider(
-              height: 20.0,
+              height: _phoneHeight * 0.03,
               color: Colors.black54,
             ),
             Row(
@@ -80,7 +85,7 @@ class Billett extends StatelessWidget {
                   child: Text(
                     'Minipris',
                     style: TextStyle(
-                      fontFamily: 'Helvetica', // Does not exist in project
+                      fontFamily: 'Helvetica',
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF315D93),
@@ -89,14 +94,14 @@ class Billett extends StatelessWidget {
                 ),
                 Image(
                   alignment: Alignment.centerRight,
-                  width: 80.0,
+                  width: _phoneWidth * 0.2,
                   image: AssetImage('assets/minipris_icons.png'),
                 ),
               ],
             ),
             Divider(
               color: Colors.black54,
-              height: 20.0,
+              height: _phoneHeight * 0.03,
             ),
             Row(
               children: <Widget>[
@@ -113,7 +118,7 @@ class Billett extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 5.0,
+                        height: _phoneHeight * 0.01,
                       ),
                       Text(
                         departure,
@@ -131,7 +136,7 @@ class Billett extends StatelessWidget {
                   highlightColor: Colors.transparent,
                   child: Image(
                     alignment: Alignment.centerRight,
-                    width: 100.0,
+                    width: _phoneWidth * 0.24,
                     image: AssetImage('assets/kontroll_icon.png'),
                   ),
                   onPressed: _onKontrollTapped,
@@ -140,58 +145,24 @@ class Billett extends StatelessWidget {
             ),
             Divider(
               color: Colors.black54,
-              height: 40.0,
+              height: _phoneHeight * 0.05,
             ),
             Row(
               children: <Widget>[
-                // Expanded(
-                //   child: FlatButton(
-                //     child: Text(
-                //       'Min Reise',
-                //       style: TextStyle(
-                //         color: Color(0xFF109980),
-                //         fontSize: 24.0,
-                //         fontWeight: FontWeight.w600,
-                //       ),
-                //     ),
-                //     onPressed: _onMinReiseTapped,
-                //   ),
-                // ),
-
-                // Expanded(
-                //   child: RaisedButton(
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(5.0),
-                //     ),
-                //     color: textContainerColor,
-                //     child: Text(
-                //       'Min Reise',
-                //       style: TextStyle(
-                //         color: vyColorGreen,
-                //         fontSize: 24.0,
-                //         fontWeight: FontWeight.w600,
-                //         fontFamily: 'Raleway',
-                //       ),
-                //     ),
-                //     onPressed: _onMinReiseTapped,
-                //   ),
-                // ),
-                
                 Expanded(
                   child: Container(
-                    height: _minReiseHeight,
-                    child: FlatButton(
+                    padding: EdgeInsets.only(bottom: 5.0),
+                    height: _phoneHeight * 0.075,
+                    child: RaisedButton(
+                      color: vyColorGreen,
+                      elevation: 5,
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: vyColorBlack,
-                          width: 2.5,
-                        ),
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                       child: Text(
                         'Min Reise',
                         style: TextStyle(
-                          color: vyColorBlack,
+                          color: Colors.white,
                           fontSize: 24.0,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Raleway',
