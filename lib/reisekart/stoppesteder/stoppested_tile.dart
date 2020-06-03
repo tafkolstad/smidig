@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_stream.dart';
-import 'package:vy_test/reisekart/varsel_stream.dart';
+import 'package:vy_test/reisekart/varsler/varsel_stream.dart';
 import 'package:vy_test/severdigheter/model/topp_Opplevelser_Karusell_model.dart';
 import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
 import 'package:vy_test/varsler/varsel.dart';

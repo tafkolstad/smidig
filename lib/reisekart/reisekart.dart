@@ -19,8 +19,8 @@ void checkPlatform(){
 */
 import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
-import 'package:vy_test/reisekart/varsel_button.dart';
-import 'package:vy_test/reisekart/varsel_tile.dart';
+import 'package:vy_test/reisekart/varsler/varsel_button.dart';
+import 'package:vy_test/reisekart/varsler/varsel_tile.dart';
 
 class Reisekart extends StatefulWidget {
 
