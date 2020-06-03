@@ -12,15 +12,16 @@ class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _edgePadding = MediaQuery.of(context).size.width * 0.03;
-    final _bottomPadding = MediaQuery.of(context).size.height * 0.01;
+    final _bottomPadding = MediaQuery.of(context).size.height * 0.015;
 
     final SizedBox _spacing =
-        SizedBox(height: MediaQuery.of(context).size.height * 0.01);
+        SizedBox(height: MediaQuery.of(context).size.height * 0.011);
 
     final List<Widget> _menu = [
       MenyItem(
         menuItemImage: 'mat.png',
         menuItemText: 'Mat',
+        sidebarImageSize: 25,
         routeName: 'mat',
         textStyle: _textStyle,
       bottomPadding: _bottomPadding,
@@ -29,6 +30,7 @@ class Sidebar extends StatelessWidget {
       MenyItem(
         menuItemImage: 'vognoversikt.png',
         menuItemText: 'Vognoversikt',
+        sidebarImageSize: 25,
         routeName: 'vognoversikt',
         textStyle: _textStyle,
       bottomPadding: _bottomPadding,
@@ -37,6 +39,7 @@ class Sidebar extends StatelessWidget {
       MenyItem(
         menuItemImage: 'severdigheter.png',
         menuItemText: 'Severdigheter',
+        sidebarImageSize: 38,
         routeName: 'severdigheter',
         textStyle: _textStyle,
       bottomPadding: _bottomPadding,
@@ -45,6 +48,7 @@ class Sidebar extends StatelessWidget {
       MenyItem(
         menuItemImage: 'betjening.png',
         menuItemText: 'Betjening',
+        sidebarImageSize: 16,
         routeName: 'betjening',
         textStyle: _textStyle,
       bottomPadding: _bottomPadding,
@@ -53,14 +57,15 @@ class Sidebar extends StatelessWidget {
       MenyItem(
         menuItemImage: 'mer_info.png',
         menuItemText: 'Mer info',
+        sidebarImageSize: 24,
         routeName: 'meny',
         textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
+      bottomPadding: MediaQuery.of(context).size.height * 0.015,
       ),
     ];
 
     return Container(
-      width: 120.0,
+      width: 110.0,
       color: Colors.transparent,
       child: ListView(
         padding: EdgeInsets.only(
