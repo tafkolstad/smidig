@@ -37,6 +37,7 @@ dependencies:
   flutter_animation_progress_bar: ^1.0.0
   step_progress_indicator: ^0.2.3+6
   permission_handler: ^4.4.0
+  wifi_configuration: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +79,10 @@ flutter:
     - family: Segoe
       fonts:
         - asset: fonts/SegoeUI.ttf
+
+    - family: Helvetica
+      fonts:
+        - asset: fonts/Helvetica-400.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
