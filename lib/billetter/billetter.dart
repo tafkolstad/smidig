@@ -18,6 +18,8 @@ class Billetter extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Billett> billetter = [firstBillett, secondBillett];
 
+    final _phoneHeight = MediaQuery.of(context).size.height;
+
     return Layout(
       appBarText: 'Billetter',
       appBarButtons: false,
@@ -25,7 +27,7 @@ class Billetter extends StatelessWidget {
         itemBuilder: (context, position) {
           if (position == 0) {
             return Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: EdgeInsets.all(_phoneHeight * 0.04),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -34,11 +36,11 @@ class Billetter extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Helvetica', // Does not exist in project
+                      fontFamily: 'Helvetica',
                     ),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: _phoneHeight * 0.015,
                   ),
                   billetter[position],
                 ],
@@ -46,7 +48,7 @@ class Billetter extends StatelessWidget {
             );
           } else {
             return Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: EdgeInsets.all(_phoneHeight * 0.04),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
