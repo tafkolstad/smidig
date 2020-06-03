@@ -96,7 +96,7 @@ class _BetjeningState extends State<Betjening> {
                         child: ButtonTheme(
                           alignedDropdown: true,
                           child: DropdownButton<String>(
-                            dropdownColor: textContainerColor,
+                            dropdownColor: backgroudColor,
                             hint: Text(
                               'Hva vil du si fra om?',
                               style: Betjening._hintTextStyle,
