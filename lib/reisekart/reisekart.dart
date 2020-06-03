@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:location/location.dart';
+//import 'package:permission_handler/permission_handler.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_button.dart';
@@ -31,50 +32,41 @@ class Reisekart extends StatefulWidget {
 
 class _ReisekartState extends State<Reisekart> {
    StoppestedStream stoppestedStream = StoppestedStream();
-  PermissionStatus _status;
   MapboxMapController mapController;
-
-  @override
-  void initState() {
-    super.initState();
-
-    PermissionHandler()
-        .checkPermissionStatus(PermissionGroup.locationWhenInUse)
-        .then(_updatestatus);
-  }
-
-  void _updatestatus(PermissionStatus status) {
-    if (status != _status) {
-      setState(() {
-        _status = status;
-      });
-    }
-  }
-
-  void _askPermission() {
-    PermissionHandler().requestPermissions(
-        [PermissionGroup.locationWhenInUse]).then(_onStatusRequested);
-  }
-
-  void _onStatusRequested(Map<PermissionGroup, PermissionStatus> value) {
-    final status = value[PermissionGroup.locationWhenInUse];
-    _updatestatus(status);
-    if(status != PermissionStatus.granted){
-      PermissionHandler().openAppSettings();
-    }
-    else{
-      _updatestatus(status);
-    }
-  }
 
   void androidController(MapboxMapController controller) {
     mapController = controller;
   }
 
+  // void getPermissions() async {
+  //   var _locationStatus = await Permission.location.status;
+
+  //   if(_locationStatus.isUndetermined){
+  //     _locationStatus = await Permission.location.request();
+  //   }
+  // }
+
+  /**
+   * Using MapBox's own permission requestor.
+   * 
+   * To make the user location pop up without having to
+   * exit and enter the map, the map must be reloaded/pushed.
+   * Should we prioritize this?
+   */
+
+  void getPermission() async{
+    final location = Location();
+    final hasPermissions = await location.hasPermission();
+
+    if (hasPermissions != PermissionStatus.granted) {
+      await location.requestPermission();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //trainLocation.fetchJson();
-    _askPermission();
+    getPermission();
 
     return Layout(
       appBarText: 'Min Reise',
