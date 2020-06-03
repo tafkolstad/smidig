@@ -8,7 +8,7 @@ class StoppestedButton extends StatefulWidget {
 }
 
 class _StoppestedButtonState extends State<StoppestedButton> {
-  bool _visible = true;
+  bool _visible = false;
   @override
   Widget build(BuildContext context) {
     final _phoneHeight = MediaQuery.of(context).size.height;

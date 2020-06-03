@@ -21,7 +21,6 @@ void checkPlatform(){
 }
 */
 
-
 class Reisekart extends StatefulWidget {
  
 
