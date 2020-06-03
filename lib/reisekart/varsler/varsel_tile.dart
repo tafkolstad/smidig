@@ -10,8 +10,8 @@ class VarselTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-  
-      height: 120,
+  child: VarselStream(),
+      height: 220,
       width: 150,
       margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
       decoration: BoxDecoration(

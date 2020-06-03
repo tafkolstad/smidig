@@ -7,12 +7,12 @@ class StoppestedStream extends StatelessWidget {
   Destinasjon destinasjon = Destinasjon();
   final customTimeFormat = new DateFormat('HH:mm');
 
-  void pushToDatabase(tid, stoppested) {
-    FirebaseDatabase.instance.reference().child('Destinations').push().set({
-      'tid': tid,
-      'stoppested': stoppested,
-    });
-  }
+  // void pushToDatabase(tid, stoppested) {
+  //   FirebaseDatabase.instance.reference().child('Destinations').push().set({
+  //     'tid': tid,
+  //     'stoppested': stoppested,
+  //   });
+  // }
 
   var _destinationRef = FirebaseDatabase.instance
       .reference()

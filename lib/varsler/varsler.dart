@@ -1,15 +1,22 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:vy_test/firebase/firebase_publish.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:vy_test/layout/colors.dart';
 import 'varsel.dart';
 import 'package:intl/intl.dart';
+import 'package:vy_test/firebase/firebase_get.dart';
+import 'package:vy_test/varsler/event_data.dart';
 
 enum IconType { DELAYED, WARNING, INFORMATION }
 
 class Varsler extends StatelessWidget {
-  // final dbRef = FirebaseDatabase.instance.reference();
+FirebasePublish firebasePublish = FirebasePublish();
+FirebaseGet firebaseGet = FirebaseGet();
+
+
+
 
   Color catagoryColor = Colors.red;
 
@@ -17,20 +24,9 @@ class Varsler extends StatelessWidget {
 
   Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
 
-  void pushToDatabase() async {
-    FirebaseDatabase.instance.reference().child('recent').push().set({
-      'title': 'Info',
-      'subtitle':
-          'Det ble en forsinkelse grunnet avsporing av motgående tog. Venter på lyssignal',
-      'timestamp': ServerValue.timestamp,
-      'iconType': 'delayed',
-      'color': 'orange',
-    });
-  }
-
-  var recentWarningsRef = FirebaseDatabase.instance
+  var _notificationRef = FirebaseDatabase.instance
       .reference()
-      .child('recent')
+      .child('Events')
       .orderByChild('created_at') //order by creation time.
       .limitToFirst(10);
 
@@ -43,7 +39,7 @@ class Varsler extends StatelessWidget {
     return Layout(
       appBarText: 'Min reise',
       customBody: StreamBuilder(
-        stream: recentWarningsRef.onValue,
+        stream: _notificationRef.onValue,
         builder: (context, AsyncSnapshot<Event> snapshot) {
           if (snapshot.hasData) {
             listOfAllNotifications.clear();
@@ -57,9 +53,9 @@ class Varsler extends StatelessWidget {
                   Varsel(
                       title: value['title'],
                       subtitle: value['subtitle'],
-                      icon: value['iconType'],
-                      color: value['catagoryColor'],
-                      timestamp: value['timestamp'].toString()),
+                      event: value['eventType'],
+                      timestamp: value['timestamp'],
+                      )
                 );
               });
             }
@@ -70,8 +66,7 @@ class Varsler extends StatelessWidget {
               RaisedButton(
                 child: Text('TRYKK'),
                 onPressed: () {
-                  pushToDatabase();
-                  print('tryjkket!');
+                 firebasePublish.pushVarselToDatabase('info', 'subtitle');
 
                 },
               ),
@@ -94,6 +89,7 @@ class Varsler extends StatelessWidget {
   Widget listItem(BuildContext context, int index) {
     final _horizontalPhoneLength = MediaQuery.of(context).size.width;
     final _verticalPhoneLength = MediaQuery.of(context).size.height;
+     final EventData _eventData = EventData(event: varselList[index].event);
 
     return Stack(
       children: <Widget>[
@@ -102,7 +98,7 @@ class Varsler extends StatelessWidget {
           height: 62,
           width: 10,
           decoration: BoxDecoration(
-              color: Colors.orange,
+              color: _eventData.colorType,
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.fromLTRB(17, 20, 0, 0),
         ),
@@ -130,36 +126,21 @@ class Varsler extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: Text(varselList[index].subtitle ?? 'default value')),
               ],
-              leading: Icon(
-                Icons.access_time,
-                color: Colors.orange,
-              ),
-              title: Text(varselList[index].title ?? 'default value'),
+              leading: _eventData.iconType,
+              title: Text(_eventData.eventTitle) ?? 'default value'),
             ),
           ),
-        ),
+        
         Container(
           padding: EdgeInsets.fromLTRB(_horizontalPhoneLength * 0.85, 27, 0, 0),
           child: Text(
             customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
-                    int.parse(varselList[index].timestamp)) ??
+                    varselList[index].timestamp) ??
                 'default value'),
             style: TextStyle(fontSize: 10),
           ),
         ),
       ],
     );
-  }
-
-  Icon iconToShow(icon) {
-    if (icon == IconType.DELAYED) {
-      return Icon(Icons.access_time);
-    }
-    if (icon == IconType.INFORMATION) {
-      return Icon(Icons.info_outline);
-    }
-    if (icon == IconType.WARNING) {
-      return Icon(Icons.warning);
-    }
   }
 }

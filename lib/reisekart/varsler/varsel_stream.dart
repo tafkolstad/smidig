@@ -1,15 +1,14 @@
+
+import 'package:vy_test/varsler/event_data.dart';
 import 'package:vy_test/varsler/varsel.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:vy_test/layout/colors.dart';
 
 class VarselStream extends StatelessWidget {
-  var _notificationRef = FirebaseDatabase.instance
-      .reference()
-      .child('recent')
-      .orderByChild('created_at') //order by creation time.
-      .limitToFirst(3);
-
+  var _notificationRef =
+      FirebaseDatabase.instance.reference().child('Events').limitToFirst(4);
+ 
   final List<Varsel> _varselList = [];
 
   @override
@@ -26,12 +25,9 @@ class VarselStream extends StatelessWidget {
               (key, value) {
                 _varselList.add(
                   Varsel(
-                    title: value['title'],
+                      event: value['eventType'],
                       subtitle: value['subtitle'],
-                    //  icon: value['iconType'],
-                    //   color: value['catagoryColor'],
-                    //  timestamp: value['timestamp'].toString()),
-                  ),
+                      timestamp: value['timestamp']),
                 );
               },
             );
@@ -41,7 +37,7 @@ class VarselStream extends StatelessWidget {
           children: <Widget>[
             // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             SizedBox(
-              height: 50.0 * _varselList.length,
+              height: 220,
               child: ListView.builder(
                   shrinkWrap: true,
                   itemBuilder: listItem,
@@ -52,21 +48,21 @@ class VarselStream extends StatelessWidget {
       },
     );
   }
-  Widget listItem(BuildContext context, int index) {
-    final _horizontalPhoneLength = MediaQuery.of(context).size.width;
-    final _verticalPhoneLength = MediaQuery.of(context).size.height;
 
-    return FlatButton(
-      onPressed: () {
-        Navigator.pushNamed(context, '/varsler');
-      },
-      child: ListTile(
-        leading: Text(_varselList[index].subtitle),
-        title: Text(
-          _varselList[index].title,
-          style: TextStyle(fontSize: 12),
-        ),
-      ),
-    );
-  }
+  Widget listItem(BuildContext context, int index) {
+    final EventData _eventData = EventData(event: _varselList[index].event);
+
+        return FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/varsler');
+          },
+          child: ListTile(
+            title: Text(_eventData.eventTitle, style: TextStyle(),) ?? 'Default value',
+            
+            trailing: _eventData.iconType ?? 'Default value',
+          ),
+        );
+      }
+    
+  
 }
