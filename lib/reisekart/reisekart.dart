@@ -90,8 +90,10 @@ class _ReisekartState extends State<Reisekart> {
                   styleString:
                       'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
                   onMapCreated: androidController,
+                  trackCameraPosition: true,
+                  
                   initialCameraPosition: CameraPosition(
-                      target: LatLng(59.9139, 10.7522), zoom: 8.0, tilt: 50),
+                      target: LatLng(59.9139, 10.7522), zoom: 13.0, tilt: 50),
                 ),
               ),
             ],
