@@ -11,11 +11,6 @@ class _StoppestedButtonState extends State<StoppestedButton> {
   bool _visible = false;
   @override
   Widget build(BuildContext context) {
-    final _phoneHeight = MediaQuery.of(context).size.height;
-    final _phoneWidth = MediaQuery.of(context).size.width;
-
-    final _edgePadding = MediaQuery.of(context).size.height * 0.01;
-    final _buttonPaddingInside = MediaQuery.of(context).size.width * 0.1;
     final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
 
     return Container(

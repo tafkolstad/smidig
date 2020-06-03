@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
-import 'package:vy_test/reisekart/varsler/varsel_stream.dart';
-import 'package:vy_test/varsler/varsel.dart';
 import 'package:vy_test/layout/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vy_test/reisekart/varsler/varsel_tile.dart';
@@ -16,11 +12,6 @@ class _VarselButtonState extends State<VarselButton> {
   bool _visible = false;
   @override
   Widget build(BuildContext context) {
-    final _phoneHeight = MediaQuery.of(context).size.height;
-    final _phoneWidth = MediaQuery.of(context).size.width;
-
-    final _edgePadding = MediaQuery.of(context).size.height * 0.01;
-    final _buttonPaddingInside = MediaQuery.of(context).size.width * 0.1;
     final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
 
     return Container(

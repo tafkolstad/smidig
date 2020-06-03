@@ -3,7 +3,6 @@ import 'package:vy_test/varsler/event_data.dart';
 import 'package:vy_test/varsler/varsel.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:vy_test/layout/colors.dart';
 
 class VarselStream extends StatelessWidget {
   var _notificationRef =

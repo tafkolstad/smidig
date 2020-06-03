@@ -15,19 +15,15 @@ class Varsler extends StatelessWidget {
   FirebasePublish firebasePublish = FirebasePublish();
   FirebaseGet firebaseGet = FirebaseGet();
 
-  Color catagoryColor = Colors.red;
+
 
   final customTimeFormat = new DateFormat('HH:mm');
-
-  Icon catagoryIcon = Icon(Icons.info, color: Colors.red);
 
   var _notificationRef = FirebaseDatabase.instance
       .reference()
       .child('Events')
       .orderByChild('created_at') //order by creation time.
       .limitToFirst(10);
-
-  List listOfAllNotifications = [];
 
   final List<Varsel> varselList = [];
 
@@ -39,7 +35,6 @@ class Varsler extends StatelessWidget {
         stream: _notificationRef.onValue,
         builder: (context, AsyncSnapshot<Event> snapshot) {
           if (snapshot.hasData) {
-            listOfAllNotifications.clear();
             DataSnapshot dataValues = snapshot.data.snapshot;
             //  var myList = dataValues
             varselList.clear();
@@ -58,13 +53,13 @@ class Varsler extends StatelessWidget {
 
           return Column(
             children: <Widget>[
-              
+
                   //TODO push to database
               RaisedButton(
                 child: Text('TRYKK'),
                 onPressed: () {
                   //info, delayed or warning
-                  firebasePublish.pushVarselToDatabase('warning', 'subtitle');
+                  firebasePublish.pushVarselToDatabase('delayed', 'subtitle');
                 },
               ),
 
@@ -86,7 +81,6 @@ class Varsler extends StatelessWidget {
 
   Widget listItem(BuildContext context, int index) {
     final _horizontalPhoneLength = MediaQuery.of(context).size.width;
-    final _verticalPhoneLength = MediaQuery.of(context).size.height;
     final EventData _eventData = EventData(event: varselList[index].event);
 
     return Stack(
