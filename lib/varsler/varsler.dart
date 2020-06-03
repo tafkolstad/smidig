@@ -12,11 +12,8 @@ import 'package:vy_test/varsler/event_data.dart';
 enum IconType { DELAYED, WARNING, INFORMATION }
 
 class Varsler extends StatelessWidget {
-FirebasePublish firebasePublish = FirebasePublish();
-FirebaseGet firebaseGet = FirebaseGet();
-
-
-
+  FirebasePublish firebasePublish = FirebasePublish();
+  FirebaseGet firebaseGet = FirebaseGet();
 
   Color catagoryColor = Colors.red;
 
@@ -49,27 +46,28 @@ FirebaseGet firebaseGet = FirebaseGet();
             Map<dynamic, dynamic> values = dataValues.value;
             if (values != null) {
               dataValues.value.forEach((key, value) {
-                varselList.add(
-                  Varsel(
-                      title: value['title'],
-                      subtitle: value['subtitle'],
-                      event: value['eventType'],
-                      timestamp: value['timestamp'],
-                      )
-                );
+                varselList.add(Varsel(
+                  title: value['title'],
+                  subtitle: value['subtitle'],
+                  event: value['eventType'],
+                  timestamp: value['timestamp'],
+                ));
               });
             }
           }
 
           return Column(
             children: <Widget>[
+              
+                  //TODO push to database
               RaisedButton(
                 child: Text('TRYKK'),
                 onPressed: () {
-                 firebasePublish.pushVarselToDatabase('info', 'subtitle');
-
+                  //info, delayed or warning
+                  firebasePublish.pushVarselToDatabase('warning', 'subtitle');
                 },
               ),
+
               Container(
                   margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                   child: Text('Varsler',
@@ -89,7 +87,7 @@ FirebaseGet firebaseGet = FirebaseGet();
   Widget listItem(BuildContext context, int index) {
     final _horizontalPhoneLength = MediaQuery.of(context).size.width;
     final _verticalPhoneLength = MediaQuery.of(context).size.height;
-     final EventData _eventData = EventData(event: varselList[index].event);
+    final EventData _eventData = EventData(event: varselList[index].event);
 
     return Stack(
       children: <Widget>[
@@ -121,16 +119,17 @@ FirebaseGet firebaseGet = FirebaseGet();
             padding: const EdgeInsets.all(2.0),
             //Expandable tile
             child: ExpansionTile(
-              children: <Widget>[
-                Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text(varselList[index].subtitle ?? 'default value')),
-              ],
-              leading: _eventData.iconType,
-              title: Text(_eventData.eventTitle) ?? 'default value'),
-            ),
+                children: <Widget>[
+                  Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child:
+                          Text(varselList[index].subtitle ?? 'default value')),
+                ],
+                leading: _eventData.iconType,
+                title: Text(_eventData.eventTitle) ?? 'default value'),
           ),
-        
+        ),
+
         Container(
           padding: EdgeInsets.fromLTRB(_horizontalPhoneLength * 0.85, 27, 0, 0),
           child: Text(

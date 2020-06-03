@@ -23,6 +23,13 @@ class EventData {
       );
       colorType = vyColorOrange;
       eventTitle = 'Forsinkelse';
+    }else if(event == 'warning'){
+         iconType = Icon(
+        OMIcons.warning,
+        color: vyColorBlack,
+      );
+      colorType = vyColorBlack;
+      eventTitle = 'Varsel';
     }
   }
 }
