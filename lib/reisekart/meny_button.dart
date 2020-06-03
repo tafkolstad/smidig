@@ -4,9 +4,12 @@ import 'package:vy_test/layout/colors.dart';
 class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _edgePadding = MediaQuery.of(context).size.height * 0.01;
-    final _buttonPaddingInside = MediaQuery.of(context).size.width * 0.1;
-    final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
+    final _edgePadding = MediaQuery.of(context).size.height * 0.014;
+    final _buttonPaddingInsideTop = MediaQuery.of(context).size.width * 0.005;
+    final _buttonPaddingInsideBottom = MediaQuery.of(context).size.width * 0.01;
+    final _buttonPaddingInsideLeft = MediaQuery.of(context).size.width * 0.09;
+    final _buttonPaddingInsideRight = MediaQuery.of(context).size.width * 0.09;
+    final _buttonHeight = MediaQuery.of(context).size.height * 0.048;
 
     return Container(
       alignment: Alignment.bottomCenter,
@@ -15,8 +18,11 @@ class MenuButton extends StatelessWidget {
           bottom: _edgePadding,
         ),
         child: ButtonTheme(
-          padding: EdgeInsets.symmetric(
-            horizontal: _buttonPaddingInside,
+          padding: EdgeInsets.fromLTRB(
+            _buttonPaddingInsideLeft,
+            _buttonPaddingInsideTop,
+            _buttonPaddingInsideRight,
+            _buttonPaddingInsideBottom
           ),
           height: _buttonHeight,
           shape:
@@ -31,7 +37,7 @@ class MenuButton extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
-                    fontSize: 21.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.w600,
                     color: vyColorDarkGreen,
                   ),

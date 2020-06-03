@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vy_test/layout/colors.dart';
 
 class MatItem extends StatelessWidget {
   final String text;
@@ -8,16 +9,18 @@ class MatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _phoneWidth = MediaQuery.of(context).size.width;
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Image.asset('assets/$imagePath'),
         Padding(
-          padding: const EdgeInsets.only(left: 15.0),
+          padding: EdgeInsets.only(left: _phoneWidth * 0.04),
           child: Text(
             text,
             style: TextStyle(
-              color: Color(0xff3B434D),
+              color: textColorGrey,
               fontSize: 16.0,
               fontWeight: FontWeight.w600,
               fontFamily: 'Segoe UI',
