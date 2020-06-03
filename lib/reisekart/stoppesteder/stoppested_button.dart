@@ -54,11 +54,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                           SizedBox(
                             width: 10,
                           ),
-                          Icon(
-                            Icons.work,
-                            size: 18,
-                            color: vyColorBlack,
-                          )
+                          Image.asset('assets/train_stat.png')
                         ],
                       ),
                     ),

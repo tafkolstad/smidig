@@ -64,14 +64,14 @@ class StoppestedStream extends StatelessWidget {
         Navigator.pushNamed(context, '/stoppesteder');
       },
       child: ListTile(
-        leading: Text(
+        title: Text(
           customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
               _destinationList[index].tid)),
           style: TextStyle(fontSize: 10),
         ),
-        trailing: Text(
+        subtitle: Text(
           _destinationList[index].stoppested,
-          style: TextStyle(fontSize: 10),
+          style: TextStyle(fontSize: 20),
         ),
       ),
     );
