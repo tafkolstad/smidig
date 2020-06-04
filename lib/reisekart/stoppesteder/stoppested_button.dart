@@ -13,14 +13,12 @@ class _StoppestedButtonState extends State<StoppestedButton> {
   Widget build(BuildContext context) {
     final _buttonHeight = MediaQuery.of(context).size.height * 0.045;
 
-
     return Container(
       alignment: Alignment.topLeft,
       child: Padding(
         padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
         child: ButtonTheme(
-          padding: EdgeInsets.symmetric(
-              ),
+          padding: EdgeInsets.symmetric(),
           height: _buttonHeight,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
@@ -37,7 +35,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            '8 min',
+                            '10 min',
                             textAlign: TextAlign.right,
                             style: TextStyle(
                               fontFamily: 'Segoe UI',
@@ -59,8 +57,10 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       });
                     },
                   ),
-
-                  AnimatedOpacity(opacity: _visible ? 1.0 : 0.0, duration:  Duration(milliseconds: 500), child: StoppestedTile()),
+                  AnimatedOpacity(
+                      opacity: _visible ? 1.0 : 0.0,
+                      duration: Duration(milliseconds: 500),
+                      child: StoppestedTile()),
                 ],
               );
             },

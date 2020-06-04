@@ -4,6 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+
 class StoppestedStream extends StatelessWidget {
   Destinasjon destinasjon = Destinasjon();
   final customTimeFormat = new DateFormat('HH:mm');
@@ -11,14 +12,18 @@ class StoppestedStream extends StatelessWidget {
   var _destinationRef = FirebaseDatabase.instance
       .reference()
       .child('Destinations')
-      .orderByChild('timestamp')
+      .orderByChild('stopnumber')
+      .startAt(2)
+      .endAt(4)
       .limitToFirst(3);
 
   final List<Destinasjon> _destinationList = [];
-
+ 
+ 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
+      
       stream: _destinationRef.onValue,
       builder: (context, AsyncSnapshot<Event> snapshot) {
         if (snapshot.hasData) {
@@ -32,6 +37,7 @@ class StoppestedStream extends StatelessWidget {
                   Destinasjon(
                     tid: value['tid'],
                     stoppested: value['stoppested'],
+                    stopnumber: value['stopnumber']
                   ),
                 );
               },
@@ -40,12 +46,12 @@ class StoppestedStream extends StatelessWidget {
         }
         return Column(
           children: <Widget>[
-            SizedBox(
-              height: 150,
+            Flexible(
               child: ListView.separated(
+               
                   separatorBuilder: (context, index) => Divider(
                         color: vyColorBlack,
-                        height: 1,
+                        height: 0.5,
                       ),
                   addAutomaticKeepAlives: false,
                   shrinkWrap: true,
@@ -70,28 +76,28 @@ class StoppestedStream extends StatelessWidget {
       }*/
     }
     nextStopIcon(isNext) {
-      if (isNext == 'Lillestrøm S') {
+      if (isNext == '') {
         return Icon(
           Icons.fiber_manual_record,
-          color: vyColorGreen,
+          color: vyColorDarkGreen,
+          size: 7,
         );
       } else {
         return Icon(
           Icons.fiber_manual_record,
-          color: vyColorBlack,
+          color: Colors.white,
+          size: 7,
         );
+      }
+    }
+    nextStopText(isNext){
+      if(isNext == 'Oslo Lufthavn' || isNext == '16:26'){
+        return Text(isNext, style: TextStyle(fontWeight: FontWeight.w800, fontSize: 11));
+      }else{
+        return Text(isNext, style: TextStyle(fontWeight: FontWeight.w300 ,fontSize: 11));
       }
     }
 
-    nextStopTime(isNext) {
-      if (isNext == 'Lillestrøm S') {
-        return Text('8 min' );
-      } else {
-        return Text(customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
-                _destinationList[index].tid)),
-            style: TextStyle(fontSize: 10),);
-      }
-    }
 
     DateTime now = DateTime.now();
     String currentTime = DateFormat('kk:mm').format(now);
@@ -103,16 +109,14 @@ class StoppestedStream extends StatelessWidget {
         Navigator.pushNamed(context, '/stoppesteder');
       },
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Text(
-            customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
-                _destinationList[index].tid)),
-            style: TextStyle(fontSize: 10),
-          ),
-          Text(_destinationList[index].stoppested,
-              style: TextStyle(fontSize: 12)),
+          nextStopText(customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
+                _destinationList[index].tid)),),
+          SizedBox(width: 3,),
           nextStopIcon(_destinationList[index].stoppested),
+          SizedBox(width: 3,),
+          nextStopText(_destinationList[index].stoppested)
         ],
       ),
 
