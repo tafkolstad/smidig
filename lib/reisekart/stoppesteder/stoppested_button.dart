@@ -37,7 +37,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            '2 min',
+                            '8 min',
                             textAlign: TextAlign.right,
                             style: TextStyle(
                               fontFamily: 'Segoe UI',
