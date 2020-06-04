@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:location/location.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
+import 'package:vy_test/layout/colors.dart';
 //import 'package:permission_handler/permission_handler.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
@@ -53,8 +56,9 @@ class _ReisekartState extends State<Reisekart> {
                   child: MapboxMap(
                     myLocationEnabled: true,
                     styleString:
-                        'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
+                        'mapbox://styles/levare/ckb0ja1pe0tcc1ipfyiu0w4ri',
                     onMapCreated: androidController,
+                    myLocationTrackingMode: MyLocationTrackingMode.TrackingGPS,
                     trackCameraPosition: true,
                     initialCameraPosition: CameraPosition(
                         target: LatLng(59.9139, 10.7522), zoom: 13.0, tilt: 50),
@@ -68,6 +72,29 @@ class _ReisekartState extends State<Reisekart> {
                 Expanded(child: StoppestedButton(),),
                 Expanded(child: VarselButton()),
               ],
+            ),
+            Container(
+              alignment: Alignment.bottomRight,
+              margin: EdgeInsets.fromLTRB(0, 0, 10, 10),
+              child: ButtonTheme(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                padding: EdgeInsets.all(2),
+                minWidth: 36,
+                child:RaisedButton(
+                      color: Colors.white,
+                      elevation: 5,
+                      child: Icon(
+                        OMIcons.gpsFixed,
+                        size: 18,
+                        color: textColorTitle,
+                      ),
+                      onPressed: () {
+                        
+                      }
+                    ),
+              ),
             ),
             MenuButton(),
           ],
