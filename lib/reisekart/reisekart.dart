@@ -9,23 +9,7 @@ import 'package:vy_test/reisekart/meny_button.dart';
 import 'package:vy_test/reisekart/sidebar.dart';
 import 'package:vy_test/reisekart/varsler/varsel_button.dart';
 
-
-//import 'dart:io' show Platform;
-/*
-void checkPlatform(){
-
-
- if(Platform.isIOS){
-   urlTemplate: 'www.mapbox.....';
- } else if(Platform.isAndroid){
- }
-}
-*/
-
 class Reisekart extends StatefulWidget {
- 
-
- 
   @override
   _ReisekartState createState() => _ReisekartState();
 }
@@ -38,22 +22,6 @@ class _ReisekartState extends State<Reisekart> {
     mapController = controller;
   }
 
-  // void getPermissions() async {
-  //   var _locationStatus = await Permission.location.status;
-
-  //   if(_locationStatus.isUndetermined){
-  //     _locationStatus = await Permission.location.request();
-  //   }
-  // }
-
-  /**
-   * Using MapBox's own permission requestor.
-   * 
-   * To make the user location pop up without having to
-   * exit and enter the map, the map must be reloaded/pushed.
-   * Should we prioritize this?
-   */
-
   void getPermission() async{
     final location = Location();
     final hasPermissions = await location.hasPermission();
@@ -65,7 +33,7 @@ class _ReisekartState extends State<Reisekart> {
 
   @override
   Widget build(BuildContext context) {
-    //trainLocation.fetchJson();
+
     getPermission();
 
     return Layout(
@@ -83,7 +51,6 @@ class _ReisekartState extends State<Reisekart> {
                       'mapbox://styles/sindrejv/ckawdi85r0f6v1impfct49vq2',
                   onMapCreated: androidController,
                   trackCameraPosition: true,
-                  
                   initialCameraPosition: CameraPosition(
                       target: LatLng(59.9139, 10.7522), zoom: 13.0, tilt: 50),
                 ),
@@ -93,16 +60,6 @@ class _ReisekartState extends State<Reisekart> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              /*RaisedButton(
-               child: Text('Trykk'),
-                onPressed: (){
-                
-                   for(Destinasjon item in destinasjoner){
-                    stoppestedStream.pushToDatabase(item.tid, item.stoppested,);
-                  }
-                 
-                }
-              ),*/
               Expanded(child: StoppestedButton(),),
               Expanded(child: VarselButton()),
             ],

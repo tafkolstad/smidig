@@ -85,7 +85,6 @@ class Varsler extends StatelessWidget {
 
     return Stack(
       children: <Widget>[
-        //Side color
         Container(
           height: 62,
           width: 10,
@@ -94,9 +93,7 @@ class Varsler extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.fromLTRB(17, 20, 0, 0),
         ),
-        //Tile
         Container(
-          //height: 100,
           margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
           decoration: BoxDecoration(
             boxShadow: [
