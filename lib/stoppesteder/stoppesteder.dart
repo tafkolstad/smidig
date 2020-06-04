@@ -29,7 +29,7 @@ class Stoppesteder extends StatelessWidget {
       customBody: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+            padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
             width: 400,
             height: 50,
             child: Text(
@@ -41,12 +41,13 @@ class Stoppesteder extends StatelessWidget {
                   fontSize: 30),
             ),
           ),
+          SizedBox(height: 20),
           Flexible(
             child: ListView(
               children: <Widget>[ Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(height: 15,),
+                  SizedBox(height: 20,),
                   StoppestederTider(),
 
                   Container(
@@ -59,7 +60,7 @@ class Stoppesteder extends StatelessWidget {
                           margin: EdgeInsets.only(top: 10),
                           child: StepProgressIndicator(
                             totalSteps: 100,
-                            currentStep: 60,
+                            currentStep: 65,
                             direction: Axis.vertical,
                             size: 5,
                             padding: 0,
@@ -70,7 +71,7 @@ class Stoppesteder extends StatelessWidget {
                         ),
                         StepProgressIndicator(
                           totalSteps: 17,
-                          currentStep: 10,
+                          currentStep: 11,
                           direction: Axis.vertical,
                           size: 21,
                           padding: 5,
