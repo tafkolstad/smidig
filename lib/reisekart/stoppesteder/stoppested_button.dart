@@ -11,7 +11,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
   bool _visible = false;
   @override
   Widget build(BuildContext context) {
-    final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
+    final _buttonHeight = MediaQuery.of(context).size.height * 0.045;
 
 
     return Container(
@@ -20,7 +20,6 @@ class _StoppestedButtonState extends State<StoppestedButton> {
         padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
         child: ButtonTheme(
           padding: EdgeInsets.symmetric(
-              // horizontal: _buttonPaddingInside,
               ),
           height: _buttonHeight,
           shape:
@@ -33,7 +32,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                     color: Colors.white,
                     elevation: 5,
                     child: Container(
-                      padding: EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.only(left: 12),
                       width: 100,
                       child: Row(
                         children: <Widget>[
@@ -44,7 +43,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                               fontFamily: 'Segoe UI',
                               fontSize: 15.0,
                               fontWeight: FontWeight.w700,
-                              color: vyColorBlack,
+                              color: textColorTitle,
                             ),
                           ),
                           SizedBox(
@@ -69,26 +68,5 @@ class _StoppestedButtonState extends State<StoppestedButton> {
         ),
       ),
     );
-
-//      Container(
-//      margin: EdgeInsets.fromLTRB(
-//          _phoneWidth * 0.03, _phoneHeight * 0.01, _phoneWidth * 0.1, 0),
-//      child: Container(
-//
-//        decoration: BoxDecoration(
-//          color: Colors.white,
-//          borderRadius: BorderRadius.all(Radius.circular(15)),
-//        ),
-//        child: ExpansionTile(
-//          title: Text(
-//            'Varsler',
-//            style: TextStyle(fontSize: 12),
-//          ),
-//          children: <Widget>[
-//            VarselStream(),
-//          ],
-//        ),
-//      ),
-//    );
   }
 }
