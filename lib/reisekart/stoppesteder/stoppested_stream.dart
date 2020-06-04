@@ -12,7 +12,7 @@ class StoppestedStream extends StatelessWidget {
   var _destinationRef = FirebaseDatabase.instance
       .reference()
       .child('Destinations')
-      .limitToFirst(5);
+      .limitToFirst(15);
 
   final List<Destinasjon> _destinationList = [];
 
@@ -43,6 +43,7 @@ class StoppestedStream extends StatelessWidget {
             SizedBox(
               height: 150,
               child: ListView.builder(
+             addAutomaticKeepAlives: false,
                   shrinkWrap: true,
                   itemBuilder: listItem,
                   itemCount: _destinationList.length),
@@ -66,6 +67,7 @@ class StoppestedStream extends StatelessWidget {
     }
     DateTime now = DateTime.now();
     String currentTime = DateFormat('kk:mm').format(now);
+    
     //if(_destinationList[index].tid < currentTime )
 
     return FlatButton(
@@ -82,7 +84,7 @@ class StoppestedStream extends StatelessWidget {
           _destinationList[index].stoppested,
           style: TextStyle(fontSize: 12)
         ),
-        trailing: Icon(Icons.fiber_manual_record, color: vyColorOrange,),
+        trailing: Icon(Icons.fiber_manual_record, color: vyColorBlack,),
       ),
     );
   }
