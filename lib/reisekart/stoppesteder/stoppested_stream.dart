@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 class StoppestedStream extends StatelessWidget {
   Destinasjon destinasjon = Destinasjon();
   final customTimeFormat = new DateFormat('HH:mm');
+   static int nextStop = 2;
 
   var _destinationRef = FirebaseDatabase.instance
       .reference()
@@ -51,7 +52,8 @@ class StoppestedStream extends StatelessWidget {
                
                   separatorBuilder: (context, index) => Divider(
                         color: vyColorBlack,
-                        height: 0.5,
+                        height: 0.1,
+                        thickness: 0.4,
                       ),
                   addAutomaticKeepAlives: false,
                   shrinkWrap: true,
@@ -111,6 +113,7 @@ class StoppestedStream extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
+             SizedBox(width: 12,),
           nextStopText(customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
                 _destinationList[index].tid)),),
           SizedBox(width: 3,),
