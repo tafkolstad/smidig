@@ -13,6 +13,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
   Widget build(BuildContext context) {
     final _buttonHeight = MediaQuery.of(context).size.height * 0.05;
 
+
     return Container(
       alignment: Alignment.topLeft,
       child: Padding(
@@ -59,7 +60,8 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       });
                     },
                   ),
-                  AnimatedOpacity(opacity: _visible ? 1.0 : 0.0,duration:  Duration(milliseconds: 500), child: StoppestedTile()),
+
+                  AnimatedOpacity(opacity: _visible ? 1.0 : 0.0, duration:  Duration(milliseconds: 500), child: StoppestedTile()),
                 ],
               );
             },

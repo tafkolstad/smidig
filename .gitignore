@@ -47,3 +47,4 @@ app.*.map.json
 ios/mapbox-ios-sdk-5-2/
 pubspec.lock
 pubspec.lock
+android/app/.settings/org.eclipse.buildship.core.prefs
