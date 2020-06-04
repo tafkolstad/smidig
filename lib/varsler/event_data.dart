@@ -7,12 +7,15 @@ class EventData {
   Color colorType;
   String eventTitle = 'undefined';
   String event;
+  double iconSize;
 
-  EventData({this.event}) {
+  EventData({this.event, this.iconSize}) {
     if (event == 'info') {
       iconType = Icon(
         OMIcons.info,
         color: infoColor,
+        size: iconSize,
+        
       );
       colorType = infoColor;
       eventTitle = 'Info';
@@ -20,15 +23,17 @@ class EventData {
       iconType = Icon(
         OMIcons.accessTime,
         color: vyColorOrange,
+        size: iconSize,
       );
       colorType = vyColorOrange;
       eventTitle = 'Forsinkelse';
     }else if(event == 'warning'){
          iconType = Icon(
         OMIcons.warning,
-        color: vyColorBlack,
+        color: tekniskFeilColor,
+        size: iconSize,
       );
-      colorType = vyColorBlack;
+      colorType = tekniskFeilColor;
       eventTitle = 'Varsel';
     }
   }

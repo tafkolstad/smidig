@@ -7,10 +7,11 @@ class VarselTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: 0),
   child: VarselStream(),
-      height: 220,
-      width: 150,
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      height: 180,
+      width: 160,
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),

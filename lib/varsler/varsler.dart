@@ -59,7 +59,7 @@ class Varsler extends StatelessWidget {
                 child: Text('TRYKK'),
                 onPressed: () {
                   //info, delayed or warning
-                  firebasePublish.pushVarselToDatabase('delayed', 'subtitle');
+                  firebasePublish.pushVarselToDatabase('warning', 'subtitle');
                 },
               ),
 
