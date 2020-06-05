@@ -43,10 +43,11 @@ class VarselStream extends StatelessWidget {
               child: ListView.separated(
                 
               
-                separatorBuilder: (context, index) => Divider(color: vyColorBlack, height: 0, thickness: 0.5,),
+                separatorBuilder: (context, index) => Divider(color: Colors.black45, height: 0.1, thickness: 0.3,),
                   shrinkWrap: true,
                   itemBuilder: listItem,
                   itemCount: _varselList.length
+                
                   ),
                   
             )

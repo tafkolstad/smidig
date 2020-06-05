@@ -64,7 +64,7 @@ class _VarselButtonState extends State<VarselButton> {
                     },
                   ),
                   AnimatedOpacity(opacity: _visible ? 1.0 : 0.0,duration:  Duration(milliseconds: 500), child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0,0,40,0),
+                    padding: const EdgeInsets.fromLTRB(0,10,40,0),
                     child: VarselTile(),
                   )),
                 ],
