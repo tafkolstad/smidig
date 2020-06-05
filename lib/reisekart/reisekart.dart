@@ -54,7 +54,7 @@ class _ReisekartState extends State<Reisekart> {
               children: <Widget>[
                 Expanded(
                   child: MapboxMap(
-                    // myLocationEnabled: true,
+                    myLocationEnabled: true,
                     styleString:
                         'mapbox://styles/levare/ckb0ja1pe0tcc1ipfyiu0w4ri',
                     onMapCreated: androidController,
