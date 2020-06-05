@@ -79,27 +79,6 @@ class Meny extends StatelessWidget {
     ),
     MenyItem(
       menuItemImage: 'vy.logo.final_primary.png',
-      menuItemText: 'Om oss',
-      routeName: 'omOss',
-      textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
-    ),
-    MenyItem(
-      menuItemImage: 'sove.png',
-      menuItemText: 'Sove',
-      routeName: 'sove',
-      textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
-    ),
-    MenyItem(
-      menuItemImage: 'dyr.png',
-      menuItemText: 'Dyr',
-      routeName: 'dyr',
-      textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
-    ),
-    MenyItem(
-      menuItemImage: 'faq.png',
       menuItemText: 'FAQ',
       routeName: 'faq',
       textStyle: _textStyle,

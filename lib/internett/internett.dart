@@ -12,9 +12,8 @@ class Internett extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _imagePadding = MediaQuery.of(context).size.height * 0.015;
-    final _horizontalButtonPadding = MediaQuery.of(context).size.width * 0.15;
-    final _verticalButtonPadding = MediaQuery.of(context).size.height * 0.04;
+    final _phoneHeight = MediaQuery.of(context).size.height;
+    final _phoneWidth = MediaQuery.of(context).size.width;
 
     Future attemptConnection() async {
       String status;
@@ -78,7 +77,7 @@ class Internett extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: _imagePadding),
+                padding: EdgeInsets.only(top: _phoneHeight * 0.015),
                 child: Image(
                   image: AssetImage('assets/vy.logo.final_primary_big.png'),
                 ),
@@ -95,7 +94,7 @@ class Internett extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 20.0,
+            height: _phoneHeight * 0.02,
           ),
           Text(
             'Gratis internett',
@@ -107,18 +106,18 @@ class Internett extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20.0,
+            height: _phoneHeight * 0.045,
           ),
           ButtonTheme(
-            height: 45.0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
             child: RaisedButton(
               color: vyColorGreen,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: _horizontalButtonPadding,
-                    vertical: _verticalButtonPadding),
+                  horizontal: _phoneWidth * 0.14,
+                  vertical: _phoneHeight * 0.025,
+                ),
                 child: Text(
                   'Koble til',
                   textAlign: TextAlign.center,
@@ -131,6 +130,18 @@ class Internett extends StatelessWidget {
                 ),
               ),
               onPressed: attemptConnection,
+            ),
+          ),
+          SizedBox(
+            height: _phoneHeight * 0.01,
+          ),
+          Text(
+            'Ved å trykke "koble til", aksepterer du våre\nbetingelser',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 10.0,
+              fontFamily: 'Segoe UI',
+              color: textColorGrey,
             ),
           ),
         ],

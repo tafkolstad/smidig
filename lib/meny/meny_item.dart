@@ -7,14 +7,15 @@ class MenyItem extends StatelessWidget {
   final String routeName;
   final TextStyle textStyle;
   final double bottomPadding;
+  final double sidebarImageSize;
 
   MenyItem(
-      {this.menuItemText, this.menuItemImage, this.routeName, this.textStyle, this.bottomPadding});
+      {this.menuItemText, this.menuItemImage,this.sidebarImageSize, this.routeName, this.textStyle, this.bottomPadding});
 
   @override
   Widget build(BuildContext context) {
-    final _topPadding = MediaQuery.of(context).size.height * 0.015;
-    final _containerHeight = MediaQuery.of(context).size.height * 0.12;
+    final _topPadding = MediaQuery.of(context).size.height * 0.01;
+    final _containerHeight = MediaQuery.of(context).size.height * 0.10;
 
     return GestureDetector(
       onTap: () {
@@ -42,6 +43,7 @@ class MenyItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Image(
+              width: sidebarImageSize,
               image: AssetImage("assets/$menuItemImage"),
             ),
             Padding(

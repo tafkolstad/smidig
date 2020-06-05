@@ -53,21 +53,17 @@ class _BetjeningState extends State<Betjening> {
       ),
     ];
 
-    final double _buttonSidePadding = MediaQuery.of(context).size.width * 0.30;
-    final double _buttonTopPadding = MediaQuery.of(context).size.height * 0.02;
-    final double _buttonBottomPadding =
-        MediaQuery.of(context).size.height * 0.04;
-    final double _bodyPadding = MediaQuery.of(context).size.height * 0.036;
-    final double _textPadding = MediaQuery.of(context).size.height * 0.025;
+    final _phoneHeight = MediaQuery.of(context).size.height;
+    final _phoneWidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Layout(
         appBarText: 'Min Reise',
         customBody: Padding(
-          padding: EdgeInsets.all(_bodyPadding),
+          padding: EdgeInsets.all(_phoneHeight * 0.036),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -78,12 +74,12 @@ class _BetjeningState extends State<Betjening> {
                       'Kontakt betjening',
                       style: TextStyle(
                         color: textColorTitle,
-                        fontFamily: 'Raleway', // Does not exist in this project
+                        fontFamily: 'Raleway',
                         fontSize: 30,
                       ),
                     ),
                     SizedBox(
-                      height: 44.0,
+                      height: _phoneHeight * 0.06,
                     ),
                     Text(
                       'Her kan du ta kontakt med besetningen for å gi tilbakemeldinger eller be om hjelp',
@@ -93,14 +89,14 @@ class _BetjeningState extends State<Betjening> {
                       ),
                     ),
                     SizedBox(
-                      height: 44.0,
+                      height: _phoneHeight * 0.08,
                     ),
                     TextContainer(
                       customChild: DropdownButtonHideUnderline(
                         child: ButtonTheme(
                           alignedDropdown: true,
                           child: DropdownButton<String>(
-                            dropdownColor: textContainerColor,
+                            dropdownColor: backgroudColor,
                             hint: Text(
                               'Hva vil du si fra om?',
                               style: Betjening._hintTextStyle,
@@ -123,7 +119,7 @@ class _BetjeningState extends State<Betjening> {
                       ),
                     ),
                     SizedBox(
-                      height: 15.0,
+                      height: _phoneHeight * 0.02,
                     ),
                     TextContainer(
                       customChild: TextField(
@@ -132,24 +128,27 @@ class _BetjeningState extends State<Betjening> {
                         keyboardType: TextInputType.multiline,
                         maxLines: null,
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(_textPadding),
+                          contentPadding: EdgeInsets.all(_phoneHeight * 0.02),
                           border: InputBorder.none,
                           hintText: 'Skriv inn din melding...',
                           hintStyle: Betjening._hintTextStyle,
                         ),
                       ),
-                      customHeight: 155.0,
+                      customHeight: _phoneHeight * 0.23,
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(
-                          _buttonSidePadding,
-                          _buttonTopPadding,
-                          _buttonSidePadding,
-                          _buttonBottomPadding),
+                          _phoneWidth * 0.30,
+                          _phoneHeight * 0.02,
+                          _phoneWidth * 0.30,
+                          _phoneHeight * 0.06),
                       child: ButtonTheme(
-                        height: 45.0,
+                        padding: EdgeInsets.only(
+                          bottom: _phoneHeight * 0.006,
+                        ),
+                        height: _phoneHeight * 0.06,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0)),
+                            borderRadius: BorderRadius.circular(8.0)),
                         child: RaisedButton(
                           color: vyColorGreen,
                           child: Text(
