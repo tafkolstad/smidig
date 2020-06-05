@@ -37,14 +37,13 @@ class VarselStream extends StatelessWidget {
         }
         return Column(
           children: <Widget>[
-            // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             SizedBox(
-              height: 180,
+              
+              height: 150,
               child: ListView.separated(
                 
               
-                separatorBuilder: (context, index) => Divider(color: vyColorBlack,),
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                separatorBuilder: (context, index) => Divider(color: vyColorBlack, height: 0, thickness: 0.5,),
                   shrinkWrap: true,
                   itemBuilder: listItem,
                   itemCount: _varselList.length
@@ -70,7 +69,7 @@ class VarselStream extends StatelessWidget {
           _eventData.iconType ?? 'Default value',
           Text(
                 _eventData.eventTitle,
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 10, fontFamily: 'Segoe UI'),
               ) ??
               'Default value',
           Text(

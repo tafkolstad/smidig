@@ -9,8 +9,8 @@ class VarselTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(right: 0),
   child: VarselStream(),
-      height: 180,
-      width: 160,
+      height: 150,
+      width: 140,
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
           color: Colors.white,
