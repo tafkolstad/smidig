@@ -13,8 +13,8 @@ class StoppestedTile extends StatelessWidget {
     return Container(
       child: StoppestedStream(),
       height: 145,
-      width: 145,
-      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      width: 153,
+      padding: EdgeInsets.fromLTRB(10, 0, 5, 0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),

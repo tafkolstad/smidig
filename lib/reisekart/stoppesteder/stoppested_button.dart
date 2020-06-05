@@ -16,7 +16,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
     return Container(
       alignment: Alignment.topLeft,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+        padding: EdgeInsets.fromLTRB(0, 10, 15, 0),
         child: ButtonTheme(
           padding: EdgeInsets.symmetric(),
           height: _buttonHeight,
@@ -60,7 +60,10 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                   AnimatedOpacity(
                       opacity: _visible ? 1.0 : 0.0,
                       duration: Duration(milliseconds: 500),
-                      child: StoppestedTile()),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 10, 0, 0),
+                        child: StoppestedTile(),
+                      )),
                 ],
               );
             },
