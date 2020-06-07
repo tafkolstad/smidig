@@ -50,7 +50,7 @@ class MenyItem extends StatelessWidget {
           children: <Widget>[
             Image(
               width: sidebarImageSize,
-              image: AssetImage("assets/$menuItemImage"),
+              image: AssetImage("assets/ikoner/$menuItemImage"),
             ),
             Padding(
               padding: EdgeInsets.only(
