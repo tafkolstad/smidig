@@ -61,7 +61,7 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                                 child: Image(
                                   height: 120.0,
                                   width: 160.0,
-                                  image: AssetImage(oppkommende.imageUrl),
+                                  image: AssetImage('assets/bilder/severdigheter/${oppkommende.imageUrl}'),
                                   fit: BoxFit.cover,
                                 ),
                               ),

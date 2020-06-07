@@ -14,7 +14,7 @@ class MatItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Image.asset('assets/$imagePath'),
+        Image.asset('assets/bilder/mat/$imagePath'),
         Padding(
           padding: EdgeInsets.only(left: _phoneWidth * 0.04),
           child: Text(

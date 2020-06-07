@@ -63,7 +63,7 @@ class ToppOpplevelserKarusell extends StatelessWidget {
                                 child: Image(
                                   height: 180.0,
                                   width: 260.0,
-                                  image: AssetImage(destination.imageUrl),
+                                  image: AssetImage('assets/bilder/severdigheter/${destination.imageUrl}'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
