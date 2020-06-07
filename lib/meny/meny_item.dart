@@ -10,7 +10,12 @@ class MenyItem extends StatelessWidget {
   final double sidebarImageSize;
 
   MenyItem(
-      {this.menuItemText, this.menuItemImage,this.sidebarImageSize, this.routeName, this.textStyle, this.bottomPadding});
+      {this.menuItemText,
+      this.menuItemImage,
+      this.sidebarImageSize,
+      this.routeName,
+      this.textStyle,
+      this.bottomPadding});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +24,9 @@ class MenyItem extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        if(routeName == 'reisekart'){
-          Navigator.of(context).pushNamedAndRemoveUntil('/reisekart', (Route<dynamic> route) => false);
+        if (routeName == 'reisekart') {
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/reisekart', (Route<dynamic> route) => false);
         } else {
           Navigator.pushNamed(context, '/$routeName');
         }

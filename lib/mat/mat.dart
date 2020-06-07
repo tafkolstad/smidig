@@ -65,7 +65,9 @@ class Mat extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: _phoneWidth * 0.04),
               child: GridView.count(
-                padding: EdgeInsets.only(bottom: _phoneHeight * 0.02,),
+                padding: EdgeInsets.only(
+                  bottom: _phoneHeight * 0.02,
+                ),
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 2,
                 children: _matItems,

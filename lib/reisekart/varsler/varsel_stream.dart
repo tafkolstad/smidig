@@ -1,4 +1,3 @@
-import 'package:vy_test/layout/colors.dart';
 import 'package:vy_test/varsler/event_data.dart';
 import 'package:vy_test/varsler/varsel.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -38,18 +37,16 @@ class VarselStream extends StatelessWidget {
         return Column(
           children: <Widget>[
             SizedBox(
-              
               height: 150,
               child: ListView.separated(
-                
-              
-                separatorBuilder: (context, index) => Divider(color: Colors.black45, height: 0.1, thickness: 0.3,),
+                  separatorBuilder: (context, index) => Divider(
+                        color: Colors.black45,
+                        height: 0.1,
+                        thickness: 0.3,
+                      ),
                   shrinkWrap: true,
                   itemBuilder: listItem,
-                  itemCount: _varselList.length
-                
-                  ),
-                  
+                  itemCount: _varselList.length),
             )
           ],
         );
@@ -65,7 +62,8 @@ class VarselStream extends StatelessWidget {
       onPressed: () {
         Navigator.pushNamed(context, '/varsler');
       },
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           _eventData.iconType ?? 'Default value',
           Text(

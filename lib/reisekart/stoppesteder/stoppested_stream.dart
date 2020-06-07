@@ -4,7 +4,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class StoppestedStream extends StatelessWidget {
   Destinasjon destinasjon = Destinasjon();
   final customTimeFormat = new DateFormat('HH:mm');
@@ -92,12 +91,6 @@ class StoppestedStream extends StatelessWidget {
       }
     }
 
-
-    DateTime now = DateTime.now();
-    String currentTime = DateFormat('kk:mm').format(now);
-
-  
-
     return FlatButton(
       onPressed: () {
         Navigator.pushNamed(context, '/stoppesteder');
@@ -114,19 +107,6 @@ class StoppestedStream extends StatelessWidget {
           nextStopText(_destinationList[index].stopnumber,_destinationList[index].stoppested)
         ],
       ),
-
-      /*ListTile(
-        subtitle: Text(
-          customTimeFormat.format(new DateTime.fromMillisecondsSinceEpoch(
-              _destinationList[index].tid)),
-          style: TextStyle(fontSize: 10),
-        ),
-        title: Text(
-          _destinationList[index].stoppested,
-          style: TextStyle(fontSize: 12)
-        ),
-        trailing: Icon(Icons.fiber_manual_record, color: vyColorBlack,),
-      ),*/
     );
   }
 }

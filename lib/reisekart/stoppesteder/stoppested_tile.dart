@@ -26,27 +26,5 @@ class StoppestedTile extends StatelessWidget {
             ),
           ]),
     );
-          
-
-//      Container(
-//      margin: EdgeInsets.fromLTRB(
-//          _phoneWidth * 0.03, _phoneHeight * 0.01, _phoneWidth * 0.1, 0),
-//      child: Container(
-//
-//        decoration: BoxDecoration(
-//          color: Colors.white,
-//          borderRadius: BorderRadius.all(Radius.circular(15)),
-//        ),
-//        child: ExpansionTile(
-//          title: Text(
-//            'Varsler',
-//            style: TextStyle(fontSize: 12),
-//          ),
-//          children: <Widget>[
-//            VarselStream(),
-//          ],
-//        ),
-//      ),
-//    );
   }
 }

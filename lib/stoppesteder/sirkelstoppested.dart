@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
 class SirkelStoppested extends StatelessWidget {
-
   Color circleColor;
   double circleHeight;
   double circleWidth;
   double childCircleHeight;
   double childCircleWidth;
 
-  SirkelStoppested({
-    this.circleColor,
-    this.circleHeight, 
-    this.circleWidth, 
-    this.childCircleHeight, 
-    this.childCircleWidth
-  });
+  SirkelStoppested(
+      {this.circleColor,
+      this.circleHeight,
+      this.circleWidth,
+      this.childCircleHeight,
+      this.childCircleWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,6 @@ class SirkelStoppested extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-        )
-    );
+        ));
   }
 }

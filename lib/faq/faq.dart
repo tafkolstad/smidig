@@ -3,19 +3,18 @@ import 'package:vy_test/faq/ItemList.dart';
 import 'package:vy_test/layout/layout.dart';
 
 class Faq extends StatelessWidget {
+  final ItemList _itemList = ItemList();
 
-final ItemList _itemList=ItemList();
-
-Future<bool>_onBackPressed(){
-   _itemList.collapseAll();
-   return Future.value(true);
-}
+  Future<bool> _onBackPressed() {
+    _itemList.collapseAll();
+    return Future.value(true);
+  }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onBackPressed,
-          child: Layout(
+      child: Layout(
         appBarText: 'Min Reise',
         customBody: ListView(children: <Widget>[
           Padding(

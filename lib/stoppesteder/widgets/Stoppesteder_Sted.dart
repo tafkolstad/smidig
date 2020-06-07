@@ -18,13 +18,12 @@ class StoppestederSted extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                height: 31.6,
+                  height: 31.6,
                   padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
-                    destinasjon.stoppested, 
+                    destinasjon.stoppested,
                     style: _textStyle,
-                  )
-              ),
+                  )),
             ],
           );
         },

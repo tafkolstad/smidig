@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Item.dart';
 import 'data.dart';
 
@@ -7,7 +6,7 @@ class ItemList extends StatefulWidget {
   ItemList({Key key}) : super(key: key);
   final List<Item> _data = data;
 
-  void collapseAll(){
+  void collapseAll() {
     _data.forEach((element) {
       element.isExpanded = false;
     });
@@ -18,8 +17,6 @@ class ItemList extends StatefulWidget {
 }
 
 class _ItemListState extends State<ItemList> {
-
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

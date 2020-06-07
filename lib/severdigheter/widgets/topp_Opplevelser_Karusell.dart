@@ -63,7 +63,8 @@ class ToppOpplevelserKarusell extends StatelessWidget {
                                 child: Image(
                                   height: 180.0,
                                   width: 260.0,
-                                  image: AssetImage('assets/bilder/severdigheter/${destination.imageUrl}'),
+                                  image: AssetImage(
+                                      'assets/bilder/severdigheter/${destination.imageUrl}'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -120,7 +121,9 @@ class ToppOpplevelserKarusell extends StatelessWidget {
                                     letterSpacing: 0.2,
                                   ),
                                 ),
-                                SizedBox(height: 3.0,),
+                                SizedBox(
+                                  height: 3.0,
+                                ),
                                 Text(
                                   destination.beskrivelse,
                                   overflow: TextOverflow.ellipsis,

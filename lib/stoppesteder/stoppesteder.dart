@@ -44,63 +44,66 @@ class Stoppesteder extends StatelessWidget {
           SizedBox(height: 20),
           Flexible(
             child: ListView(
-              children: <Widget>[ Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(height: 20,),
-                  StoppestederTider(),
-
-                  Container(
-                    height: 530,
-                    margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
-                    child: Stack(
-                      alignment: Alignment.topCenter,
-                      children: <Widget>[
-                        Container(height: 510,
-                          margin: EdgeInsets.only(top: 10),
-                          child: StepProgressIndicator(
-                            totalSteps: 100,
-                            currentStep: 65,
+              children: <Widget>[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    StoppestederTider(),
+                    Container(
+                      height: 530,
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            height: 510,
+                            margin: EdgeInsets.only(top: 10),
+                            child: StepProgressIndicator(
+                              totalSteps: 100,
+                              currentStep: 65,
+                              direction: Axis.vertical,
+                              size: 5,
+                              padding: 0,
+                              selectedColor: vyColorDarkGreen,
+                              unselectedColor: vyColorGreen,
+                              roundedEdges: Radius.circular(10),
+                            ),
+                          ),
+                          StepProgressIndicator(
+                            totalSteps: 17,
+                            currentStep: 11,
                             direction: Axis.vertical,
-                            size: 5,
-                            padding: 0,
+                            size: 21,
+                            padding: 5,
                             selectedColor: vyColorDarkGreen,
                             unselectedColor: vyColorGreen,
-                            roundedEdges: Radius.circular(10),
-                          ),
-                        ),
-                        StepProgressIndicator(
-                          totalSteps: 17,
-                          currentStep: 11,
-                          direction: Axis.vertical,
-                          size: 21,
-                          padding: 5,
-                          selectedColor: vyColorDarkGreen,
-                          unselectedColor: vyColorGreen,
-                          customStep: (index, color, _) => color == vyColorDarkGreen
-                              ? SirkelStoppested(
-                                circleHeight: 10,
-                                circleWidth: 10,
-                                circleColor: vyColorDarkGreen,
-                                childCircleWidth: 9,
-                                childCircleHeight: 9,
-                              )
-                              : SirkelStoppested(
-                                circleHeight: 10,
-                                circleWidth: 10,
-                                circleColor: vyColorGreen,
-                                childCircleWidth: 9,
-                                childCircleHeight: 9,
-                              ),
-                        )
-                      ],
+                            customStep: (index, color, _) =>
+                                color == vyColorDarkGreen
+                                    ? SirkelStoppested(
+                                        circleHeight: 10,
+                                        circleWidth: 10,
+                                        circleColor: vyColorDarkGreen,
+                                        childCircleWidth: 9,
+                                        childCircleHeight: 9,
+                                      )
+                                    : SirkelStoppested(
+                                        circleHeight: 10,
+                                        circleWidth: 10,
+                                        circleColor: vyColorGreen,
+                                        childCircleWidth: 9,
+                                        childCircleHeight: 9,
+                                      ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  
-                  StoppestederSted(),
-                  
-                ],
-              ),],
+                    StoppestederSted(),
+                  ],
+                ),
+              ],
             ),
           ),
         ],

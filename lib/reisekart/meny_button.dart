@@ -19,10 +19,10 @@ class MenuButton extends StatelessWidget {
         ),
         child: ButtonTheme(
           padding: EdgeInsets.fromLTRB(
-            _buttonPaddingInsideLeft,
-            _buttonPaddingInsideTop,
-            _buttonPaddingInsideRight,
-            _buttonPaddingInsideBottom
+              _buttonPaddingInsideLeft,
+              _buttonPaddingInsideTop,
+              _buttonPaddingInsideRight,
+              _buttonPaddingInsideBottom
           ),
           height: _buttonHeight,
           shape:

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:location/location.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:vy_test/layout/colors.dart';
-//import 'package:permission_handler/permission_handler.dart';
 import 'package:vy_test/layout/layout.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:vy_test/reisekart/stoppesteder/stoppested_button.dart';

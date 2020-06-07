@@ -11,7 +11,6 @@ class Vognoversikt extends StatefulWidget {
 }
 
 class _VognoversiktState extends State<Vognoversikt> {
-  
   int _selectedIndex = 0;
   List<String> _vonger = [
     "Vogn 1",
@@ -44,16 +43,13 @@ class _VognoversiktState extends State<Vognoversikt> {
           _vonger[index],
           style: TextStyle(
             fontSize: 23.0,
-            color: _selectedIndex == index
-                ? vyColorGreen
-                : Color(0xFF7b808a),
-            fontWeight: _selectedIndex == index
-                ? FontWeight.w700
-                : FontWeight.w400,
+            color: _selectedIndex == index ? vyColorGreen : Color(0xFF7b808a),
+            fontWeight:
+                _selectedIndex == index ? FontWeight.w700 : FontWeight.w400,
             letterSpacing: 0.3,
           ),
         ),
-      ),      
+      ),
     );
   }
 
@@ -121,7 +117,7 @@ class _VognoversiktState extends State<Vognoversikt> {
                         Container(
                           height: 420,
                           child: Image.asset(_vongerimg[_selectedIndex]),
-                          )
+                        )
                       ],
                     ),
                     Column(

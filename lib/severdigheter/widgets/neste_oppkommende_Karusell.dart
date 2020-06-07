@@ -7,7 +7,8 @@ class NesteoppkommendeKarusell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[Padding(
+      children: <Widget>[
+        Padding(
           padding: EdgeInsets.fromLTRB(30, 0, 20, 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +62,8 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                                 child: Image(
                                   height: 120.0,
                                   width: 160.0,
-                                  image: AssetImage('assets/bilder/severdigheter/${oppkommende.imageUrl}'),
+                                  image: AssetImage(
+                                      'assets/bilder/severdigheter/${oppkommende.imageUrl}'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -101,12 +103,10 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                           height: 65.0,
                           width: 130.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(20.0),
-                                bottomRight: Radius.circular(20.0)
-                              )
-                          ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(20.0),
+                                  bottomRight: Radius.circular(20.0))),
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                             child: Column(
@@ -121,9 +121,12 @@ class NesteoppkommendeKarusell extends StatelessWidget {
                                     letterSpacing: 0.2,
                                   ),
                                 ),
-                                SizedBox(height: 5.0,),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Text(
                                       oppkommende.vongside,
@@ -161,23 +164,3 @@ class NesteoppkommendeKarusell extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

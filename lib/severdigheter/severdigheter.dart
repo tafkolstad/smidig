@@ -25,7 +25,6 @@ class Severdigheter extends StatelessWidget {
           ToppOpplevelserKarusell(),
           SizedBox(height: 5.0),
           NesteoppkommendeKarusell(),
-      
         ],
       ),
     );

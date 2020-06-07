@@ -10,7 +10,7 @@ class MatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _phoneWidth = MediaQuery.of(context).size.width;
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[

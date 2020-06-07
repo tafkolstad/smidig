@@ -17,13 +17,15 @@ List<Destination> destinations = [
     imageUrl: 'stranda.png',
     plass: 'Stranda',
     title: 'Roaldshornet',
-    beskrivelse: 'På Stranda kan en ta gondol opp til Roaldshornet, her får en utsik over fjell.',
+    beskrivelse:
+        'På Stranda kan en ta gondol opp til Roaldshornet, her får en utsik over fjell.',
   ),
   Destination(
     imageUrl: 'fjord2.png',
     plass: 'Fjord',
     title: 'Utsikt',
-    beskrivelse: 'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
+    beskrivelse:
+        'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
   ),
   Destination(
     imageUrl: 'by.png',
@@ -35,13 +37,15 @@ List<Destination> destinations = [
     imageUrl: 'stranda.png',
     plass: 'Stranda',
     title: 'Roaldshornet',
-    beskrivelse: 'På Stranda kan en ta gondol opp til Roaldshornet, her får en utsik over fjell.',
+    beskrivelse:
+        'På Stranda kan en ta gondol opp til Roaldshornet, her får en utsik over fjell.',
   ),
   Destination(
     imageUrl: 'fjord2.png',
     plass: 'Fjord',
     title: 'Utsikt',
-    beskrivelse: 'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
+    beskrivelse:
+        'Fjord er en landform som i internasjonalt fagspråk (geologi, geografi) forklart som ei dyp, smal',
   ),
   Destination(
     imageUrl: 'by.png',

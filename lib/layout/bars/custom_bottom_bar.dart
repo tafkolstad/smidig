@@ -49,7 +49,8 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     void _onBilletterTapped(int index) {
       if (index == 2) {
-        Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
+        Navigator.of(context)
+            .pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false);
       }
     }
 

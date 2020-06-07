@@ -24,7 +24,7 @@ class Sidebar extends StatelessWidget {
         sidebarImageSize: 25,
         routeName: 'mat',
         textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
+        bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -33,7 +33,7 @@ class Sidebar extends StatelessWidget {
         sidebarImageSize: 25,
         routeName: 'vognoversikt',
         textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
+        bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -42,7 +42,7 @@ class Sidebar extends StatelessWidget {
         sidebarImageSize: 38,
         routeName: 'severdigheter',
         textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
+        bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -51,7 +51,7 @@ class Sidebar extends StatelessWidget {
         sidebarImageSize: 16,
         routeName: 'betjening',
         textStyle: _textStyle,
-      bottomPadding: _bottomPadding,
+        bottomPadding: _bottomPadding,
       ),
       _spacing,
       MenyItem(
@@ -60,7 +60,7 @@ class Sidebar extends StatelessWidget {
         sidebarImageSize: 24,
         routeName: 'meny',
         textStyle: _textStyle,
-      bottomPadding: MediaQuery.of(context).size.height * 0.015,
+        bottomPadding: MediaQuery.of(context).size.height * 0.015,
       ),
     ];
 
