@@ -6,14 +6,13 @@ import 'package:vy_test/layout/layout.dart';
 import 'package:vy_test/layout/colors.dart';
 import 'varsel.dart';
 import 'package:intl/intl.dart';
-import 'package:vy_test/firebase/firebase_get.dart';
+
 import 'package:vy_test/varsler/event_data.dart';
 
 enum IconType { DELAYED, WARNING, INFORMATION }
 
 class Varsler extends StatelessWidget {
   final FirebasePublish firebasePublish = FirebasePublish();
-  final FirebaseGet firebaseGet = FirebaseGet();
 
   final customTimeFormat = new DateFormat('HH:mm');
 
