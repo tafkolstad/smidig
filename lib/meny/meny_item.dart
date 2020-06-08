@@ -35,10 +35,14 @@ class MenyItem extends StatelessWidget {
         height: _containerHeight,
         alignment: Alignment.center,
         decoration: BoxDecoration(
+          border: Border.all(
+            color: Color(0x357c94b6),
+            width: 1.0,
+          ),
           boxShadow: [
             BoxShadow(
               color: dropshadowColor,
-              offset: Offset(3, 6),
+              offset: Offset(2, 6),
               blurRadius: 6,
             ),
           ],

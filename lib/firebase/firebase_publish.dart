@@ -13,7 +13,7 @@ class FirebasePublish {
   void pushVarselToDatabase(eventType, subtitle,) async {
     FirebaseDatabase.instance.reference().child('Events').push().set({
       'subtitle': subtitle,
-      'eventType': eventType, //info, delayed or warning
+      'eventType': eventType,
       'timestamp': ServerValue.timestamp,
     });
   }

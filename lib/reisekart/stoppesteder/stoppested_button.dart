@@ -63,7 +63,8 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(40, 10, 0, 0),
                         child: StoppestedTile(),
-                      )),
+                      ),
+                  ),
                 ],
               );
             },
