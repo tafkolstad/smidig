@@ -54,12 +54,12 @@ class _ReisekartState extends State<Reisekart> {
                   child: MapboxMap(
                     myLocationEnabled: true,
                     styleString:
-                        'mapbox://styles/levare/ckb0ja1pe0tcc1ipfyiu0w4ri',
+                        'mapbox://styles/levare/ckb64mnws35im1ioe1gcliosx',
                     onMapCreated: androidController,
                     myLocationTrackingMode: MyLocationTrackingMode.TrackingGPS,
                     trackCameraPosition: true,
                     initialCameraPosition: CameraPosition(
-                        target: LatLng(59.9139, 10.7522), zoom: 13.0, tilt: 50),
+                        target: LatLng(59.9139, 10.7522), zoom: 14.0, tilt: 50),
                   ),
                 ),
               ],

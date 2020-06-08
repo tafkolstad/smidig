@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class StoppestedStream extends StatelessWidget {
-  Destinasjon destinasjon = Destinasjon();
+  final Destinasjon destinasjon = Destinasjon();
   final customTimeFormat = new DateFormat('HH:mm');
   
    static int nextStop = 2;
 
-  var _destinationRef = FirebaseDatabase.instance
+  final _destinationRef = FirebaseDatabase.instance
       .reference()
       .child('Destinations')
       .orderByChild('stopnumber')

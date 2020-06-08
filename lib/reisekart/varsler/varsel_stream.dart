@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class VarselStream extends StatelessWidget {
-  var _notificationRef =
+  final _notificationRef =
       FirebaseDatabase.instance.reference().child('Events').limitToFirst(4);
 
   final customTimeFormat = new DateFormat('HH:mm');

@@ -38,7 +38,7 @@ class MenyItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: dropshadowColor,
-              offset: Offset(1, 4),
+              offset: Offset(3, 6),
               blurRadius: 6,
             ),
           ],

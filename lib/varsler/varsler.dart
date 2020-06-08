@@ -8,17 +8,16 @@ import 'varsel.dart';
 import 'package:intl/intl.dart';
 import 'package:vy_test/firebase/firebase_get.dart';
 import 'package:vy_test/varsler/event_data.dart';
-import 'package:vy_test/stoppesteder/model/Stoppesteder_Model.dart';
 
 enum IconType { DELAYED, WARNING, INFORMATION }
 
 class Varsler extends StatelessWidget {
-  FirebasePublish firebasePublish = FirebasePublish();
-  FirebaseGet firebaseGet = FirebaseGet();
+  final FirebasePublish firebasePublish = FirebasePublish();
+  final FirebaseGet firebaseGet = FirebaseGet();
 
   final customTimeFormat = new DateFormat('HH:mm');
 
-  var _notificationRef = FirebaseDatabase.instance
+  final _notificationRef = FirebaseDatabase.instance
       .reference()
       .child('Events')
       .orderByChild('created_at') //order by creation time.
@@ -52,25 +51,12 @@ class Varsler extends StatelessWidget {
 
           return Column(
             children: <Widget>[
-              //TODO push to database
-              /*
-              RaisedButton(
-                child: Text('TRYKK'),
-                onPressed: () {
-                  //info, delayed or warning
-                  //firebasePublish.pushVarselToDatabase('delayed', 'subtitle');
-                  for (var destinasjon in destinasjoner) {
-                    firebasePublish.pushStoppestedToDatabase(
-                        destinasjon.tid, destinasjon.stoppested, destinasjon.stopnumber);
-                  }
-                },
-              ),*/
-
               Container(
                   margin: EdgeInsets.fromLTRB(0, 25, 250, 10),
                   child: Text('Varsler',
-                      style: TextStyle(fontSize: 30, wordSpacing: 5))),
-              // padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
+                      style: TextStyle(fontSize: 30, wordSpacing: 5)
+                  )
+              ),
               Expanded(
                 child: ListView.builder(
                     itemBuilder: listItem, itemCount: varselList.length),

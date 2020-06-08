@@ -5,7 +5,7 @@ import 'package:vy_test/layout/colors.dart';
 
 
 class StoppestedTile extends StatelessWidget {
-  Destinasjon destinasjon = new Destinasjon();
+  final Destinasjon destinasjon = new Destinasjon();
 
   @override
   Widget build(BuildContext context) {

@@ -9,18 +9,6 @@ import 'package:vy_test/stoppesteder/widgets/Stoppesteder_Tider.dart';
 import 'package:vy_test/stoppesteder/widgets/Stoppesteder_Sted.dart';
 
 class Stoppesteder extends StatelessWidget {
-  Color _circleColor = vyColorGreen;
-  List<Widget> _circleList = [
-    SirkelStoppested(
-      circleHeight: 15,
-      circleWidth: 15,
-      circleColor: vyColorGreen,
-      childCircleWidth: 10,
-      childCircleHeight: 10,
-    )
-  ];
-
-  static const TextStyle _textStyle = TextStyle(fontSize: 16);
 
   @override
   Widget build(BuildContext context) {
