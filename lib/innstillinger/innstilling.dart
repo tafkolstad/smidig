@@ -33,7 +33,7 @@ class _InnstillingState extends State<Innstilling> {
                   text: widget.firstText,
                   style: TextStyle(
                     color: widget.firstTextColor,
-                    fontFamily: 'Ebrima',
+                    fontFamily: 'Segoe UI',
                     fontSize: 16.0,
                   ),
                   children: <TextSpan>[

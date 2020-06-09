@@ -7,13 +7,13 @@ import 'package:vy_test/layout/layout.dart';
 class Betjening extends StatefulWidget {
   static const TextStyle _hintTextStyle = TextStyle(
     color: textColorMenu,
-    fontFamily: 'Ebrima',
+    fontFamily: 'Raleway',
     fontSize: 15.0,
   );
 
   static const TextStyle _inputTextStyle = TextStyle(
     color: textColorGrey,
-    fontFamily: 'Ebrima',
+    fontFamily: 'Raleway',
     fontSize: 15.0,
   );
 
