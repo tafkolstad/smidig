@@ -17,16 +17,16 @@ class _VarselButtonState extends State<VarselButton> {
     return Container(
       alignment: Alignment.topRight,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+        padding: EdgeInsets.fromLTRB(0, 10, 40, 0),
         child: ButtonTheme(
-          padding: EdgeInsets.symmetric(
-              ),
+          padding: EdgeInsets.symmetric(),
           height: _buttonHeight,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Builder(
             builder: (context) {
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   RaisedButton(
                     color: Colors.white,
@@ -63,10 +63,16 @@ class _VarselButtonState extends State<VarselButton> {
                       });
                     },
                   ),
-                  AnimatedOpacity(opacity: _visible ? 1.0 : 0.0,duration:  Duration(milliseconds: 500), child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0,10,40,0),
-                    child: VarselTile(),
-                  )),
+                  AnimatedOpacity(
+                      opacity: _visible ? 1.0 : 0.0,
+                      duration: Duration(milliseconds: 500),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Visibility(
+                          visible: _visible,
+                          child: VarselTile(),
+                        ),
+                      )),
                 ],
               );
             },

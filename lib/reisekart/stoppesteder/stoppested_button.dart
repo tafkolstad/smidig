@@ -16,7 +16,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
     return Container(
       alignment: Alignment.topLeft,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 10, 15, 0),
+        padding: EdgeInsets.fromLTRB(40, 10, 15, 0),
         child: ButtonTheme(
           padding: EdgeInsets.symmetric(),
           height: _buttonHeight,
@@ -25,6 +25,7 @@ class _StoppestedButtonState extends State<StoppestedButton> {
           child: Builder(
             builder: (context) {
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   RaisedButton(
                     color: Colors.white,
@@ -58,12 +59,15 @@ class _StoppestedButtonState extends State<StoppestedButton> {
                     },
                   ),
                   AnimatedOpacity(
-                      opacity: _visible ? 1.0 : 0.0,
-                      duration: Duration(milliseconds: 500),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 10, 0, 0),
+                    opacity: _visible ? 1.0 : 0.0,
+                    duration: Duration(milliseconds: 500),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: Visibility(
+                        visible: _visible,
                         child: StoppestedTile(),
                       ),
+                    ),
                   ),
                 ],
               );
