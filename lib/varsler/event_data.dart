@@ -15,7 +15,6 @@ class EventData {
         OMIcons.info,
         color: infoColor,
         size: iconSize,
-        
       );
       colorType = infoColor;
       eventTitle = 'Info';

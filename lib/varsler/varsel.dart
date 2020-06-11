@@ -10,6 +10,4 @@ class Varsel {
     this.event,
     this.timestamp,
   });
-
-
 }

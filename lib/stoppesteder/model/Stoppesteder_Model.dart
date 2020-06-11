@@ -2,7 +2,6 @@ class Destinasjon {
   int stopnumber;
   int tid;
   String stoppested;
-
   Destinasjon({
     this.stopnumber,
     this.tid,
